@@ -10,23 +10,23 @@ export class MudarabaComponent {
     {
       title: 'ВКЛАД «МУДАРАБА»',
       subtitle: 'ДЛЯ ПРАВИЛЬНЫХ РЕШЕНИЙ',
-      image: '/assets/images/pages/deposit%20info/banner-mudaraba.png',
+      image: './assets/images/pages/deposit%20info/banner-mudaraba.png',
       buttonText: 'Открыть вклад',
     }
   ]
   conditionData = [
     {
-      image: '/assets/images/pages/deposit%20info/d1.png',
+      image: './assets/images/pages/deposit%20info/d1.png',
       title: 'Надёжность',
       subtitle: 'защита вкладов'
     },
     {
-      image: '/assets/images/pages/deposit%20info/d2.png',
+      image: './assets/images/pages/deposit%20info/d2.png',
       title: 'от 1000 сомони',
       subtitle: 'сумма вклада'
     },
     {
-      image: '/assets/images/pages/deposit%20info/d3.png',
+      image: './assets/images/pages/deposit%20info/d3.png',
       title: 'От 3 до 36 месяцев',
       subtitle: 'Срок вклада'
     },

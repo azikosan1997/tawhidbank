@@ -10,24 +10,24 @@ export class NationalComponent {
     {
       title: 'КОРТИ МИЛЛИ',
       subtitle: 'ВАША НАЦИОНАЛЬНАЯ КАРТА',
-      image: '/assets/images/pages/cards%20info/national-card-banner.png',
+      image: './assets/images/pages/cards%20info/national-card-banner.png',
       buttonText: 'Заказать карту',
       class: 'card'
     }
   ]
   conditionData = [
     {
-      image: '/assets/images/pages/cards%20info/cd1.png',
+      image: './assets/images/pages/cards%20info/cd1.png',
       title: '10 000 сомони в день',
       subtitle: 'максимальный баланс'
     },
     {
-      image: '/assets/images/pages/deposit%20info/d2.png',
+      image: './assets/images/pages/deposit%20info/d2.png',
       title: '5000 сомони',
       subtitle: 'выдача наличных'
     },
     {
-      image: '/assets/images/pages/deposit%20info/d3.png',
+      image: './assets/images/pages/deposit%20info/d3.png',
       title: 'от 18 лет',
       subtitle: 'возраст'
     },

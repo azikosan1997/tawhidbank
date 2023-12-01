@@ -19,7 +19,7 @@ export class BranchesComponent implements OnInit {
     this.activatedTab = index;
   }
   customMarkerIcon: any  = {
-    url: '/assets/images/pages/about/location/branch.png',
+    url: './assets/images/pages/about/location/branch.png',
     scaledSize: {
       width: 35,
       height: 40

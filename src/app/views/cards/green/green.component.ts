@@ -10,24 +10,24 @@ export class GreenComponent {
     {
       title: 'КРЕДИТНАЯ КАРТА “САБЗ”',
       subtitle: 'ДЕНЬГИ ВСЕГДА ПОД РУКОЙ',
-      image: '/assets/images/pages/cards%20info/green-card-banner.png',
+      image: './assets/images/pages/cards%20info/green-card-banner.png',
       buttonText: 'Заказать карту',
       class: 'card'
     }
   ]
   conditionData = [
     {
-      image: '/assets/images/pages/cards%20info/cd1.png',
+      image: './assets/images/pages/cards%20info/cd1.png',
       title: '0% оплата',
       subtitle: 'покупок'
     },
     {
-      image: '/assets/images/pages/deposit%20info/d2.png',
+      image: './assets/images/pages/deposit%20info/d2.png',
       title: '6000 сомони',
       subtitle: 'максимальная сумма'
     },
     {
-      image: '/assets/images/pages/deposit%20info/d3.png',
+      image: './assets/images/pages/deposit%20info/d3.png',
       title: 'от 20 до 63 лет',
       subtitle: 'возраст'
     },

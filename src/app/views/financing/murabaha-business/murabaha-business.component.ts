@@ -10,23 +10,23 @@ export class MurabahaBusinessComponent {
     {
       title: 'МУРАБАХА BUSINESS',
       subtitle: 'ФИНАНСИРОВАНИЕ ДЛЯ ЧАСТНЫХ ЛИЦ',
-      image: '/assets/images/pages/financing%20info/banner-business.png',
+      image: './assets/images/pages/financing%20info/banner-business.png',
       buttonText: 'Оставить заявку',
     }
   ]
   conditionData = [
     {
-      image: '/assets/images/pages/financing%20info/ft2.png',
+      image: './assets/images/pages/financing%20info/ft2.png',
       title: 'Быстрое одобрение',
       subtitle: 'финансирования'
     },
     {
-      image: '/assets/images/pages/deposit%20info/d2.png',
+      image: './assets/images/pages/deposit%20info/d2.png',
       title: '3 000 000 сомони',
       subtitle: 'Сумма финансирования'
     },
     {
-      image: '/assets/images/pages/deposit%20info/d3.png',
+      image: './assets/images/pages/deposit%20info/d3.png',
       title: 'До 36 месяцев',
       subtitle: 'Срок финансирования'
     },

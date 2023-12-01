@@ -10,23 +10,23 @@ export class MurabahaHouseComponent {
     {
       title: 'МУРАБАХА ЖАЛЬЁ',
       subtitle: 'ФИНАНСИРОВАНИЕ ДЛЯ ЧАСТНЫХ ЛИЦ',
-      image: '/assets/images/pages/financing%20info/banner-house.png',
+      image: './assets/images/pages/financing%20info/banner-house.png',
       buttonText: 'Оставить заявку',
     }
   ]
   conditionData = [
     {
-      image: '/assets/images/pages/financing%20info/ft2.png',
+      image: './assets/images/pages/financing%20info/ft2.png',
       title: 'Быстрое одобрение',
       subtitle: 'финансирования'
     },
     {
-      image: '/assets/images/pages/deposit%20info/d2.png',
+      image: './assets/images/pages/deposit%20info/d2.png',
       title: '500 000 сомони',
       subtitle: 'Сумма финансирования'
     },
     {
-      image: '/assets/images/pages/deposit%20info/d3.png',
+      image: './assets/images/pages/deposit%20info/d3.png',
       title: 'До 60 месяцев',
       subtitle: 'Срок финансирования'
     },

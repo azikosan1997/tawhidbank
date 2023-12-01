@@ -10,23 +10,23 @@ export class ManzilComponent {
     {
       title: 'ВКЛАД «МАНЗИЛ»',
       subtitle: 'ПРИОБРЕТИ СВОЙ ДОМ',
-      image: '/assets/images/pages/deposit%20info/banner-manzil.png',
+      image: './assets/images/pages/deposit%20info/banner-manzil.png',
       buttonText: 'Открыть вклад',
     }
   ]
   conditionData = [
     {
-      image: '/assets/images/pages/deposit%20info/d4.png',
+      image: './assets/images/pages/deposit%20info/d4.png',
       title: 'Хиба (подарок от банка)',
       subtitle: 'На усмотрение Банка'
     },
     {
-      image: '/assets/images/pages/deposit%20info/d2.png',
+      image: './assets/images/pages/deposit%20info/d2.png',
       title: 'Не ограниченая',
       subtitle: 'сумма вклада'
     },
     {
-      image: '/assets/images/pages/deposit%20info/d3.png',
+      image: './assets/images/pages/deposit%20info/d3.png',
       title: 'Не ограниченый',
       subtitle: 'срок вклада'
     },

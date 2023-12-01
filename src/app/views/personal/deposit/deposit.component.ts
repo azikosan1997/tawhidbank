@@ -11,7 +11,7 @@ export class DepositComponent {
 
   depositsInfo = [
     {
-      image: '/assets/images/pages/deposits/d1.png',
+      image: './assets/images/pages/deposits/d1.png',
       imageAlt: 'Saving',
       depositName: 'Вклад «Мудараба»',
       depositTextFirst: 'От 100$(долларов)',
@@ -23,7 +23,7 @@ export class DepositComponent {
       link: '/personal/deposit/mudaraba'
     },
     {
-      image: '/assets/images/pages/deposits/d2.png',
+      image: './assets/images/pages/deposits/d2.png',
       imageAlt: 'House',
       depositName: 'Накопительный депозит «Манзил»',
       depositTextFirst: 'Не ограничено',
@@ -35,7 +35,7 @@ export class DepositComponent {
       link: '/personal/deposit/manzil'
     },
     {
-      image: '/assets/images/pages/deposits/d3.png',
+      image: './assets/images/pages/deposits/d3.png',
       imageAlt: 'Time',
       depositName: 'Вклад «Вакала»',
       depositTextFirst: 'От 1000 сомонов',

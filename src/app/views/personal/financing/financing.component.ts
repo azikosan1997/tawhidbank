@@ -13,7 +13,7 @@ export class FinancingComponent {
   }
   financingInfo = [
     {
-      image: '/assets/images/pages/financing/f1.png',
+      image: './assets/images/pages/financing/f1.png',
       financingSubText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed',
       imageAlt: 'Cart',
       financingName: 'Потрибительская мурабаха',
@@ -28,7 +28,7 @@ export class FinancingComponent {
       link: '/personal/financing/murabaha-consumption'
     },
     {
-      image: '/assets/images/pages/financing/f2.png',
+      image: './assets/images/pages/financing/f2.png',
       financingSubText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed',
       imageAlt: 'House',
       financingName: 'Мурабаха жильё',
@@ -43,7 +43,7 @@ export class FinancingComponent {
       link: '/personal/financing/murabaha-house'
     },
     {
-      image: '/assets/images/pages/financing/f3.png',
+      image: './assets/images/pages/financing/f3.png',
       financingSubText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed',
       imageAlt: 'Time',
       financingName: 'Мурабаха Business',
@@ -58,7 +58,7 @@ export class FinancingComponent {
       link: '/personal/financing/murabaha-business'
     },
     {
-      image: '/assets/images/pages/financing/f4.png',
+      image: './assets/images/pages/financing/f4.png',
       financingSubText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed',
       imageAlt: 'Time',
       financingName: 'Мурабаха авто',
@@ -73,7 +73,7 @@ export class FinancingComponent {
       link: '/personal/auto-financing'
     },
     {
-      image: '/assets/images/pages/financing/f5.png',
+      image: './assets/images/pages/financing/f5.png',
       financingSubText: 'Рассчитайте услове по финансированию',
       imageAlt: 'Time',
       financingName: 'Калькулятор финансирования',

@@ -17,7 +17,7 @@ export class CardsComponent implements AfterViewInit {
 
   allCard = [
     {
-      cardImage: '/assets/images/pages/cards/national-card.png',
+      cardImage: './assets/images/pages/cards/national-card.png',
       cardTitle: 'Корти миллӣ',
       cardSubTitle: 'онлайн-заявка',
       percent:'10 000 сомони в день',
@@ -29,7 +29,7 @@ export class CardsComponent implements AfterViewInit {
       link: '/personal/cards/national'
     },
     {
-      cardImage: '/assets/images/pages/cards/green-card.png',
+      cardImage: './assets/images/pages/cards/green-card.png',
       cardTitle: 'Кредитная карта «Cабз»',
       cardSubTitle: 'онлайн-заявка',
       percent:'0%',
@@ -41,7 +41,7 @@ export class CardsComponent implements AfterViewInit {
       link: '/personal/cards/green'
     },
     {
-      cardImage: '/assets/images/pages/cards/nameless-card.png',
+      cardImage: './assets/images/pages/cards/nameless-card.png',
       cardTitle: 'Безымянная карта',
       cardSubTitle: 'онлайн-заявка',
       percent:'10 000 сомони в день',
@@ -55,7 +55,7 @@ export class CardsComponent implements AfterViewInit {
   ]
   craditCard = [
     {
-      cardImage: '/assets/images/pages/cards/green-card.png',
+      cardImage: './assets/images/pages/cards/green-card.png',
       cardTitle: 'Кредитная карта «Cабз»',
       cardSubTitle: 'онлайн-заявка',
       percent:'0%',
@@ -69,7 +69,7 @@ export class CardsComponent implements AfterViewInit {
   ]
   debitCard  = [
     {
-      cardImage: '/assets/images/pages/cards/national-card.png',
+      cardImage: './assets/images/pages/cards/national-card.png',
       cardTitle: 'Корти миллӣ',
       cardSubTitle: 'онлайн-заявка',
       percent:'10 000 сомони в день',
@@ -81,7 +81,7 @@ export class CardsComponent implements AfterViewInit {
       link: '/personal/cards/national'
     },
     {
-      cardImage: '/assets/images/pages/cards/nameless-card.png',
+      cardImage: './assets/images/pages/cards/nameless-card.png',
       cardTitle: 'Безымянная карта',
       cardSubTitle: 'онлайн-заявка',
       percent:'10 000 сомони в день',

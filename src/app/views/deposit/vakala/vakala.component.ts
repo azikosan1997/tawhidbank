@@ -10,23 +10,23 @@ export class VakalaComponent {
     {
       title: 'ВКЛАД «ВАКАЛА»',
       subtitle: 'Надежные исламские инвестиции',
-      image: '/assets/images/pages/deposit%20info/deposit-vakala.png',
+      image: './assets/images/pages/deposit%20info/deposit-vakala.png',
       buttonText: 'Открыть вклад'
     }
   ]
   conditionData = [
     {
-      image: '/assets/images/pages/deposit%20info/d4.png',
+      image: './assets/images/pages/deposit%20info/d4.png',
       title: 'Дебетовая карта',
       subtitle: 'в подарок'
     },
     {
-      image: '/assets/images/pages/deposit%20info/d2.png',
+      image: './assets/images/pages/deposit%20info/d2.png',
       title: 'от 1000 сомони',
       subtitle: 'сумма вклада'
     },
     {
-      image: '/assets/images/pages/deposit%20info/d3.png',
+      image: './assets/images/pages/deposit%20info/d3.png',
       title: 'с 1 до 3 года',
       subtitle: 'Cрок вклада'
     },

@@ -4,7 +4,7 @@
 .banner {
   width: 100%;
   min-height: 625px;
-  background-image: url("/assets/images/pages/about/banner.png");
+  background-image: url("../../../../assets/images/pages/about/banner.png");
 
   .container {
     padding-top: 200px;
@@ -101,7 +101,7 @@
     .history-text {
       border-radius: 10px;
       width: 100%;
-      background-image: url("/assets/images/pages/about/paper.jpg");
+      background-image: url("../../../../assets/images/pages/about/paper.jpg");
       background-size: cover;
       background-color: white;
       padding: 140px 80px 80px 80px;
@@ -199,31 +199,31 @@
           background-repeat: no-repeat;
 
           &.first {
-            background-image: url("/assets/images/pages/about/v1.png");
+            background-image: url("../../../../assets/images/pages/about/v1.png");
           }
 
           &.second {
-            background-image: url("/assets/images/pages/about/v2.png");
+            background-image: url("../../../../assets/images/pages/about/v2.png");
             background-size: 80%;
           }
 
           &.third {
-            background-image: url("/assets/images/pages/about/v3.png");
+            background-image: url("../../../../assets/images/pages/about/v3.png");
             background-size: 70%;
           }
 
           &.fourth {
-            background-image: url("/assets/images/pages/about/v4.png");
+            background-image: url("../../../../assets/images/pages/about/v4.png");
             background-size: 60%;
           }
 
           &.fifth {
-            background-image: url("/assets/images/pages/about/v5.png");
+            background-image: url("../../../../assets/images/pages/about/v5.png");
             background-size: 90%;
           }
 
           &.sixth {
-            background-image: url("/assets/images/pages/about/v6.png");
+            background-image: url("../../../../assets/images/pages/about/v6.png");
             background-size: 50%;
           }
         }

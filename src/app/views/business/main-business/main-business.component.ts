@@ -37,17 +37,17 @@ export class MainBusinessComponent {
 
   bannerData: BannerDataType[] = [
     {
-      background: '/assets/images/pages/business%20main/b4.png',
+      background: './assets/images/pages/business%20main/b4.png',
       title: "Торговый эквайринг",
       description: "Предоставьте своим клиентам больше возможностей оплаты и увеличьте продажи с помощью POS-терминалов и QR-кодов"
     },
     {
-      background: '/assets/images/pages/business%20main/b2.png',
+      background: './assets/images/pages/business%20main/b2.png',
       title: "Расчётно-кассовое обслуживание",
       description: "Конвертации, бронирование счёта, валютные переводы и многое другое — всё это под рукой"
     },
     {
-      background: '/assets/images/pages/business%20main/b3.png',
+      background: './assets/images/pages/business%20main/b3.png',
       title: "Корпоративная Мурабаха",
       description: "Коммерческая сделка продажи, в которой банк прямо указывает стоимость актива и продает его клиенту, добавив прибыль или наценку на него"
     },
