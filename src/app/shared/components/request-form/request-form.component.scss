@@ -1,0 +1,93 @@
+@import "../../../../assets/styles/variables";
+@import "../../../../assets/styles/mixins";
+
+.request-form {
+  padding-top: 110px;
+  padding-bottom: 110px;
+  background-color: rgba(48, 151, 153, 0.2);
+
+  .container {
+    .request-form-wrap {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      .request-form-wrap-info {
+        h2 {
+          @include h2-mixin;
+        }
+
+        .request-form-wrap-info-description {
+          font-size: 18px;
+          font-family: "Montserrat", sans-serif;
+          color: rgb(68, 68, 68);
+          line-height: 1.2;
+        }
+      }
+
+      .request-form-wrap-form {
+        width: 50%;
+
+        .request-form-wrap-form-row {
+          box-sizing: border-box;
+          width: 100%;
+          margin-bottom: 20px;
+
+          &.extra {
+            box-sizing: border-box;
+            width: 110%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            input {
+              width: 80%;
+            }
+
+            .button {
+              border: none;
+              border-radius: 10px;
+              font-size: 24px;
+              font-family: "Montserrat", sans-serif;
+              color: rgb(255, 255, 255);
+              font-weight: bold;
+              line-height: 1.2;
+              margin-right: 20px;
+              padding-inline: 40px;
+            }
+
+            .policy {
+              font-size: 16px;
+              font-family: "Montserrat",sans-serif;
+              color: rgb(68, 68, 68);
+              line-height: 1.2;
+              max-width: 400px;
+            }
+          }
+
+          .input-name {
+            font-size: 16px;
+            font-family: "Montserrat", sans-serif;
+            color: rgb(68, 68, 68);
+            line-height: 1.2;
+            margin-bottom: 10px;
+          }
+
+          input {
+            width: 100%;
+            height: 40px;
+            border: none;
+            outline: none;
+            border-radius: 10px;
+            padding: 20px;
+            font-size: 24px;
+            font-family: "Montserrat", sans-serif;
+            color: rgb(68, 68, 68);
+            line-height: 1.2;
+          }
+        }
+      }
+    }
+  }
+}

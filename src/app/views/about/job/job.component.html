@@ -1,0 +1,166 @@
+<app-about-header></app-about-header>
+<section class="banner">
+  <div class="container">
+    <div class="banner-wrap">
+      <div class="banner-info">
+        <div class="banner-title">Больше, чем новая работа</div>
+        <div class="banner-subtitle">Новые возможности</div>
+        <a href="#" class="button">Вакансии</a>
+      </div>
+      <div class="banner-image">
+        <img src="/assets/images/pages/job/banner.png" alt="Bee">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="features-job">
+  <div class="container">
+    <div class="features-job-wrap">
+      <div class="features-job-card">
+        <div class="features-job-card-info">
+          <div class="features-job-card-image">
+            <img src="/assets/images/pages/job/cj1.png" alt="Map">
+          </div>
+          <div class="features-job-card-title">Республиканский банк</div>
+          <div class="features-job-card-description">Работайте в своем городе</div>
+        </div>
+      </div>
+      <div class="features-job-card">
+        <div class="features-job-card-info">
+          <div class="features-job-card-image">
+            <img src="/assets/images/pages/job/cj2.png" alt="Graphic">
+          </div>
+          <div class="features-job-card-title">Быстрый рост</div>
+          <div class="features-job-card-description">Мы открываем всё больше отделении по РТ.</div>
+        </div>
+      </div>
+      <div class="features-job-card">
+        <div class="features-job-card-info">
+          <div class="features-job-card-image">
+            <img src="/assets/images/pages/job/cj3.png" alt="Pick">
+          </div>
+          <div class="features-job-card-title">Широкие возможности</div>
+          <div class="features-job-card-description">Мы ориентированы на быстрый рост сотрудников.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="more">
+  <div class="container">
+    <div class="more-wrap">
+      <h2>Больше, чем банк</h2>
+      <span
+        class="who">Вы хотите реализовать свои возможности? <br> <strong>Присоединяйтесь к нашей команде!</strong> <br>
+        Мы ищем творческих и амбициозных профессионалов, которые смогут просто решать сложные задачи и уважать каждого клиента.</span>
+    </div>
+  </div>
+</section>
+<section class="search">
+  <div class="container">
+    <h2>Поиск вакансий</h2>
+    <div class="search-subtitle">Найдите работу своей мечты</div>
+    <div class="search-params-wrap">
+      <div class="search-param-duty">
+        <mat-form-field class="example-form-field">
+          <mat-label>Найти вакасию</mat-label>
+          <input matInput type="text" [(ngModel)]="searchValue">
+          <button *ngIf="searchValue" matSuffix mat-icon-button aria-label="Clear" (click)="searchValue=''">
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+      <div class="search-param-filter">
+        <div class="search-param-filter-item">
+          <mat-form-field>
+            <mat-label>Вакансии</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let food of foods" [value]="food.value">
+                {{food.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="search-param-filter-item">
+          <mat-form-field>
+            <mat-label>Виберите регион</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let food of foods" [value]="food.value">
+                {{food.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="search-param-filter-result">Всего <span>20</span> вакансии в <span>17</span> городах</div>
+      </div>
+      <div class="search-results">
+        <div class="search-results-row">
+          <div class="search-results-row-duty">Сотрудник Банка</div>
+          <div class="search-results-row-salary">от 6000 сомони</div>
+          <div class="search-results-row-city">Душанбе</div>
+        </div>
+        <div class="search-results-row">
+          <div class="search-results-row-duty">Стратег финансовой службы</div>
+          <div class="search-results-row-salary">з.п не указана</div>
+          <div class="search-results-row-city">Худжанд</div>
+        </div>
+        <div class="search-results-row">
+          <div class="search-results-row-duty">Бизнес аналитик</div>
+          <div class="search-results-row-salary">от 4500 сомони</div>
+          <div class="search-results-row-city">Бохтар</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="contact">
+  <div class="container">
+    <h2>Обратная связь</h2>
+    <div class="contact-wrap">
+      <div class="contact-wrap-row">
+        <mat-form-field class="example-form-field">
+          <mat-label>Фамилия, имя и отчество</mat-label>
+          <input matInput type="text" [(ngModel)]="fullNameValue">
+          <button *ngIf="fullNameValue" matSuffix mat-icon-button aria-label="Clear" (click)="fullNameValue=''">
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+      <div class="contact-wrap-row">
+        <mat-form-field class="example-form-field">
+          <mat-label>Мобильный телефон</mat-label>
+          <input matInput type="tell">
+          <button *ngIf="mobileValue" matSuffix mat-icon-button aria-label="Clear" (click)="mobileValue=''">
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+        <mat-form-field class="example-form-field">
+          <mat-label>E-mail</mat-label>
+          <input matInput type="text">
+          <button *ngIf="emailValue" matSuffix mat-icon-button aria-label="Clear" (click)="emailValue=''">
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+      <div class="contact-wrap-row">
+        <mat-form-field>
+          <mat-label>Textarea</mat-label>
+          <textarea matInput></textarea>
+        </mat-form-field>
+      </div>
+      <div class="contact-wrap-row">
+        <div class="financing-request-agreement-checkbox">
+          <input class="custom-checkbox" type="checkbox" id="myCheckbox">
+          <label for="myCheckbox">
+            Даю согласия на переработку своих персональных данных.
+          </label>
+        </div>
+      </div>
+      <div class="contact-wrap-row">
+        <button class="button">Отправить</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+

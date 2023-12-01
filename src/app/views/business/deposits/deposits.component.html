@@ -1,0 +1,186 @@
+<app-business-header></app-business-header>
+<section class="banner">
+  <div class="container">
+    <div class="banner-wrap">
+      <div class="banner-info">
+        <div class="banner-title">Ограниченная мудараба</div>
+        <div class="banner-subtitle">ИНВЕСТИЦИИ С <br>
+          ПРОФЕССИОНАЛАМИ РЫНКА</div>
+        <button class="button">Инвестировать</button>
+      </div>
+      <div class="banner-image">
+        <img src="/assets/images/pages/investments/banner.png" alt="Card">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="requirements">
+  <div class="container">
+    <div class="requirements-wrap">
+      <div class="requirements-wrap-item">
+        <div class="requirements-wrap-item-image">
+          <img src="/assets/images/pages/investments/r1.png" alt="Shield">
+        </div>
+        <div class="requirements-wrap-item-info">
+          <div class="requirements-wrap-item-info-title">Надёжность</div>
+          <div class="requirements-wrap-item-info-subtitle">защита инвесторов</div>
+        </div>
+      </div>
+      <div class="requirements-wrap-item">
+        <div class="requirements-wrap-item-image">
+          <img src="/assets/images/pages/investments/r2.png" alt="Aim">
+        </div>
+        <div class="requirements-wrap-item-info">
+          <div class="requirements-wrap-item-info-title">Профессиональное</div>
+          <div class="requirements-wrap-item-info-subtitle">управление</div>
+        </div>
+      </div>
+      <div class="requirements-wrap-item">
+        <div class="requirements-wrap-item-image">
+          <img src="/assets/images/pages/investments/r3.png" alt="Calendar">
+        </div>
+        <div class="requirements-wrap-item-info">
+          <div class="requirements-wrap-item-info-title">Гибкие условия</div>
+          <div class="requirements-wrap-item-info-subtitle">периода инвестирования</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="features">
+  <div class="container">
+    <h2>Преимущества Ограниченной мударабы</h2>
+    <div class="features-wrap">
+      <div class="feature-card">
+        <h3>Надёжность</h3>
+        <div class="feature-card-subtitle">Защита инвесторов за счёт строгого
+          законодательного регулирования
+          рынка со стороны ЦБ.
+        </div>
+        <div class="feature-card-image">
+          <img src="/assets/images/pages/investments/f1.png" alt="Shield">
+        </div>
+      </div>
+      <div class="feature-card">
+        <h3>Профессиональное
+          управление</h3>
+        <div class="feature-card-subtitle">Опыт и экспертиза с управляющей
+          компанией OАО Тавхидбанк
+          позволяют принимать эффективные
+          решения в интересах клиента.
+        </div>
+        <div class="feature-card-image">
+          <img src="/assets/images/pages/investments/f2.png" alt="Aim">
+        </div>
+      </div>
+      <div class="feature-card">
+        <h3>Гибкие условия</h3>
+        <div class="feature-card-subtitle">Определяйте период инвестирования
+          сами. Рекомендуемый срок — от года.
+        </div>
+        <div class="feature-card-image">
+          <img src="/assets/images/pages/investments/f3.png" alt="Calendar">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="tariffs">
+  <div class="container">
+    <h2>Условия и тирифы</h2>
+    <nav class="all-branches-button-group">
+      <ul>
+        <li class="tab" *ngFor="let tab of tabsArray; let i = index" (click)="setTab(i)">
+          <a class="tab-link" [ngClass]="activatedTab === i ? 'active' : ''">{{tab}}</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="tariffs-tab" *ngIf="activatedTab === 0">
+      <div class="tariffs-tab-row">
+        <div class="tariffs-tab-row-title">Валюта вклада</div>
+        <div class="tariffs-tab-row-description space">TJS   USD   RUB   EUR</div>
+      </div>
+      <div class="tariffs-tab-row">
+        <div class="tariffs-tab-row-title">Минимальная сумма вклада</div>
+        <div class="tariffs-tab-row-description">в эквиваленте 100 долларов</div>
+      </div>
+      <div class="tariffs-tab-row">
+        <div class="tariffs-tab-row-title">Максимальная сумма вклада</div>
+        <div class="tariffs-tab-row-description">не ограничена</div>
+      </div>
+      <div class="tariffs-tab-row">
+        <div class="tariffs-tab-row-title">Срок размещения</div>
+        <div class="tariffs-tab-row-description">От 3 до 36 месяцев</div>
+      </div>
+      <div class="tariffs-tab-row">
+        <div class="tariffs-tab-row-title">Норма прибыли</div>
+        <div class="tariffs-tab-row-description">в зависимости от валюты, суммы и срока вклада</div>
+      </div>
+      <div class="tariffs-tab-row">
+        <div class="tariffs-tab-row-title">Дополнительные взносы</div>
+        <div class="tariffs-tab-row-description">не допускаются</div>
+      </div>
+      <div class="tariffs-tab-row">
+        <div class="tariffs-tab-row-title">Частичные изъятия</div>
+        <div class="tariffs-tab-row-description">не допускаются</div>
+      </div>
+      <div class="tariffs-tab-row">
+        <div class="tariffs-tab-row-title">Особые условия</div>
+        <div class="tariffs-tab-row-description">не допускается досрочное изъятие вклада</div>
+      </div>
+    </div>
+    <div class="tariffs-tab" *ngIf="activatedTab === 1">
+      <div class="tariffs-tab-row">
+        <div class="tariffs-tab-row-title">Валюта вклада</div>
+        <div class="tariffs-tab-row-description profit"><span>TJS</span><span>USD</span><span>EUR</span><span>RUB</span></div>
+      </div>
+      <div class="tariffs-tab-row">
+        <div class="tariffs-tab-row-title">12</div>
+        <div class="tariffs-tab-row-description profit"><span>40/60</span><span>35/65</span><span>25/75</span><span>25/75</span></div>
+      </div>
+      <div class="tariffs-tab-row">
+        <div class="tariffs-tab-row-title">18</div>
+        <div class="tariffs-tab-row-description profit"><span>45/55</span><span>40/60</span><span>30/70</span><span>30/70</span></div>
+      </div>
+      <div class="tariffs-tab-row">
+        <div class="tariffs-tab-row-title">24</div>
+        <div class="tariffs-tab-row-description profit"><span>50/50</span><span>45/55</span><span>35/65</span><span>35/65</span></div>
+      </div>
+      <div class="tariffs-tab-row">
+        <div class="tariffs-tab-row-title">30</div>
+        <div class="tariffs-tab-row-description profit"><span>55/45</span><span>50/50</span><span>40/60</span><span>40/60</span></div>
+      </div>
+      <div class="tariffs-tab-row">
+        <div class="tariffs-tab-row-title">36</div>
+        <div class="tariffs-tab-row-description profit"><span>60/40</span><span>55/45</span><span>50/50</span><span>50/50</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="steps">
+  <div class="container">
+    <h2>Три простых шага для получения финансирования</h2>
+    <div class="steps-wrap">
+      <div class="step">
+        <div class="step-number">#1</div>
+        <div class="step-title">Подать заявку</div>
+        <div class="step-subtitle">на формление вклада</div>
+      </div>
+      <div class="step">
+        <div class="step-number">#2</div>
+        <div class="step-title">Подписать соглашение</div>
+        <div class="step-subtitle">о сотрудничестве удаленно</div>
+      </div>
+      <div class="step">
+        <div class="step-number">#3</div>
+        <div class="step-title">Получайте доход</div>
+        <div class="step-subtitle">в зависимости от валюты, <br>
+          суммы и срока вклада
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<app-request-form></app-request-form>
+<app-documets></app-documets>

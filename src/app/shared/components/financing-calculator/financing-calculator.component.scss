@@ -1,0 +1,124 @@
+.financing-calculator {
+  padding-bottom: 80px;
+
+  .container {
+    .financing-calculator-wrap {
+      width: 100%;
+      box-sizing: border-box;
+      border-radius: 15px;
+      border: 2px solid rgba(48, 151, 153, 0.2);
+      padding: 35px;
+      display: flex;
+      align-items: flex-start;
+      gap: 30px;
+
+      .financing-calculator-wrap-toggles {
+        width: 48%;
+
+        h3 {
+          font-size: 20px;
+          font-family: "Montserrat", sans-serif;
+          color: rgb(68, 68, 68);
+          font-weight: bold;
+          margin-bottom: 50px;
+        }
+
+        .financing-calculator-wrap-toggles-row {
+          margin-bottom: 40px;
+
+          h4 {
+            font-size: 18px;
+            font-family: "Montserrat", sans-serif;
+            color: rgb(68, 68, 68);
+          }
+        }
+      }
+    }
+
+    .financing-calculator-wrap-summary {
+      width: 50%;
+
+      .financing-calculator-wrap-summary-title {
+        border-radius: 10px;
+        width: 100%;
+        box-sizing: border-box;
+        padding-left: 30px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        background: linear-gradient(90deg, rgb(48, 153, 151) 0%, rgb(56, 173, 172) 57%, rgb(64, 192, 193) 100%);
+        font-size: 24px;
+        font-family: "Montserrat", sans-serif;
+        color: rgb(255, 255, 255);
+        line-height: 1.2;
+        margin-bottom: 40px;
+      }
+
+      .financing-calculator-wrap-summary-row {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding-bottom: 10px;
+        border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
+        margin-bottom: 20px;
+
+        &:nth-child(3) {
+          display: inline-block;
+          border-bottom: none;
+        }
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        .financing-calculator-wrap-summary-row-item {
+          font-size: 14px;
+          font-family: Montserrat, sans-serif;
+          margin-bottom: 20px;
+
+          .important {
+            font-size: 30px;
+            font-family: "Montserrat", sans-serif;
+            color: rgb(48, 151, 153);
+            font-weight: bold;
+            line-height: 1.2;
+          }
+        }
+
+        .documents {
+          font-family: Montserrat, sans-serif;
+          font-size: 16px;
+          font-weight: 600;
+          color: #444444;
+          margin-bottom: 20px;
+        }
+
+        .wrapper {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          gap: 30px;
+
+          .financing-calculator-wrap-summary-row-ic {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+          }
+        }
+
+        .button {
+          width: 100%;
+          display: grid;
+          place-content: center;
+          border: none;
+          font-size: 24px;
+          font-family: "Montserrat", sans-serif;
+          color: rgb(255, 255, 255);
+          font-weight: bold;
+          border: 10px;
+        }
+      }
+    }
+  }
+}

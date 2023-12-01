@@ -1,0 +1,267 @@
+<app-personal-header></app-personal-header>
+<section class="cards">
+  <div class="container">
+    <h2>Все кредитные карты</h2>
+    <nav class="all-branches-button-group">
+      <ul>
+        <li class="tab" *ngFor="let tab of tabsArray; let i = index" (click)="setTab(i)">
+          <a class="tab-link" [ngClass]="activatedTab === i ? 'active' : ''">{{tab}}</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="cards-tab" *ngIf="activatedTab === 0">
+      <div class="card-item" *ngFor="let card of allCard">
+        <div class="card-item-image">
+          <img src="{{card.cardImage}}" alt="Card">
+        </div>
+        <div class="card-item-info">
+          <h3>{{card.cardTitle}}</h3>
+          <div class="card-item-info-subtitle">{{card.cardSubTitle}}</div>
+          <div class="card-item-info-row">
+            <div class="card-item-info-row-item">
+              <div>{{card.percent}}</div>
+              <div>{{card.percentText}}</div>
+            </div>
+            <div class="card-item-info-row-item">
+              <div>{{card.age}}</div>
+              <div>{{card.ageText}}</div>
+            </div>
+            <div class="card-item-info-row-item">
+              <div>{{card.feature}}</div>
+              <div>{{card.featureText}}</div>
+            </div>
+          </div>
+          <div class="card-item-info-actions">
+            <a routerLink="{{card.link}}">Узнать подробнее</a>
+            <button class="button">Оформить карту</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cards-tab" *ngIf="activatedTab === 1">
+      <div class="card-item" *ngFor="let card of debitCard">
+        <div class="card-item-image">
+          <img src="{{card.cardImage}}" alt="Card">
+        </div>
+        <div class="card-item-info">
+          <h3>{{card.cardTitle}}</h3>
+          <div class="card-item-info-subtitle">{{card.cardSubTitle}}</div>
+          <div class="card-item-info-row">
+            <div class="card-item-info-row-item">
+              <div>{{card.percent}}</div>
+              <div>{{card.percentText}}</div>
+            </div>
+            <div class="card-item-info-row-item">
+              <div>{{card.age}}</div>
+              <div>{{card.ageText}}</div>
+            </div>
+            <div class="card-item-info-row-item">
+              <div>{{card.feature}}</div>
+              <div>{{card.featureText}}</div>
+            </div>
+          </div>
+          <div class="card-item-info-actions">
+            <a routerLink="{{card.link}}">Узнать подробнее</a>
+            <button class="button">Оформить карту</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cards-tab" *ngIf="activatedTab === 2">
+      <div class="card-item" *ngFor="let card of craditCard">
+        <div class="card-item-image">
+          <img src="{{card.cardImage}}" alt="Card">
+        </div>
+        <div class="card-item-info">
+          <h3>{{card.cardTitle}}</h3>
+          <div class="card-item-info-subtitle">{{card.cardSubTitle}}</div>
+          <div class="card-item-info-row">
+            <div class="card-item-info-row-item">
+              <div>{{card.percent}}</div>
+              <div>{{card.percentText}}</div>
+            </div>
+            <div class="card-item-info-row-item">
+              <div>{{card.age}}</div>
+              <div>{{card.ageText}}</div>
+            </div>
+            <div class="card-item-info-row-item">
+              <div>{{card.feature}}</div>
+              <div>{{card.featureText}}</div>
+            </div>
+          </div>
+          <div class="card-item-info-actions">
+            <a routerLink="{{card.link}}">Узнать подробнее</a>
+            <button class="button">Оформить карту</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="why">
+  <div class="container">
+    <h2>Почему выбирать карты от Тавхидбанк?</h2>
+    <div class="why-wrap">
+      <div class="why-wrap-item">
+        <div class="why-wrap-item-image">
+          <img src="/assets/images/pages/cards/w1.png" alt="Percent">
+        </div>
+        <div class="why-wrap-item-title">Пользуйтесь бесплатно</div>
+        <div class="why-wrap-item-subtitle">Оплачивайте картой без комиссии
+          во всех POS-терминалах.</div>
+      </div>
+      <div class="why-wrap-item">
+        <div class="why-wrap-item-image">
+          <img src="/assets/images/pages/cards/w2.png" alt="Exchange">
+        </div>
+        <div class="why-wrap-item-title">Выгодный курс</div>
+        <div class="why-wrap-item-subtitle">Получайте переводы из России
+          по выгодному курсу. <br><br>
+         <b> 1 руб. = 0 c.</b></div>
+      </div>
+      <div class="why-wrap-item">
+        <div class="why-wrap-item-image">
+          <img src="/assets/images/pages/cards/w3.png" alt="Card">
+        </div>
+        <div class="why-wrap-item-title">Бесплатная карта</div>
+        <div class="why-wrap-item-subtitle">Получите первую карту бесплатно в
+          наших офисах в Душанбе и по всему Таджикистану.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cards-request">
+  <div class="container">
+    <div class="cards-request-wrap">
+      <h3 class="cards-request-title">Оставить заявку</h3>
+      <div class="cards-request-steps">
+        <div class="cards-request-step-one">Шаг 1</div>
+        <div class="cards-request-step-one-info">Персональные данные</div>
+      </div>
+      <div class="cards-request-progress">
+        <div class="cards-request-progress-text">Получите <b>36%</b>заполнив шаг 1</div>
+        <div class="cards-request-progress-bar"></div>
+        <div class="cards-request-progress-subtext">+28% за заполнение поля ФИО</div>
+      </div>
+      <div class="cards-request-bank-obligation">
+        <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+          <g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M3.37752 5.08241C3 5.62028 3 7.21907 3 10.4167V11.9914C3 17.6294 7.23896 20.3655 9.89856 21.5273C10.62 21.8424 10.9807 22 12 22C13.0193 22 13.38 21.8424 14.1014 21.5273C16.761 20.3655 21 17.6294 21 11.9914V10.4167C21 7.21907 21 5.62028 20.6225 5.08241C20.245 4.54454 18.7417 4.02996 15.7351 3.00079L15.1623 2.80472C13.595 2.26824 12.8114 2 12 2C11.1886 2 10.405 2.26824 8.83772 2.80472L8.26491 3.00079C5.25832 4.02996 3.75503 4.54454 3.37752 5.08241ZM15.0595 10.4995C15.3353 10.1905 15.3085 9.71642 14.9995 9.44055C14.6905 9.16467 14.2164 9.19151 13.9405 9.50049L10.9286 12.8739L10.0595 11.9005C9.78358 11.5915 9.30947 11.5647 9.00049 11.8405C8.69151 12.1164 8.66467 12.5905 8.94055 12.8995L10.3691 14.4995C10.5114 14.6589 10.7149 14.75 10.9286 14.75C11.1422 14.75 11.3457 14.6589 11.488 14.4995L15.0595 10.4995Z" fill="#309799"></path>
+          </g>
+        </svg>
+        <span>
+          Заполнение анкеты не обязывает вас брать карту. <br>
+          Гарантируем: ваши данные останутся в безопасности.
+        </span>
+      </div>
+      <div class="cards-request-form">
+        <h3>Персональные данные</h3>
+        <form>
+          <div class="form-row">
+            <mat-form-field class="example-form-field">
+              <mat-label>Фамилия</mat-label>
+              <input matInput type="text">
+              <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                <mat-icon>close</mat-icon>
+              </button>
+            </mat-form-field>
+          </div>
+          <div class="form-row">
+            <mat-form-field class="example-form-field">
+              <mat-label>Имя</mat-label>
+              <input matInput type="text">
+              <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                <mat-icon>close</mat-icon>
+              </button>
+            </mat-form-field>
+            <mat-form-field class="example-form-field">
+              <mat-label>Отчество</mat-label>
+              <input matInput type="text">
+              <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                <mat-icon>close</mat-icon>
+              </button>
+            </mat-form-field>
+          </div>
+          <div class="form-row">
+            <mat-form-field class="example-form-field">
+              <mat-label>Мобильный телефон</mat-label>
+              <input matInput type="tell">
+              <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                <mat-icon>close</mat-icon>
+              </button>
+            </mat-form-field>
+            <mat-form-field class="example-form-field">
+              <mat-label>E-mail</mat-label>
+              <input matInput type="text">
+              <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                <mat-icon>close</mat-icon>
+              </button>
+            </mat-form-field>
+          </div>
+          <div class="form-row">
+            <mat-form-field>
+              <mat-label>Дата рождения</mat-label>
+              <input matInput [matDatepicker]="picker">
+              <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </div>
+        </form>
+      </div>
+      <div class="cards-request-agreement">
+        <div class="checkbox-container">
+          <input type="checkbox" id="fruit1" name="fruit-1" value="Apple">
+          <label for="fruit1">Даю согласие на <a href="#1">отправку запроса в БКИ (для клиентов банка)</a> и <a href="#2">обработку персональных данных</a>, с тарифами и условиями
+          <span class="label-break">кредитования,
+            <a href="#3">политикой обработки персональных данных</a> ознакомлен и согласен</span>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="cards-accordion">
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Как работают кредитные карты
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>I'm visible because I am open</p>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+    <div class="cards-help">
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Что такое льготный период
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>I'm visible because I am open</p>
+        </mat-expansion-panel>
+      </mat-accordion>
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Как оформить кредитную карту
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>I'm visible because I am open</p>
+        </mat-expansion-panel>
+      </mat-accordion>
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Что такое кредитный лимит
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>I'm visible because I am open</p>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </div>
+</section>

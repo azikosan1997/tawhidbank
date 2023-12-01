@@ -1,0 +1,134 @@
+<app-about-header></app-about-header>
+<section class="terminals">
+  <div class="container">
+    <h1>Адреса</h1>
+    <app-about-navigation></app-about-navigation>
+    <div class="atms-wrap">
+      <div class="atm-search">
+        <mat-form-field appearance="fill">
+          <mat-label>Поиск по адресу</mat-label>
+          <input matInput placeholder="Адресс">
+          <mat-icon matSuffix>
+            <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+              <g id="SVGRepo_iconCarrier">
+                <path opacity="0.1"
+                      d="M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
+                      fill="#309799"></path>
+                <path d="M15 15L21 21" stroke="#309799" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round"></path>
+                <path
+                  d="M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
+                  stroke="#309799" stroke-width="2"></path>
+              </g>
+            </svg>
+          </mat-icon>
+          <mat-hint></mat-hint>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Регионы</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let food of foods" [value]="food.value">
+              {{food.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="atms-map">
+        <google-map [options]="options" width="100vw" height="700px"></google-map>
+      </div>
+      <div class="atms-info">
+        <div class="atms-hints">
+          <div class="atms-hint">
+            <img src="/assets/images/pages/about/location/terminal.png" alt="Terminal">
+            <span>Терминалы</span>
+          </div>
+          <div class="atms-hint">
+            <img src="/assets/images/pages/about/location/red.png" alt="ATM">
+            <span>Сейчас не работает</span>
+          </div>
+        </div>
+        <h2>Терминалы </h2>
+        <div class="toggle-region-wrap">
+          <div class="toggle-region" *ngFor="let region of tabsArray; let i = index">
+            <input type="radio" id="{{i}}" name="radio-group" (click)="setTab(i)" [checked]="activatedTab === 0 ? i === 0 : false">
+            <label for="{{i}}">{{region}}</label>
+          </div>
+        </div>
+        <div class="atm-list" *ngIf="activatedTab === 0">
+          <div class="atm-list-row">
+            <div class="atm-list-row-address head">АДРЕС</div>
+            <div class="atm-list-row-graphic head">ВРЕМЯ РАБОТЫ</div>
+            <div class="atm-list-row-cash head">СНЯТИЕ НАЛИЧНЫХ</div>
+          </div>
+          <div class="atm-list-row">
+            <div class="atm-list-row-address">Бонки маркази ш. Душанбе н.Шоҳмансур кучаи Айни 4/1</div>
+            <div class="atm-list-row-graphic">24 часа</div>
+            <div class="atm-list-row-cash">Да</div>
+          </div>
+        </div>
+        <div class="atm-list" *ngIf="activatedTab === 1">
+          <div class="atm-list-row">
+            <div class="atm-list-row-address head">АДРЕС</div>
+            <div class="atm-list-row-graphic head">ВРЕМЯ РАБОТЫ</div>
+            <div class="atm-list-row-cash head">СНЯТИЕ НАЛИЧНЫХ</div>
+          </div>
+          <div class="atm-list-row" *ngFor="let bokhtarTerminal of bokhtarTerminals">
+            <div class="atm-list-row-address">{{bokhtarTerminal.address}}</div>
+            <div class="atm-list-row-graphic">{{bokhtarTerminal.graphic}}</div>
+            <div class="atm-list-row-cash">{{bokhtarTerminal.cash}}</div>
+          </div>
+        </div>
+        <div class="atm-list" *ngIf="activatedTab === 2">
+          <div class="atm-list-row">
+            <div class="atm-list-row-address head">АДРЕС</div>
+            <div class="atm-list-row-graphic head">ВРЕМЯ РАБОТЫ</div>
+            <div class="atm-list-row-cash head">СНЯТИЕ НАЛИЧНЫХ</div>
+          </div>
+          <div class="atm-list-row" *ngFor="let shahrituzTerminal of shahrituzTerminals">
+            <div class="atm-list-row-address">{{shahrituzTerminal.address}}</div>
+            <div class="atm-list-row-graphic">{{shahrituzTerminal.graphic}}</div>
+            <div class="atm-list-row-cash">{{shahrituzTerminal.cash}}</div>
+          </div>
+        </div>
+        <div class="atm-list" *ngIf="activatedTab === 3">
+          <div class="atm-list-row">
+            <div class="atm-list-row-address head">АДРЕС</div>
+            <div class="atm-list-row-graphic head">ВРЕМЯ РАБОТЫ</div>
+            <div class="atm-list-row-cash head">СНЯТИЕ НАЛИЧНЫХ</div>
+          </div>
+          <div class="atm-list-row" *ngFor="let rudakiTerminal of rudakiTerminals">
+            <div class="atm-list-row-address">{{rudakiTerminal.address}}</div>
+            <div class="atm-list-row-graphic">{{rudakiTerminal.graphic}}</div>
+            <div class="atm-list-row-cash">{{rudakiTerminal.cash}}</div>
+          </div>
+        </div>
+        <div class="atm-list" *ngIf="activatedTab === 4">
+          <div class="atm-list-row">
+            <div class="atm-list-row-address head">АДРЕС</div>
+            <div class="atm-list-row-graphic head">ВРЕМЯ РАБОТЫ</div>
+            <div class="atm-list-row-cash head">СНЯТИЕ НАЛИЧНЫХ</div>
+          </div>
+          <div class="atm-list-row" *ngFor="let firdavsiTerminal of firdavsiTerminals">
+            <div class="atm-list-row-address">{{firdavsiTerminal.address}}</div>
+            <div class="atm-list-row-graphic">{{firdavsiTerminal.graphic}}</div>
+            <div class="atm-list-row-cash">{{firdavsiTerminal.cash}}</div>
+          </div>
+        </div>
+        <div class="atm-list" *ngIf="activatedTab === 5">
+          <div class="atm-list-row">
+            <div class="atm-list-row-address head">АДРЕС</div>
+            <div class="atm-list-row-graphic head">ВРЕМЯ РАБОТЫ</div>
+            <div class="atm-list-row-cash head">СНЯТИЕ НАЛИЧНЫХ</div>
+          </div>
+          <div class="atm-list-row" *ngFor="let khujandTerminals of khujandTerminals">
+            <div class="atm-list-row-address">{{khujandTerminals.address}}</div>
+            <div class="atm-list-row-graphic">{{khujandTerminals.graphic}}</div>
+            <div class="atm-list-row-cash">{{khujandTerminals.cash}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

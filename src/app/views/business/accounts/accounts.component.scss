@@ -1,0 +1,215 @@
+@import "../../../../assets/styles/mixins";
+@import "../../../../assets/styles/variables";
+
+.business-deposit {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  .container {
+    .business-deposit-banner {
+      width: 100%;
+      box-sizing: border-box;
+      background-color: rgba(48, 151, 153, 0.2);
+      padding: 40px 60px;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      overflow: hidden;
+
+      .business-deposit-banner-info {
+        h1 {
+          position: relative;
+          @include h1-mixin;
+          font-size: 36px;
+          margin-bottom: 75px;
+
+          &::before {
+            content: '';
+            background-color: rgb(48, 151, 153);
+            position: absolute;
+            width: 680px;
+            transform: skew(-20deg);
+            height: 70px;
+            z-index: -1;
+            left: -100px;
+            top: -13px;
+          }
+        }
+
+        .business-deposit-banner-info-description {
+          font-size: 18px;
+          font-family: "Montserrat", sans-serif;
+          color: rgb(68, 68, 68);
+          line-height: 1.1;
+          max-width: 400px;
+          margin-bottom: 60px;
+        }
+
+        .button {
+          border: none;
+          border-radius: 5px;
+          font-size: 18px;
+          font-family: "Montserrat", sans-serif;
+          color: rgb(247, 248, 249);
+          font-weight: bold;
+          line-height: 1;
+          padding-inline: 30px;
+        }
+      }
+
+      .business-deposit-banner-image {
+        img {
+          width: 500px;
+        }
+      }
+    }
+  }
+}
+
+.features {
+  padding-bottom: 100px;
+
+  .container {
+    h2 {
+      @include h2-mixin;
+    }
+
+    .features-wrap {
+      width: 100%;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      .features-item {
+        width: 390px;
+        height: 500px;
+        background-color: rgba(48, 151, 153, 0.2);
+        padding: 40px 35px;
+        box-sizing: border-box;
+        border-radius: 10px;
+
+        h3 {
+          font-size: 24px;
+          font-family: "Montserrat", sans-serif;
+          color: rgb(68, 68, 68);
+          font-weight: bold;
+          line-height: 1;
+        }
+
+        .features-item-description {
+          font-size: 18px;
+          font-family: "Montserrat", sans-serif;
+          color: rgb(68, 68, 68);
+          line-height: 1.333;
+        }
+      }
+    }
+  }
+}
+
+.tariffs {
+  padding-bottom: 100px;
+
+  .container {
+    h2 {
+      @include h2-mixin;
+      margin-bottom: 20px;
+    }
+
+    .tariffs-subtitle {
+      font-size: 18px;
+      font-family: "Montserrat", sans-serif;
+      color: rgb(68, 68, 68);
+      line-height: 1;
+      margin-bottom: 60px;
+    }
+
+    .all-branches-button-group {
+      margin-bottom: 60px;
+
+      ul {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        list-style: none;
+        flex-wrap: wrap;
+
+        li {
+          cursor: pointer;
+
+          a {
+            padding: 15px 30px;
+            background-color: transparent;
+            border: 2px solid #309799;
+            border-radius: 15px;
+            font-size: 18px;
+            font-family: "Montserrat", sans-serif;
+            color: rgb(48, 151, 153);
+
+            &.active {
+              background-color: #309799;
+              color: white;
+            }
+          }
+        }
+      }
+    }
+
+    .tariff-tab {
+      .tariff-tab-heading {
+        font-size: 22px;
+        font-family: "Montserrat", sans-serif;
+        color: rgb(68, 68, 68);
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+
+      .tariff-tab-row {
+        width: 100%;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        display: flex;
+        justify-content: space-between;
+
+        &.line {
+          border-bottom: 2px solid rgba(48, 151, 153, 0.2);
+        }
+
+        .tariff-tab-row-item {
+          font-size: 18px;
+
+          &.bold {
+            font-weight: 500;
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.partners {
+  padding-top: 80px;
+  padding-bottom: 100px;
+
+  .container {
+    h2 {
+      @include h2-mixin;
+    }
+
+    .tariffs-subtitle {
+      font-size: 20px;
+      font-family: "Montserrat", sans-serif;
+      color: rgb(68, 68, 68);
+      margin-bottom: 40px;
+    }
+
+    .partners-wrap{
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+}

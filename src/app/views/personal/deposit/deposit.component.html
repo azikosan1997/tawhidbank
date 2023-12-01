@@ -1,0 +1,92 @@
+<app-personal-header></app-personal-header>
+<section class="deposits">
+  <div class="container">
+    <h2>Вклады</h2>
+    <div class="products-wrap">
+      <div class="product-card" *ngFor="let deposit of depositsInfo">
+        <div class="product-card-image">
+          <img src="{{deposit.image}}" alt="{{deposit.imageAlt}}">
+        </div>
+        <div class="product-card-info">
+          <h3>{{deposit.depositName}}</h3>
+          <div class="product-card-description">
+            <div class="product-card-description-items">
+              <div class="product-card-description-item">{{deposit.depositTextFirst}}</div>
+              <div class="product-card-description-item-sub">{{deposit.depositSubFirst}}</div>
+            </div>
+            <div class="product-card-description-items">
+              <div class="product-card-description-item">{{deposit.depositTextSecond}}</div>
+              <div class="product-card-description-item-sub">{{deposit.depositSubSecond}}</div>
+            </div>
+            <div class="product-card-description-items">
+              <div class="product-card-description-item">{{deposit.depositTextThird}}</div>
+              <div class="product-card-description-item-sub">{{deposit.depositSubThird}}</div>
+            </div>
+          </div>
+          <div class="product-card-info-action">
+            <a routerLink="{{deposit.link}}" class="product-detail">Подробнее о вкладе</a>
+            <button type="button" class="button-fill">Открыть вклад</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="tariff">
+  <div class="container">
+    <h2>Тарифы и условия</h2>
+    <div class="tariff-controllers">
+      <button class="tariff-controller active">Сравнить вклады</button>
+      <button class="tariff-controller">Тарифы</button>
+      <button class="tariff-controller">Условия вклада</button>
+    </div>
+    <div class="tariff-wrap">
+      <h3>Сравнить вклады</h3>
+      <table class="tariff-table">
+        <thead>
+        <tr>
+          <td>вклад</td>
+          <td>Мудараба</td>
+          <td>Манзил</td>
+          <td>Вакала</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Срок</td>
+          <td>3 - 36 месяцев</td>
+          <td>Неограниченно</td>
+          <td>12 - 36 месяцев</td>
+        </tr>
+        <tr>
+          <td>Преимущества</td>
+          <td>Периодичность выплаты <br>
+            прибыли в конце срока</td>
+          <td>Хиба
+            (подарок от банка)</td>
+          <td>Бесплатное предложение
+            дебетовой карты</td>
+        </tr>
+        <tr>
+          <td>Минимальная сумма вклада</td>
+          <td>От 100 долларов</td>
+          <td>Неограниченно</td>
+          <td>От 1000 сомони</td>
+        </tr>
+        <tr>
+          <td>Прогназируемая прибыль</td>
+          <td>80/20</td>
+          <td>Неограниченно</td>
+          <td>15%</td>
+        </tr>
+        <tr>
+          <td>Пополнение/расходные операции</td>
+          <td>Не допускаются</td>
+          <td>Разрешается</td>
+          <td>Не допускаются</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

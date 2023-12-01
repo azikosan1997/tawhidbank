@@ -1,0 +1,141 @@
+<app-about-header></app-about-header>
+<section class="branches">
+  <div class="container">
+    <h1>Адреса</h1>
+    <app-about-navigation></app-about-navigation>
+    <div class="headquarters">
+      <h2>Головной офис</h2>
+      <div class="headquarters-info">
+        <div class="headquarters-address">
+          <div class="headquarters-row">
+            <div class="headquarters-row-heading">АДРЕС</div>
+            <div class="headquarters-row-body">Адрес: 734025, г. Душанбе, ул. C.Айни 4/1</div>
+          </div>
+          <div class="headquarters-row">
+            <div class="headquarters-row-heading">РЕЖИМ РАБОТЫ</div>
+            <div class="headquarters-row-body">Пн — Пт: 8:00—21:00 (кассы: 9:00—17:00) <br>
+              Сб — Вс: выходной
+            </div>
+          </div>
+        </div>
+        <div class="headquarters-contacts">
+          <div class="headquarters-row">
+            <div class="headquarters-row-heading">КОНТАКТЫ</div>
+            <div class="headquarters-row-body number">91 11 | +922 (44) 601 70 70</div>
+            <div class="headquarters-row-subtitle">tawhidbank@info.tj</div>
+          </div>
+          <div class="headquarters-row">
+            <div class="headquarters-row-heading">УСЛУГИ</div>
+            <div class="headquarters-row-body">
+              Гирифтани корти “Сабз”, “Котри милли”, бастани шартномаи
+              маблағгузорӣ, машаххаскунии Tawhid Pay, пуркунии / гирифтани
+              маблағ аз ҳисоби “Корти миллӣ”, Tawhid Pay ва амонат, пардохти
+              маблағгузорӣ, интиқоли маблағ, кушодани суратҳисоб ва амонат,
+              хариду фурӯши асъор
+            </div>
+          </div>
+        </div>
+        <div class="headquarters-map">
+          <google-map [options]="branchOptions" [center]="{lat: 38.56189522986055, lng: 68.78508842680635}" [zoom]="18" width="100%" height="400px">
+            <map-marker [position]="{lat: 38.56189522986055, lng: 68.78508842680635}" [icon]="customMarkerIcon">
+            </map-marker>
+          </google-map>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="all-branches">
+  <div class="container">
+    <h2>Филиалы и точки обслуживания</h2>
+    <nav class="all-branches-button-group">
+      <ul>
+        <li class="tab" *ngFor="let tab of tabsArray; let i = index" (click)="setTab(i)">
+          <a class="tab-link" [ngClass]="activatedTab === i ? 'active' : ''">{{tab}}</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="all-branches-wraps">
+      <div class="all-branches-wrap" *ngIf="activatedTab === 0">
+        <mat-accordion *ngFor="let branch of dushanbe">
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <div class="accordion-header">
+                  <div class="branch-title">{{branch.title}}</div>
+                  <div class="branch-address">{{branch.address}}</div>
+                </div>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="branch-map">
+              <google-map [options]="branchOptions" [center]="{lat: branch.lat, lng: branch.lng}" [zoom]="20" width="100%" height="400px">
+                <map-marker [position]="{lat: branch.lat, lng: branch.lng}" [icon]="customMarkerIcon">
+                </map-marker>
+              </google-map>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+      <div class="all-branches-wrap" *ngIf="activatedTab === 1">
+        <mat-accordion *ngFor="let branch of drs">
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <div class="accordion-header">
+                  <div class="branch-title">{{branch.title}}</div>
+                  <div class="branch-address">{{branch.address}}</div>
+                </div>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="branch-map">
+              <google-map [options]="branchOptions" [center]="{lat: branch.lat, lng: branch.lng}" [zoom]="18" width="100%" height="400px">
+                <map-marker [position]="{lat: branch.lat, lng: branch.lng}" [icon]="customMarkerIcon">
+                </map-marker>
+              </google-map>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+      <div class="all-branches-wrap" *ngIf="activatedTab === 3">
+        <mat-accordion *ngFor="let branch of khatlon">
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <div class="accordion-header">
+                  <div class="branch-title">{{branch.title}}</div>
+                  <div class="branch-address">{{branch.address}}</div>
+                </div>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="branch-map">
+              <google-map [options]="branchOptions" [center]="{lat: branch.lat, lng: branch.lng}" [zoom]="18" width="100%" height="400px">
+                <map-marker [position]="{lat: branch.lat, lng: branch.lng}" [icon]="customMarkerIcon">
+                </map-marker>
+              </google-map>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+      <div class="all-branches-wrap" *ngIf="activatedTab === 2">
+        <mat-accordion *ngFor="let branch of sogd">
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <div class="accordion-header">
+                  <div class="branch-title">{{branch.title}}</div>
+                  <div class="branch-address">{{branch.address}}</div>
+                </div>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="branch-map">
+              <google-map [options]="branchOptions" [center]="{lat: branch.lat, lng: branch.lng}" [zoom]="18" width="100%" height="400px">
+                <map-marker [position]="{lat: branch.lat, lng: branch.lng}" [icon]="customMarkerIcon">
+                </map-marker>
+              </google-map>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+    </div>
+  </div>
+</section>

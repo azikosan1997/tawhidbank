@@ -1,0 +1,150 @@
+<app-personal-header></app-personal-header>
+<section class="transfer-banner">
+  <div class="container">
+    <div class="transfer-banner-wrap">
+      <div class="transfer-banner-info">
+        <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut </h1>
+        <div class="transfer-banner-info-description">
+          Денежные переводы в Таджикистан 0%
+        </div>
+        <a href="https://play.google.com/store/apps/details?id=tj.itservice.tawhidbank&hl=ru"
+           class="button-yellow-rounded">Скачать Tawhidpay</a>
+      </div>
+      <div class="transfer-banner-image">
+        <img src="/assets/images/pages/transfers/banner.png" alt="Mobile">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="transfers-features">
+  <div class="container">
+    <h2>Преимущества Tawhid Pay</h2>
+    <div class="transfers-features-wrap">
+      <div class="transfers-features-item">
+        <div class="transfers-features-item-image">
+          <img src="/assets/images/pages/transfers/f1.png" alt="Zero">
+        </div>
+        <div class="transfers-features-item-text">Без комиссий</div>
+      </div>
+      <div class="transfers-features-item">
+        <div class="transfers-features-item-image">
+          <img src="/assets/images/pages/transfers/f2.png" alt="Shield">
+        </div>
+        <div class="transfers-features-item-text">Надежно</div>
+      </div>
+      <div class="transfers-features-item">
+        <div class="transfers-features-item-image">
+          <img src="/assets/images/pages/transfers/f3.png" alt="Currency icon">
+        </div>
+        <div class="transfers-features-item-text">Выгодный курс</div>
+      </div>
+      <div class="transfers-features-item">
+        <div class="transfers-features-item-image">
+          <img src="/assets/images/pages/transfers/f4.png" alt="Arrow">
+        </div>
+        <div class="transfers-features-item-text">Моментальный перевод</div>
+      </div>
+      <div class="transfers-features-item">
+        <div class="transfers-features-item-image">
+          <img src="/assets/images/pages/transfers/f5.png" alt="Card Russia">
+        </div>
+        <div class="transfers-features-item-text">С карт банков России</div>
+      </div>
+      <div class="transfers-features-item">
+        <div class="transfers-features-item-image">
+          <img src="/assets/images/pages/transfers/f6.png" alt="National Card">
+        </div>
+        <div class="transfers-features-item-text">На карты «Корти милли»</div>
+      </div>
+    </div>
+    <div class="transfers-features-action">
+      <a href="https://play.google.com/store/apps/details?id=tj.itservice.tawhidbank&hl=ru" class="button">Скачать
+        Tawhidpay</a>
+    </div>
+  </div>
+</section>
+
+<section class="transfers-video">
+  <div class="container">
+    <h2>Реализация принципов исламского банкинга</h2>
+    <div class="transfers-video-wrap">
+      <vg-player class="transfers-video-item">
+        <vg-overlay-play></vg-overlay-play>
+        <vg-buffering vgFor="singleVideo"></vg-buffering>
+<!--        <vg-scrub-bar>-->
+<!--          <vg-scrub-bar-current-time></vg-scrub-bar-current-time>-->
+<!--          <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>-->
+<!--        </vg-scrub-bar>-->
+<!--        <vg-controls>-->
+<!--          <vg-play-pause></vg-play-pause>-->
+<!--          <vg-scrub-bar style="pointer-events: none;"></vg-scrub-bar>-->
+<!--          <vg-time-display vgProperty="left" vgFormat="mm:ss"></vg-time-display>-->
+<!--          <vg-track-selector></vg-track-selector>-->
+<!--          <vg-mute></vg-mute>-->
+<!--          <vg-volume></vg-volume>-->
+<!--          <vg-fullscreen></vg-fullscreen>-->
+<!--        </vg-controls>-->
+        <video [vgMedia]="$any(media)"
+               #media id="singleVideo"
+               preload="auto"
+               src="/assets/videos/features.mp4"
+               crossorigin>
+        </video>
+      </vg-player>
+    </div>
+  </div>
+</section>
+
+<section class="online-transfer">
+  <div class="container">
+    <h2>Онлайн перевод денег</h2>
+    <div class="online-transfer-wrap">
+      <div class="online-transfer-card">
+        <div class="online-transfer-card-row one">
+          <div class="online-transfer-card-number">Номер карты отправителя*</div>
+          <input type="text" class="online-transfer-input" placeholder="0000 0000 0000 0000">
+        </div>
+        <div class="online-transfer-card-row two">
+          <div class="online-transfer-card-number">Срок действия</div>
+          <input type="text" class="online-transfer-input" placeholder="ММ/ГГ">
+        </div>
+        <div class="online-transfer-card-row two">
+          <div class="online-transfer-card-number">CVV/CVC</div>
+          <input type="text" class="online-transfer-input" placeholder="123">
+        </div>
+      </div>
+      <div class="online-transfer-card">
+        <div class="online-transfer-card-row one">
+          <div class="online-transfer-card-number">Номер карты получателя</div>
+          <input type="text" class="online-transfer-input" placeholder="0000 0000 0000 0000">
+        </div>
+      </div>
+      <div class="online-transfer-summary">
+        <div class="online-transfer-summary-row">
+          <div class="online-transfer-summary-item">
+            <div class="online-transfer-summary-item-amount">Сумма перевода</div>
+            <input type="text" class="online-transfer-summary-item-input" placeholder="0.0">
+          </div>
+          <div class="online-transfer-summary-item">
+            <div class="online-transfer-summary-item-amount commission">Комиссия</div>
+            <input type="text" class="online-transfer-summary-item-input" placeholder="TJS" disabled>
+          </div>
+          <div class="online-transfer-summary-item">
+            <div class="online-transfer-summary-item-amount commission">Итого</div>
+            <input type="text" class="online-transfer-summary-item-input" placeholder="TJS" disabled>
+          </div>
+        </div>
+        <div class="online-transfer-summary-row">
+          <div class="financing-request-agreement-checkbox">
+            <input class="custom-checkbox" type="checkbox" id="myCheckbox">
+            <label for="myCheckbox" class="agree">
+                Ознакомлен и принимаю <a href="#1">условия оферты</a>
+            </label>
+          </div>
+          <button class="button">Продолжить</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<app-faq></app-faq>

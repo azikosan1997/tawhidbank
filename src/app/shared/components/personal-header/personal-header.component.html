@@ -1,0 +1,50 @@
+<div class="header-bottom-content">
+  <div class="container">
+    <div class="header-logo">
+      <a routerLink="/">
+        <img src="assets/images/header-logo-russ.png" alt="Logotype">
+      </a>
+    </div>
+    <nav class="header-bottom-menu">
+      <ul>
+        <li>
+          <a routerLink="/personal/deposit" routerLinkActive="active-link">Депозиты</a>
+        </li>
+        <li>
+          <a routerLink="/personal/financing" routerLinkActive="active-link">Финансирование</a>
+        </li>
+        <li>
+          <a routerLink="/personal/transfers" routerLinkActive="active-link">Переводы</a>
+        </li>
+        <li>
+          <a routerLink="/personal/cards" routerLinkActive="active-link">Карты</a>
+        </li>
+        <li>
+          <a routerLink="/personal/tawhid-pay" routerLinkActive="active-link">Tawhid pay</a>
+        </li>
+        <li>
+          <button mat-icon-button [matMenuTriggerFor]="more" aria-label="Example icon-button with a menu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #more="matMenu">
+            <a mat-menu-item routerLink="/personal/auto-financing" >
+              <mat-icon>directions_car</mat-icon>
+              <a routerLinkActive="active-link" class="nav-item">Покупка авто</a>
+            </a>
+          </mat-menu>
+        </li>
+      </ul>
+    </nav>
+    <div class="header-bottom-action">
+      <a class="button" href="https://ib.tawhid.tj/">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          width="29px" height="19px">
+          <image  x="0px" y="0px" width="29px" height="19px"  xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB0AAAATCAQAAADGkM70AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfnCRQKCSoSENRqAAABHUlEQVQ4y5WTP04CURjEf4OrkJhdE6ytaYyFnYfgBmpvxwHsvQJnsTfewt6oIRJdFoQ3FuyuILsLzKve9958M/P+aAHQ0kADjtkFmYd6YA4EAqHv/XATCEQAOgcCQ962ah5wxyk9wZJKB5j4XqNtTKNrTpkDtPIKZArbiAF3SYpZq6y3HRs3K6IZ6Sa148SYemkhlFGGisqVmb6XvY0qFAtvSjapE30uexfmKJusBOnopNaw862rIzeL0JSv2mMqtlYmrcn6o5QGGGFoK95UTfUhmsnGh//vVcCRE9MMoUBWGhbAGIj1yGTNX1Vm0S1jGuOe3/f4N6NwFTARt8QseKJPc9Q/POuCS1J5TLwjZR3TiBfOKg6T/DlR6+X1F7hUxSFHuWKTAAAAAElFTkSuQmCC" />
+        </svg>
+        Интернет-банк
+      </a>
+    </div>
+  </div>
+</div>

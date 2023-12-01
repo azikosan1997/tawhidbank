@@ -1,0 +1,29 @@
+@import "../../../../assets/styles/mixins";
+@import "../../../../assets/styles/variables";
+
+.location-menu{
+  width: 100%;
+  margin-bottom: 30px;
+  ul{
+    display: flex;
+    gap: 50px;
+    list-style: none;
+    flex-wrap: wrap;
+
+    li{
+      padding-bottom: 30px;
+      a{
+        text-decoration: none;
+        font-family: Montserrat,sans-serif;
+        font-size: 22px;
+        color: #1e2332;
+        font-weight: 500;
+        padding-bottom: 10px;
+
+        &.active-tab{
+          border-bottom: 2px solid $main-color;
+        }
+      }
+    }
+  }
+}

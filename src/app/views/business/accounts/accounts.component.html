@@ -1,0 +1,204 @@
+<app-business-header></app-business-header>
+<section class="business-deposit">
+  <div class="container">
+    <div class="business-deposit-banner">
+      <div class="business-deposit-banner-info">
+        <h1>НАЧНИТЕ ВМЕСТЕ С НАМИ!</h1>
+        <div class="business-deposit-banner-info-description">
+          Откройте расчётный счёт бесплатно и
+          пользуйтесь выгодными тарифами.
+        </div>
+        <button class="button">Открыть счёт</button>
+      </div>
+      <div class="business-deposit-banner-image">
+        <img src="/assets/images/pages/business%20deposit/banner.png" alt="Cash machine">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="features">
+  <div class="container">
+    <h2>Ваши возможности</h2>
+    <div class="features-wrap">
+      <div class="features-item">
+        <h3>Пополнение и снятие</h3>
+        <div class="features-item-description">
+          Снимайте деньги и пополняйте счёт
+          с лёгкостью в разных валютах через
+          наши кассы.
+        </div>
+        <img src="" alt="">
+      </div>
+      <div class="features-item">
+        <h3>Конвертация валюты</h3>
+        <div class="features-item-description">
+          Распоряжайтесь валютами как угодно:
+          конвертируйте сомони в доллары или
+          рубли
+        </div>
+        <img src="" alt="">
+      </div>
+      <div class="features-item">
+        <h3>Переводы в 6 валютах</h3>
+        <div class="features-item-description">
+          Отправляйте деньги в сомони, рублях,
+          долларах, евро, дирхамах, сумах и
+          юанях
+        </div>
+        <img src="" alt="">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="tariffs">
+  <div class="container">
+    <h2>Тарифы</h2>
+    <div class="tariffs-subtitle">расчётно-кассового обслуживания</div>
+    <nav class="all-branches-button-group">
+      <ul>
+        <li class="tab" *ngFor="let tab of tabsArray; let i = index" (click)="setTab(i)">
+          <a class="tab-link" [ngClass]="activatedTab === i ? 'active' : ''">{{tab}}</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="tariff-tab" *ngIf="activatedTab === 0">
+      <div class="tariff-tab-heading">Открытие, ведение и закрытие текущего или расчётного счёта:</div>
+      <div class="tariff-tab-row">
+        <div class="tariff-tab-row-item">Физическим лицам</div>
+        <div class="tariff-tab-row-item">Бесплатно</div>
+      </div>
+      <div class="tariff-tab-row">
+        <div class="tariff-tab-row-item">Юридическим лицам
+          и индивидуальным предпринимателям</div>
+        <div class="tariff-tab-row-item">50 сомони</div>
+      </div>
+      <div class="tariff-tab-row line">
+        <div class="tariff-tab-row-item">Юридическим лицам
+          и индивидуальным предпринимателям</div>
+        <div class="tariff-tab-row-item">50 сомони</div>
+      </div>
+      <div class="tariff-tab-row line">
+        <div class="tariff-tab-row-item bold">Предоставление выписок по состоянию счёта</div>
+        <div class="tariff-tab-row-item">Бесплатно</div>
+      </div>
+      <div class="tariff-tab-row line">
+        <div class="tariff-tab-row-item bold">Подтверждение остатков по всем счетам на официальном бланк</div>
+        <div class="tariff-tab-row-item">Бесплатно</div>
+      </div>
+    </div>
+    <div class="tariff-tab" *ngIf="activatedTab === 1">
+      <div class="tariff-tab-heading">Открытие, ведение и закрытие текущего или расчётного счёта:</div>
+      <div class="tariff-tab-row">
+        <div class="tariff-tab-row-item">Физическим лицам</div>
+        <div class="tariff-tab-row-item">Бесплатно</div>
+      </div>
+      <div class="tariff-tab-row">
+        <div class="tariff-tab-row-item">Юридическим лицам
+          и индивидуальным предпринимателям</div>
+        <div class="tariff-tab-row-item">97 сомони</div>
+      </div>
+      <div class="tariff-tab-row line">
+        <div class="tariff-tab-row-item">Юридическим лицам
+          и индивидуальным предпринимателям</div>
+        <div class="tariff-tab-row-item">65 сомони</div>
+      </div>
+      <div class="tariff-tab-row line">
+        <div class="tariff-tab-row-item bold">Предоставление выписок по состоянию счёта</div>
+        <div class="tariff-tab-row-item">Бесплатно</div>
+      </div>
+      <div class="tariff-tab-row line">
+        <div class="tariff-tab-row-item bold">Подтверждение остатков по всем счетам на официальном бланк</div>
+        <div class="tariff-tab-row-item">Бесплатно</div>
+      </div>
+    </div>
+    <div class="tariff-tab" *ngIf="activatedTab === 2">
+      <div class="tariff-tab-heading">Открытие, ведение и закрытие текущего или расчётного счёта:</div>
+      <div class="tariff-tab-row">
+        <div class="tariff-tab-row-item">Физическим лицам</div>
+        <div class="tariff-tab-row-item">Бесплатно</div>
+      </div>
+      <div class="tariff-tab-row">
+        <div class="tariff-tab-row-item">Юридическим лицам
+          и индивидуальным предпринимателям</div>
+        <div class="tariff-tab-row-item">30 сомони</div>
+      </div>
+      <div class="tariff-tab-row line">
+        <div class="tariff-tab-row-item">Юридическим лицам
+          и индивидуальным предпринимателям</div>
+        <div class="tariff-tab-row-item">50 сомони</div>
+      </div>
+      <div class="tariff-tab-row line">
+        <div class="tariff-tab-row-item bold">Предоставление выписок по состоянию счёта</div>
+        <div class="tariff-tab-row-item">Бесплатно</div>
+      </div>
+      <div class="tariff-tab-row line">
+        <div class="tariff-tab-row-item bold">Подтверждение остатков по всем счетам на официальном бланк</div>
+        <div class="tariff-tab-row-item">Бесплатно</div>
+      </div>
+    </div>
+    <div class="tariff-tab" *ngIf="activatedTab === 3">
+      <div class="tariff-tab-heading">Открытие, ведение и закрытие текущего или расчётного счёта:</div>
+      <div class="tariff-tab-row">
+        <div class="tariff-tab-row-item">Физическим лицам</div>
+        <div class="tariff-tab-row-item">Бесплатно</div>
+      </div>
+      <div class="tariff-tab-row">
+        <div class="tariff-tab-row-item">Юридическим лицам
+          и индивидуальным предпринимателям</div>
+        <div class="tariff-tab-row-item">20 сомони</div>
+      </div>
+      <div class="tariff-tab-row line">
+        <div class="tariff-tab-row-item">Юридическим лицам
+          и индивидуальным предпринимателям</div>
+        <div class="tariff-tab-row-item">11 сомони</div>
+      </div>
+      <div class="tariff-tab-row line">
+        <div class="tariff-tab-row-item bold">Предоставление выписок по состоянию счёта</div>
+        <div class="tariff-tab-row-item">Бесплатно</div>
+      </div>
+      <div class="tariff-tab-row line">
+        <div class="tariff-tab-row-item bold">Подтверждение остатков по всем счетам на официальном бланк</div>
+        <div class="tariff-tab-row-item">Бесплатно</div>
+      </div>
+    </div>
+  </div>
+</section>
+<app-request-form></app-request-form>
+<section class="partners">
+  <div class="container">
+    <h2>Как стать нашим партнёром?</h2>
+    <div class="tariffs-subtitle">Вам нужно предоставить следующие документы:</div>
+    <div class="partners-wrap">
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Для юридических лиц:
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>I'm visible because I am open</p>
+        </mat-expansion-panel>
+      </mat-accordion>
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Для индивидуальных предпринимателей:
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>I'm visible because I am open</p>
+        </mat-expansion-panel>
+      </mat-accordion>
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Дополнительные требования в определённых случаях:
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>I'm visible because I am open</p>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </div>
+</section>

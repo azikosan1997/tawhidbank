@@ -1,0 +1,84 @@
+<app-personal-header></app-personal-header>
+<section class="financing">
+  <div class="container">
+    <h2>Финансирование</h2>
+    <div class="products-wrap">
+      <div class="product-card" *ngFor="let financing of financingInfo">
+        <div class="product-card-image">
+          <img src="{{financing.image}}" alt="{{financing.imageAlt}}">
+        </div>
+        <div class="product-card-info">
+          <h3>{{financing.financingName}}</h3>
+          <div class="financing-subtext">{{financing.financingSubText}}</div>
+          <div class="product-card-description">
+            <div class="product-card-description-items">
+              <div class="product-card-description-item">{{financing.financingTextFirst}}</div>
+              <div class="product-card-description-item-sub">{{financing.financingSubFirst}}</div>
+            </div>
+            <div class="product-card-description-items">
+              <div class="product-card-description-item">{{financing.financingTextSecond}}</div>
+              <div class="product-card-description-item-sub">{{financing.financingSubSecond}}</div>
+            </div>
+            <div class="product-card-description-items">
+              <div class="product-card-description-item">{{financing.financingTextThird}}</div>
+              <div class="product-card-description-item-sub">{{financing.financingSubThird}}</div>
+            </div>
+          </div>
+          <div class="product-card-info-action">
+            <a routerLink="{{financing.link}}" class="product-detail">{{financing.financingLink}}</a>
+            <button type="button" class="button-fill">{{financing.financingButton}}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="financing-request">
+  <div class="container">
+    <app-financing-form></app-financing-form>
+    <div class="financing-accordion">
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Другие предложения по финансированию наличными
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>I'm visible because I am open</p>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+    <div class="financing-help">
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Описание
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>I'm visible because I am open</p>
+        </mat-expansion-panel>
+      </mat-accordion>
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Условия сотрудничества
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>I'm visible because I am open</p>
+        </mat-expansion-panel>
+      </mat-accordion>
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Почему стоит взять финансирования в Тавхидбанке?
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>I'm visible because I am open</p>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </div>
+</section>

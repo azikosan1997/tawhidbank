@@ -1,0 +1,163 @@
+@import "../../../../assets/styles/mixins";
+@import "../../../../assets/styles/variables";
+
+.business-financing {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  .container {
+    .business-financing-banner {
+      width: 100%;
+      box-sizing: border-box;
+      background-color: rgba(48, 151, 153, 0.2);
+      padding: 40px 60px;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      overflow: hidden;
+
+      .business-financing-banner-info {
+        h1 {
+          position: relative;
+          @include h1-mixin;
+          font-size: 32px;
+          margin-bottom: 75px;
+          text-transform: uppercase;
+
+          &::before {
+            content: '';
+            background-color: rgb(48, 151, 153);
+            position: absolute;
+            width: 680px;
+            transform: skew(-20deg);
+            height: 70px;
+            z-index: -1;
+            left: -100px;
+            top: -15px;
+          }
+        }
+
+        .business-financing-banner-info-description {
+          font-size: 18px;
+          font-family: "Montserrat", sans-serif;
+          color: rgb(68, 68, 68);
+          line-height: 1.1;
+          max-width: 400px;
+          margin-bottom: 60px;
+        }
+
+        .button {
+          border: none;
+          border-radius: 5px;
+          font-size: 18px;
+          font-family: "Montserrat", sans-serif;
+          color: rgb(247, 248, 249);
+          font-weight: bold;
+          line-height: 1;
+          padding-inline: 30px;
+        }
+      }
+
+      .business-financing-banner-image {
+        img {
+          width: 500px;
+        }
+      }
+    }
+  }
+}
+
+.requirements {
+  margin-bottom: 120px;
+}
+
+.features {
+  padding-bottom: 100px;
+
+  .container {
+    h2 {
+      @include h2-mixin;
+    }
+
+    .features-wrap {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+
+      .feature-card {
+        background-color: rgba(48, 151, 153, 0.2);
+        border-radius: 10px;
+        padding: 30px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h3 {
+          font-size: 22px;
+          font-family: "Montserrat", sans-serif;
+          color: rgb(68, 68, 68);
+          font-weight: bold;
+          margin-bottom: 40px;
+          min-height: 100px;
+        }
+
+        &.gradient {
+          grid-column-start: 2;
+          grid-column-end: 4;
+          flex-direction: row;
+          align-items: flex-start;
+          background: linear-gradient(-30deg, rgb(48, 153, 151) 0%, rgb(64, 192, 193) 100%);
+
+          h3 {
+            color: white;
+          }
+
+          .feature-card-image {
+            img {
+              padding-top: 50px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.what-financing {
+  padding-bottom: 100px;
+
+  .container {
+    .what-financing-wrap {
+      width: 100%;
+      background: linear-gradient(-30deg, rgb(48, 153, 151) 0%, rgb(64, 192, 193) 100%);
+      border-radius: 10px;
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      padding: 30px 70px;
+      color: white;
+
+      .what-financing-wrap-image {
+        width: 450px;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .what-financing-wrap-info {
+        h3 {
+          font-size: 30px;
+          font-family: "Montserrat", sans-serif;
+          color: rgb(255, 255, 255);
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

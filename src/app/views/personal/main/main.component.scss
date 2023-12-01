@@ -1,0 +1,487 @@
+@import "../../../../assets/styles/variables";
+@import "../../../../assets/styles/mixins";
+
+.main-banner {
+  background-color: #f5f5f5;
+  padding-top: 25px;
+  padding-bottom: 120px;
+
+  .container {
+    .banner-warp {
+      width: 100%;
+
+      .banner-carousel {
+        min-height: 385px;
+        max-height: 385px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 10px;
+        padding: 80px;
+        display: grid;
+        align-content: center;
+        overflow: hidden;
+
+        .banner-carousel-info {
+          max-width: 600px;
+
+          .banner-title {
+            font-size: 60px;
+            font-family: Montserrat, sans-serif;
+            font-weight: 600;
+            color: #1e2332;
+            line-height: 1;
+            margin-bottom: 25px;
+          }
+
+          .banner-description {
+            width: 477px;
+            padding: 8px 6px;
+            background-color: $secondary-color;
+            font-size: 18px;
+            font-family: "Montserrat", sans-serif;
+            color: rgb(44, 44, 44);
+            line-height: 1.2;
+            margin-bottom: 66px;
+          }
+
+          a {
+            width: 179px;
+            background-color: $secondary-color;
+            font-size: 16px;
+            font-family: "Montserrat", sans-serif;
+            font-weight: 600;
+            color: rgb(44, 44, 44);
+            display: grid;
+            place-content: center;
+
+            &:hover {
+              box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.1);
+            }
+          }
+
+        }
+      }
+    }
+  }
+}
+
+.best-products {
+  background-color: #f5f5f5;
+  padding-bottom: 120px;
+
+  h2 {
+    @include h2-mixin;
+  }
+
+  .best-products-wrap {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-bottom: 40px;
+
+    .best-product {
+      width: 392px;
+      background-color: white;
+      transition: all 300ms ease-in-out;
+
+      .best-product-image {
+        display: flex;
+        justify-content: center;
+        height: 198px;
+        padding: 20px 47px 0 50px;
+        background-color: #f9f9f9;
+
+        .image {
+          object-fit: scale-down;
+        }
+      }
+
+      .best-product-info {
+        padding: 25px 40px 42px 28px;
+
+        h3 {
+          font-size: 24px;
+          font-weight: 500;
+          font-family: "Montserrat", sans-serif;
+          color: rgb(31, 35, 43);
+        }
+
+        .best-product-description {
+          font-size: 16px;
+          font-family: "Montserrat", sans-serif;
+          color: rgba(31, 35, 43, 0.902);
+          margin-bottom: 24px;
+          min-height: 100px;
+        }
+
+        .product-link {
+          font-size: 16px;
+          font-family: "Montserrat", sans-serif;
+          color: rgb(31, 35, 43);
+          font-weight: 500;
+        }
+      }
+
+      &:hover {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+
+  .button-transparent {
+    display: inline-block;
+    padding: 20px 70px 19px 70px;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    font-family: "Montserrat", sans-serif;
+    color: rgb(33, 33, 33);
+    border-width: 2px;
+    border-color: $main-color;
+    border-style: solid;
+
+    &:hover {
+      color: white;
+    }
+  }
+}
+
+.online-calculator {
+  padding-top: 75px;
+  padding-bottom: 160px;
+
+  .container {
+    h2 {
+      @include h2-mixin;
+      margin-bottom: 40px;
+    }
+
+    .online-calculator-component-selector {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 30px;
+
+      .online-calculator-selector {
+        background-color: #f5f5f5;
+        padding: 10px 16px;
+        color: #1f232b;
+        cursor: pointer;
+        font-family: Montserrat, sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+
+        &.active {
+          color: white;
+          background-color: #535e6e;
+        }
+      }
+    }
+
+    .mortgage-calculator {
+      max-width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+
+      .calculator-left {
+        width: 48%;
+
+        .mortgage-calculator-criteria {
+          width: 100%;
+          margin-bottom: 30px;
+
+          .mortgage-calculator-criteria-title {
+            font-family: Montserrat, sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #1f232b;
+          }
+        }
+      }
+
+      .calculator-right {
+        width: 48%;
+
+        .calculator-summary {
+          max-width: 100%;
+          padding: 10px 32px 25px 32px;
+          background-color: #f5f5f5;
+
+          .calculator-summary-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #dde7f0;
+            padding: 15px 0;
+
+            .calculator-summary-item-text {
+              color: #1f232b;
+              font-size: 18px;
+              line-height: 24px;
+              font-family: Montserrat, sans-serif;
+            }
+
+            .calculator-summary-item-amount {
+              color: #444444;
+              font-size: 20px;
+              line-height: 28px;
+              font-weight: 500;
+            }
+
+            &:last-child {
+              border-bottom: none;
+              margin-bottom: 28px;
+            }
+          }
+
+          .request-mortgage {
+            display: inline-block;
+            width: 100%;
+            font-family: Montserrat, sans-serif;
+            border-radius: 0;
+            font-size: 18px;
+            background-color: $main-color;
+            text-decoration: none;
+            text-align: center;
+            padding-top: 21px;
+            padding-bottom: 21px;
+            color: white;
+            margin-top: 28px;
+          }
+        }
+
+        .summary-description {
+          font-size: 16px;
+          line-height: 20px;
+          color: #8293a3;
+          margin: 12px 15px 0 15px;
+          font-family: Montserrat, sans-serif;
+        }
+      }
+    }
+  }
+}
+
+.apps {
+  padding-bottom: 110px;
+
+  .container {
+    .apps-wrap {
+      max-width: 100%;
+      background-color: #f5f5f5;
+      padding: 22px 64px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      min-height: 445px;
+      overflow: hidden;
+
+      .apps-info {
+        padding-left: 50px;
+
+        h2 {
+          @include h2-mixin;
+          margin-bottom: 20px;
+        }
+
+        .apps-info-description {
+          max-width: 400px;
+          color: #1f232b;
+          font-style: normal;
+          font-family: Montserrat, sans-serif;
+          font-weight: 400;
+          font-size: 1.125rem;
+          line-height: 1.625rem;
+          margin-bottom: 64px;
+        }
+
+        .apps-info-action {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+        }
+      }
+
+      .apps-image {
+        position: absolute;
+        bottom: -6px;
+        right: calc(25% - 200px);
+      }
+    }
+  }
+}
+
+.services {
+  padding-bottom: 120px;
+
+  .container {
+    h2 {
+      @include h2-mixin;
+      margin-bottom: 32px;
+    }
+
+    .hint-controllers{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .hint {
+        font-size: 1.125rem;
+        line-height: 1.625rem;
+        color: #444444;
+        margin-bottom: 52px;
+      }
+
+      .carousel-controllers{
+        display: flex;
+        align-items: center;
+        gap: 30px;
+
+        .move-backward, .move-forward{
+          text-align: center;
+          padding-top: 10px;
+          width: 44px;
+          height: 44px;
+          cursor: pointer;
+          box-sizing: border-box;
+          transition: all 120ms ease-in-out;
+
+          &:hover{
+            background-color: $main-color;
+
+            svg{
+              path{
+                fill: white;
+              }
+            }
+          }
+        }
+      }
+    }
+
+
+    .services-carousel-wrap {
+      width: 100%;
+
+      .services-carousel-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 500px;
+        padding: 34px 30px;
+        background-color: #f5f5f5;
+        box-sizing: border-box;
+
+        .services-carousel-item-icon {
+          width: 70px;
+          margin-bottom: 45px;
+        }
+
+        .services-carousel-item-title {
+          font-size: 18px;
+          font-family: "Montserrat", sans-serif;
+          font-weight: 600;
+          color: rgb(31, 35, 43);
+          margin-bottom: 29px;
+        }
+
+        .services-carousel-item-description {
+          font-size: 16px;
+          font-family: "Montserrat", sans-serif;
+          color: rgb(31, 35, 43);
+          line-height: 1.2;
+          font-weight: 500;
+          margin-bottom: 100px;
+        }
+      }
+    }
+  }
+}
+
+.additional {
+  padding-bottom: 75px;
+}
+
+.interesting {
+  padding-bottom: 130px;
+
+  .container {
+    h2 {
+      @include h2-mixin;
+    }
+
+    .interesting-carousel-wrap {
+      position: relative;
+      width: 100%;
+
+      .interesting-carousel-controllers{
+        position: relative;
+        z-index: 20;
+
+        .go-back, .go-next{
+          position: absolute;
+          text-align: center;
+          padding-top: 10px;
+          background-color: white;
+          width: 44px;
+          height: 44px;
+          cursor: pointer;
+          box-sizing: border-box;
+          transition: all 120ms ease-in-out;
+
+          &:hover{
+            box-shadow: 0 0 8px rgba(0,0,0, 0.2);
+          }
+        }
+
+        .go-back{
+          left: 40px;
+          bottom: -220px;
+        }
+
+        .go-next{
+          right: 40px;
+          bottom: -220px;
+        }
+      }
+
+
+      .interesting-carousel-item {
+        padding: 50px;
+        background-size: cover;
+        background-position: center;
+        min-height: 400px;
+        box-sizing: border-box;
+
+        .interesting-carousel-item-info {
+          max-width: 500px;
+          padding: 50px;
+
+          .interesting-carousel-item-title {
+            font-size: 36px;
+            font-family: "Montserrat", sans-serif;
+            color: rgb(255, 255, 255);
+            font-weight: bold;
+            margin-bottom: 30px;
+          }
+
+          .interesting-carousel-item-description {
+            font-size: 18px;
+            font-family: "Montserrat", sans-serif;
+            color: rgb(255, 255, 255);
+            margin-bottom: 60px;
+          }
+
+          .button-fill {
+            width: 30%;
+            background-color: #343944;
+          }
+        }
+      }
+    }
+  }
+}
+
