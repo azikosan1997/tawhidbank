@@ -26,7 +26,7 @@
           </div>
           <div class="product-card-info-action">
             <a routerLink="{{financing.link}}" class="product-detail">{{financing.financingLink}}</a>
-            <button type="button" class="button-fill">{{financing.financingButton}}</button>
+            <a routerLink="/personal/financing" fragment="financingRequest" type="button" class="button-fill">{{financing.financingButton}}</a>
           </div>
         </div>
       </div>
@@ -35,7 +35,7 @@
 </section>
 <section class="financing-request">
   <div class="container">
-    <app-financing-form></app-financing-form>
+    <app-financing-form id="financingRequest"></app-financing-form>
     <div class="financing-accordion">
       <mat-accordion>
         <mat-expansion-panel>

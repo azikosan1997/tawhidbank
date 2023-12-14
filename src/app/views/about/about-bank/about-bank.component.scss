@@ -104,20 +104,20 @@
       background-image: url("../../../../assets/images/pages/about/paper.jpg");
       background-size: cover;
       background-color: white;
-      padding: 140px 80px 80px 80px;
+      padding: 160px 80px 80px 80px;
       font-family: Montserrat, sans-serif;
       box-shadow: 0 10px 20px rgba(0, 0, 0, .1);
-      font-size: 25px;
+      font-size: 18px;
       color: rgb(49, 49, 49);
       line-height: 1.2;
       box-sizing: border-box;
 
       strong {
         float: left;
-        font-size: 110px;
+        font-size: 60px;
         line-height: 0.5;
         margin-right: 5px;
-        margin-top: 20px;
+        margin-top: 5px;
         letter-spacing: initial;
         color: $main-color;
       }

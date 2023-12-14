@@ -8,7 +8,7 @@
           Откройте расчётный счёт бесплатно и
           пользуйтесь выгодными тарифами.
         </div>
-        <button class="button">Открыть счёт</button>
+        <a routerLink="/business/accounting" fragment="request" class="button">Открыть счёт</a>
       </div>
       <div class="business-deposit-banner-image">
         <img src="./assets/images/pages/business%20deposit/banner.png" alt="Cash machine">
@@ -27,7 +27,9 @@
           с лёгкостью в разных валютах через
           наши кассы.
         </div>
-        <img src="" alt="">
+        <div class="features-item-image">
+          <img src="./assets/images/pages/business%20deposit/c1.png" alt="">
+        </div>
       </div>
       <div class="features-item">
         <h3>Конвертация валюты</h3>
@@ -36,7 +38,9 @@
           конвертируйте сомони в доллары или
           рубли
         </div>
-        <img src="" alt="">
+        <div class="features-item-image">
+          <img src="./assets/images/pages/business%20deposit/c2.png" alt="">
+        </div>
       </div>
       <div class="features-item">
         <h3>Переводы в 6 валютах</h3>
@@ -45,7 +49,9 @@
           долларах, евро, дирхамах, сумах и
           юанях
         </div>
-        <img src="" alt="">
+        <div class="features-item-image">
+          <img src="./assets/images/pages/business%20deposit/c3.png" alt="">
+        </div>
       </div>
     </div>
   </div>
@@ -163,7 +169,7 @@
     </div>
   </div>
 </section>
-<app-request-form></app-request-form>
+<app-request-form [requestType]="requestType" id="request"></app-request-form>
 <section class="partners">
   <div class="container">
     <h2>Как стать нашим партнёром?</h2>

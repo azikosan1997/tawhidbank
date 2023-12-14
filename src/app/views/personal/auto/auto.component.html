@@ -8,7 +8,7 @@
           Оплачивать можете до 3 года
         </div>
         <div class="auto-banner-info-action">
-          <button class="button-yellow-rounded">Оставить заявку</button>
+          <a routerLink="/personal/auto-financing" fragment="request" class="button-yellow-rounded">Оставить заявку</a>
         </div>
       </div>
       <div class="auto-banner-image">
@@ -17,7 +17,6 @@
     </div>
   </div>
 </section>
-
 <section class="purchase">
   <div class="container">
     <h2>Как оформить покупку:</h2>
@@ -49,71 +48,8 @@
     </div>
   </div>
 </section>
-
-<section class="auto-calculator">
-  <div class="container">
-    <div class="auto-calculator-wrap">
-      <h2>Калькулятор финансирования на покупку авто</h2>
-      <div class="auto-calculator-row">
-        <div class="auto-calculator-row-left">
-          <div class="auto-calculator-row-left-action">
-            <button class="button-currency active">Сомони</button>
-            <button class="button-currency">Доллар США</button>
-          </div>
-          <div class="mortgage-calculator-criteria">
-            <div class="mortgage-calculator-criteria-title">Стоимость авто</div>
-            <div class="criteria-tool">
-              <input type="tel" value="6400000 TJS" inputmode="numeric">
-              <div class="slider-container">
-                <span class="bar"><span class="fill"></span></span>
-                <input class="slider" type="range" min="0" max="100" value="0">
-              </div>
-            </div>
-          </div>
-          <div class="mortgage-calculator-criteria">
-            <div class="mortgage-calculator-criteria-title">Первоначальный взнос</div>
-            <div class="criteria-tool">
-              <input type="tel" value="6400000 TJS" inputmode="numeric">
-              <div class="slider-container">
-                <span class="bar"><span class="fill"></span></span>
-                <input class="slider" type="range" min="0" max="100" value="0">
-              </div>
-            </div>
-          </div>
-          <div class="auto-calculator-row-left-years">
-            <button class="years active">1 год</button>
-            <button class="years">2 год</button>
-            <button class="years">3 год</button>
-          </div>
-        </div>
-        <div class="auto-calculator-row-right">
-          <div class="auto-calculator-row-right-image">
-            <img src="./assets/images/pages/auto/c3.png" alt="Car">
-          </div>
-          <div class="auto-calculator-row-right-summary">
-            <div class="auto-calculator-row-right-summary-header">
-              <span class="auto-calculator-row-right-summary-title">Сумма ежемесячного платежа</span>
-              <div class="auto-calculator-row-right-summary-amount">81 190 TJS</div>
-            </div>
-            <div class="auto-calculator-row-right-summary-rate-wrap">
-              <div>
-                <div class="auto-calculator-row-right-summary-rate">Ставка</div>
-                <div class="auto-calculator-row-right-summary-rate-percent">14%</div>
-              </div>
-              <div>
-                <div class="auto-calculator-row-right-summary-rate">Сумма финансирования</div>
-                <div class="auto-calculator-row-right-summary-rate-percent">900 000TJS</div>
-              </div>
-            </div>
-            <button class="button">Оставить заявку</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="auto-request">
+<app-auto-financing-calculator></app-auto-financing-calculator>
+<section class="auto-request" id="request">
   <div class="container">
     <div class="auto-request-wrap">
       <div class="auto-request-info">
@@ -123,24 +59,31 @@
           с вами свяжемся
         </div>
       </div>
-      <div class="auto-request-form">
+      <form class="auto-request-form" [formGroup]="autoFinancingForm">
         <div class="auto-request-form-row">
           <div class="auto-request-form-row-span">Введите имя и фамилию</div>
-          <input type="text" placeholder="Введите данные">
+          <input type="text" placeholder="Введите данные" formControlName="fullName" [ngClass]="{'error': autoFinancingForm.get('fullName')?.touched &&
+                                                                      (autoFinancingForm.get('fullName')?.hasError('required') ||
+                                                                      autoFinancingForm.get('fullName')?.hasError('pattern'))}">
+          <div class="error-message" *ngIf="autoFinancingForm.get('fullName')?.touched && autoFinancingForm.get('fullName')?.errors?.['required']">Заполните ФИО</div>
+          <div class="error-message" *ngIf="autoFinancingForm.get('fullName')?.touched && autoFinancingForm.get('fullName')?.errors?.['pattern']">Напишите ваше имя и фамиля с заглавной буквой</div>
         </div>
         <div class="auto-request-form-row">
           <div class="auto-request-form-row-span">Номер телефона</div>
-          <input type="text" placeholder="Введите номер">
+          <input type="text" placeholder="Введите номер" formControlName="mobileNumber"  [ngClass]="{'error': autoFinancingForm.get('mobileNumber')?.touched &&
+                                                                      (autoFinancingForm.get('mobileNumber')?.hasError('required') ||
+                                                                      autoFinancingForm.get('mobileNumber')?.hasError('pattern'))}">
+          <div class="error-message" *ngIf="autoFinancingForm.get('mobileNumber')?.touched && autoFinancingForm.get('mobileNumber')?.errors?.['required']">Заполните поле для номера телефона</div>
+          <div class="error-message" *ngIf="autoFinancingForm.get('mobileNumber')?.touched && autoFinancingForm.get('mobileNumber')?.errors?.['pattern']">Заполните поле для номера телефона(+992 999 999 999)</div>
         </div>
         <div class="auto-request-form-row">
-          <button class="button-white">Отправить</button>
+          <button class="button-white" (click)="sendAutoFinancingRequest()">Отправить</button>
           <span>Нажимая кнопку <a href="#">«Отправить»</a>, я <br> соглашаюсь на обработку моих <br> данных</span>
         </div>
-      </div>
+      </form>
     </div>
   </div>
 </section>
-
 <section class="documents">
   <div class="container">
     <div class="documents-requirements-wrap">
@@ -167,7 +110,6 @@
     </div>
   </div>
 </section>
-
 <section class="payment">
   <div class="container">
     <h2>Задолженность можно погасить</h2>
@@ -196,7 +138,6 @@
     </div>
   </div>
 </section>
-
 <section class="faq">
   <div class="container">
     <h2>Популярные вопросы</h2>

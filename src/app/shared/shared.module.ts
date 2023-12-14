@@ -33,7 +33,17 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import { TabFinancingComponent } from './components/tab-financing/tab-financing.component';
 import { FinancingCalculatorComponent } from './components/financing-calculator/financing-calculator.component';
-
+import { MortgageCalculatorComponent } from './components/mortgage-calculator/mortgage-calculator.component';
+import {MatOptionModule} from "@angular/material/core";
+import {MatSelectModule} from "@angular/material/select";
+import { ConverterComponent } from './components/converter/converter.component';
+import { RateTabeComponent } from './components/rate-tabe/rate-tabe.component';
+import {MatTabsModule} from "@angular/material/tabs";
+import { AutoFinancingCalculatorComponent } from './components/auto-financing-calculator/auto-financing-calculator.component';
+import {MatDialogModule} from "@angular/material/dialog";
+import { BranchInfoComponent } from './components/branch-info/branch-info.component';
+import { PersonGraphicComponent } from './components/person-graphic/person-graphic.component';
+import { FileGetterComponent } from './components/file-getter/file-getter.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +70,13 @@ import { FinancingCalculatorComponent } from './components/financing-calculator/
     FinancingFormComponent,
     TabFinancingComponent,
     FinancingCalculatorComponent,
+    MortgageCalculatorComponent,
+    ConverterComponent,
+    RateTabeComponent,
+    AutoFinancingCalculatorComponent,
+    BranchInfoComponent,
+    PersonGraphicComponent,
+    FileGetterComponent,
   ],
   imports: [
     CommonModule,
@@ -73,7 +90,12 @@ import { FinancingCalculatorComponent } from './components/financing-calculator/
     MatExpansionModule,
     FormsModule,
     MatDatepickerModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatOptionModule,
+    MatSelectModule,
+    MatTabsModule,
+    MatDialogModule
+
   ],
   exports: [
     NewsComponent,
@@ -98,7 +120,14 @@ import { FinancingCalculatorComponent } from './components/financing-calculator/
     LoanPaymentComponent,
     FinancingFormComponent,
     TabFinancingComponent,
-    FinancingCalculatorComponent
+    FinancingCalculatorComponent,
+    MortgageCalculatorComponent,
+    ConverterComponent,
+    RateTabeComponent,
+    AutoFinancingCalculatorComponent,
+    BranchInfoComponent,
+    PersonGraphicComponent,
+    FileGetterComponent
   ]
 })
 export class SharedModule { }

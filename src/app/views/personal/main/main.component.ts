@@ -11,10 +11,17 @@ import {MatTabsModule} from '@angular/material/tabs';
 export class MainComponent implements OnInit{
 
 
+  ngOnInit() {
+  }
+
+  tabsArray: string[] = ['Конвертер валют', 'Калькулятор финансирования'];
+  activatedTab: number = 0;
+
   constructor() {
   }
 
-  ngOnInit() {
+  setTab(index: number) {
+    this.activatedTab = index;
   }
 
   mainBannerOptions: OwlOptions = {

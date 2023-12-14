@@ -8,31 +8,48 @@
           связаться и всё подробно рассказать
         </div>
       </div>
-      <form class="request-form-wrap-form">
+      <form class="request-form-wrap-form" [formGroup]="formData">
         <div class="request-form-wrap-form-row">
           <div class="input-name">Имя и фамилия</div>
-          <input type="text">
+          <input type="text" formControlName="fullName" [ngClass]="{'error': formData.get('fullName')?.touched &&
+                                                                      (formData.get('fullName')?.hasError('required') ||
+                                                                      formData.get('fullName')?.hasError('pattern'))}">
+          <div class="error-message" *ngIf="formData.get('fullName')?.touched && formData.get('fullName')?.errors?.['required']">Заполните ФИО</div>
+          <div class="error-message" *ngIf="formData.get('fullName')?.touched && formData.get('fullName')?.errors?.['pattern']">Напишите ваше имя и фамиля с заглавной буквой</div>
         </div>
         <div class="request-form-wrap-form-row">
           <div class="input-name">Номер телефона</div>
-          <input type="text">
+          <input type="text" formControlName="mobileNumber"  [ngClass]="{'error': formData.get('mobileNumber')?.touched &&
+                                                                      (formData.get('mobileNumber')?.hasError('required') ||
+                                                                      formData.get('mobileNumber')?.hasError('pattern'))}">
+          <div class="error-message" *ngIf="formData.get('mobileNumber')?.touched && formData.get('mobileNumber')?.errors?.['required']">Заполните поле для номера телефона</div>
+          <div class="error-message" *ngIf="formData.get('mobileNumber')?.touched && formData.get('mobileNumber')?.errors?.['pattern']">Заполните поле для номера телефона(+992 999 999 999)</div>
         </div>
         <div class="request-form-wrap-form-row">
           <div class="input-name">E-mail</div>
-          <input type="text">
+          <input type="text" formControlName="email" [ngClass]="{'error': formData.get('email')?.touched &&
+                                                                      (formData.get('email')?.hasError('required') ||
+                                                                      formData.get('email')?.hasError('pattern'))}">
+          <div class="error-message" *ngIf="formData.get('email')?.touched && formData.get('email')?.errors?.['required']">Заполните поле E-mail в правильном формате</div>
         </div>
         <div class="request-form-wrap-form-row extra">
           <div>
             <div class="input-name">Компания</div>
-            <input type="text">
+            <input type="text" formControlName="company"  [ngClass]="{'error': formData.get('company')?.touched &&
+                                                                      (formData.get('company')?.hasError('required') ||
+                                                                      formData.get('company')?.hasError('pattern'))}">
+            <div class="error-message" *ngIf="formData.get('company')?.touched && formData.get('company')?.errors?.['required']">Заполните поле именем вашей компании</div>
           </div>
           <div>
             <div class="input-name">Город</div>
-            <input type="text">
+            <input type="text" formControlName="city"  [ngClass]="{'error': formData.get('city')?.touched &&
+                                                                      (formData.get('city')?.hasError('required') ||
+                                                                      formData.get('city')?.hasError('pattern'))}">
+            <div class="error-message" *ngIf="formData.get('city')?.touched && formData.get('city')?.errors?.['required']">Заполните поле именем вашей компании</div>
           </div>
         </div>
         <div class="request-form-wrap-form-row extra">
-          <button class="button">Отправить</button>
+          <button class="button" (click)="sendRequest()">Отправить</button>
           <div class="policy">
             Нажимая кнопку <b>«Отправить»</b>, я соглашаюсь с условиями обработки моих данных.
           </div>

@@ -6,7 +6,7 @@
         <div class="banner-title">ИНТЕРНЕТ-ЭКВАЙРИНГ</div>
         <div class="banner-subtitle">НА ВЫГОДНЫХ УСЛОВИЯХ</div>
         <div class="banner-description">Ставка рассчитывается индивидуально Бесплатное подключение ЭКВАЙРИНГ</div>
-        <button class="button">Подключить</button>
+        <a class="button" routerLink="/business/merchant-acquiring" fragment="consulting">Подключить</a>
       </div>
       <div class="banner-image">
         <img src="./assets/images/pages/acquiring/banner.png" alt="Shoping">
@@ -77,7 +77,6 @@
     </div>
   </div>
 </section>
-
 <section class="tariffs">
   <div class="container">
     <h2>Тариф</h2>
@@ -153,7 +152,7 @@
     </div>
   </div>
 </section>
-<section class="consulting">
+<section class="consulting" id="consulting">
   <div class="container">
     <div class="consulting-wrap">
       <div class="top-content">
@@ -164,22 +163,30 @@
             связаться и всё подробно рассказать
           </div>
         </div>
-        <div class="form">
+        <form class="form" [formGroup]="acquiringForm" autocomplete="off">
           <div class="form-row">
             <div class="form-row-name">Имя и фамилия</div>
-            <input type="text">
+            <input type="text" formControlName="fullName" [ngClass]="{'error': acquiringForm.get('fullName')?.touched &&
+                                                                      (acquiringForm.get('fullName')?.hasError('required') ||
+                                                                      acquiringForm.get('fullName')?.hasError('pattern'))}">
+            <div class="error-message" *ngIf="acquiringForm.get('fullName')?.touched && acquiringForm.get('fullName')?.errors?.['required']">Заполните ФИО</div>
+            <div class="error-message" *ngIf="acquiringForm.get('fullName')?.touched && acquiringForm.get('fullName')?.errors?.['pattern']">Напишите ваше имя и фамиля с заглавной буквой</div>
           </div>
           <div class="form-row">
             <div class="form-row-name">Номер телефона</div>
-            <input type="text">
+            <input type="text" formControlName="mobileNumber"  [ngClass]="{'error': acquiringForm.get('mobileNumber')?.touched &&
+                                                                      (acquiringForm.get('mobileNumber')?.hasError('required') ||
+                                                                      acquiringForm.get('mobileNumber')?.hasError('pattern'))}">
+            <div class="error-message" *ngIf="acquiringForm.get('mobileNumber')?.touched && acquiringForm.get('mobileNumber')?.errors?.['required']">Заполните поле для номера телефона</div>
+            <div class="error-message" *ngIf="acquiringForm.get('mobileNumber')?.touched && acquiringForm.get('mobileNumber')?.errors?.['pattern']">Заполните поле для номера телефона(+992 999 999 999)</div>
           </div>
           <div class="form-row last">
-            <button class="button">Отправить</button>
+            <button class="button" (click)="sendAcquiringRequest()">Отправить</button>
             <div class="form-row-name">Нажимая кнопку <b>«Отправить»</b>, я соглашаюсь с условиями обработки моих
               данных.
             </div>
           </div>
-        </div>
+        </form>
       </div>
       <div class="bottom-content">
         <h2>Дополнительные <br>

@@ -20,5 +20,4 @@ export class TabPanelComponent {
     this.activatedTab = index;
   }
 
-
 }

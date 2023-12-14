@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, ElementRef, TemplateRef, ViewChild} from '@angular/core';
+import {MatDialog} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-deposit',
@@ -6,7 +7,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./deposit.component.scss']
 })
 export class DepositComponent {
-  constructor() {
+  @ViewChild('depositPopup') depositPopup!: TemplateRef<ElementRef>;
+  constructor(public dialog: MatDialog) {}
+
+  openPopup() {
+    this.dialog.open(this.depositPopup,{
+      width: '60vw',
+      // disableClose: true,
+      // hasBackdrop: false,
+    });
+  }
+
+  closePopup() {
+    this.dialog.closeAll();
   }
 
   depositsInfo = [

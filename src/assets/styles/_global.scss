@@ -28,7 +28,9 @@ html, body {
 // Button Customizing
 .button {
   background-color: $main-color;
-  padding: 14px 17px 14px 17px;
+  padding: 15px 17px;
+  border-radius: 10px;
+  border: none;
   text-decoration: none;
   color: white;
   display: flex;
@@ -45,7 +47,8 @@ html, body {
 .button-fill {
   outline: none;
   border: transparent;
-  padding: 16px 32px;
+  padding: 20px 32px;
+  border-radius: 10px;
   background-color: $main-color;
   justify-content: center;
   display: flex;
@@ -69,6 +72,7 @@ html, body {
 }
 
 .button-transparent {
+  border-radius: 10px;
   padding: 16px 32px;
   background-color: transparent;
   border: 2px solid $main-color;
@@ -91,6 +95,7 @@ html, body {
 .footer-button {
   background-color: #1f232b;
   padding: 14px 17px 14px 17px;
+  border-radius: 10px;
   text-decoration: none;
   color: white;
   display: flex;
@@ -142,7 +147,6 @@ html, body {
   flex-wrap: wrap;
 
   .additional-rate {
-    width: 48%;
 
     .additional-rate-title {
       display: flex;
@@ -249,7 +253,7 @@ html, body {
     }
 
     .additional-map-description {
-      color: #ffffff;
+      color: #444;
       display: inline-block;
       font-size: 16px;
       font-family: Montserrat, sans-serif;
@@ -393,6 +397,34 @@ html, body {
   color: #309799 !important;
 }
 
+.mdc-text-field--filled {
+  &.mdc-text-field--invalid:not(.mdc-text-field--disabled) {
+    .mdc-text-field__input {
+      caret-color: red !important;
+    }
+  }
+}
+
+.mdc-text-field--filled {
+  &.mdc-text-field--invalid:not(.mdc-text-field--disabled) {
+    .mdc-line-ripple {
+      &::before {
+        border-bottom-color: #f44336 !important;
+      }
+    }
+  }
+}
+
+.mdc-text-field--filled {
+  &.mdc-text-field--invalid:not(.mdc-text-field--disabled) {
+    .mdc-line-ripple {
+      &::after {
+        border-bottom-color: #f44336 !important;
+      }
+    }
+  }
+}
+
 // Criteria Tool
 .criteria-tool {
   width: 100%;
@@ -508,7 +540,7 @@ html, body {
         }
 
         .button-fill {
-          border-radius: 3px;
+          border-radius: 10px;
           min-width: 207px;
         }
       }
@@ -719,4 +751,45 @@ input[type=checkbox]:checked:disabled + label:before {
       border-bottom-right-radius: 0;
     }
   }
+}
+
+// Popup
+.deposit-popup{
+  position: relative;
+  width: 100%;
+  padding-top: 120px;
+  .popup-close{
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+}
+
+// Select options
+.mat-mdc-option.mdc-list-item--selected:not(.mdc-list-item--disabled){
+  .mdc-list-item__primary-text{
+    color: #309799 !important;
+  }
+}
+
+.mat-primary {
+  .mat-pseudo-checkbox-checked.mat-pseudo-checkbox-minimal::after,
+  .mat-pseudo-checkbox-indeterminate.mat-pseudo-checkbox-minimal::after {
+    color: #309799 !important;
+  }
+}
+
+// Mat Dialog
+.mat-dialog-container {
+  overflow: hidden !important;
+}
+// Snack Bar
+.custom-snackbar-success {
+  background-color: #2cde2c !important;
+  color: #fff !important;
+}
+.custom-snackbar-error {
+  background-color: #e60303 !important;
+  color: #fff !important;
 }

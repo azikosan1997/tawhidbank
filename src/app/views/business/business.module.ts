@@ -11,6 +11,7 @@ import {AccountsComponent} from "./accounts/accounts.component";
 import {MatExpansionModule} from "@angular/material/expansion";
 import { FinancingComponent } from './financing/financing.component';
 import { DepositsComponent } from './deposits/deposits.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { DepositsComponent } from './deposits/deposits.component';
     CarouselModule,
     MatTabsModule,
     SharedModule,
-    MatExpansionModule
+    MatExpansionModule,
+    ReactiveFormsModule,
   ]
 })
 export class BusinessModule {

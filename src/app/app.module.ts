@@ -18,6 +18,7 @@ import {SharedModule} from "./shared/shared.module";
 import {PersonalModule} from "./views/personal/personal.module";
 import {AboutModule} from "./views/about/about.module";
 import {DepositModule} from "./views/deposit/deposit.module";
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import {DepositModule} from "./views/deposit/deposit.module";
     SharedModule,
     PersonalModule,
     AboutModule,
-    DepositModule
+    DepositModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

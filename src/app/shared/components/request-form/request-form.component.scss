@@ -3,7 +3,7 @@
 
 .request-form {
   padding-top: 110px;
-  padding-bottom: 110px;
+  padding-bottom: 60px;
   background-color: rgba(48, 151, 153, 0.2);
 
   .container {
@@ -32,7 +32,7 @@
         .request-form-wrap-form-row {
           box-sizing: border-box;
           width: 100%;
-          margin-bottom: 20px;
+          min-height: 130px;
 
           &.extra {
             box-sizing: border-box;
@@ -85,6 +85,16 @@
             font-family: "Montserrat", sans-serif;
             color: rgb(68, 68, 68);
             line-height: 1.2;
+
+            &.error{
+              border: 1px solid #f44336;
+            }
+          }
+
+          .error-message{
+            color: #f44336;
+            font-size: 12px;
+            font-family: Montserrat,sans-serif;
           }
         }
       }

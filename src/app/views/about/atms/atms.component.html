@@ -7,7 +7,7 @@
       <div class="atm-search">
         <mat-form-field appearance="fill">
           <mat-label>Поиск по адресу</mat-label>
-          <input matInput placeholder="Адресс">
+          <input matInput placeholder="Адресс" (input)="updateCenter($event)">
           <mat-icon matSuffix>
             <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -29,14 +29,16 @@
         <mat-form-field>
           <mat-label>Регионы</mat-label>
           <mat-select>
-            <mat-option *ngFor="let food of foods" [value]="food.value">
-              {{food.viewValue}}
+            <mat-option *ngFor="let region of regions" [value]="region.value">
+              {{region.viewValue}}
             </mat-option>
           </mat-select>
         </mat-form-field>
       </div>
-      <div class="atms-map">
-        <google-map [options]="options" width="100vw" height="700px"></google-map>
+      <div class="atms-map" >
+        <google-map [options]="options" width="100vw" height="700px">
+          <map-marker *ngFor="let atm of atms" [position]="{lat: atm.lat, lng: atm .lng}" [icon]="customMarkerIcon"></map-marker>
+        </google-map>
       </div>
       <div class="atms-info">
         <div class="atms-hints">

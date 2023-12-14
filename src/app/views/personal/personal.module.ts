@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {CommonModule, NgIf} from '@angular/common';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { VgCoreModule } from '@videogular/ngx-videogular/core';
@@ -21,6 +21,8 @@ import { AutoComponent } from './auto/auto.component';
 import { TawhidPayComponent } from './tawhidpay/tawhidpay.component';
 import {SharedModule} from "../../shared/shared.module";
 import { CardsComponent } from './cards/cards.component';
+import {MatDialogModule} from "@angular/material/dialog";
+import {MatSnackBarModule} from "@angular/material/snack-bar";
 
 
 @NgModule({
@@ -49,6 +51,9 @@ import { CardsComponent } from './cards/cards.component';
     VgOverlayPlayModule,
     VgBufferingModule,
     SharedModule,
+    MatDialogModule,
+    MatSnackBarModule,
+    ReactiveFormsModule,
   ]
 })
 export class PersonalModule {

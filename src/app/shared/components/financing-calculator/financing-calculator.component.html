@@ -6,19 +6,31 @@
         <div class="financing-calculator-wrap-toggles-row">
           <h4>Сумма финансирования</h4>
           <div class="criteria-tool">
-            <input type="tel" value="1000 TJS" inputmode="numeric">
+            <input type="tel" [(ngModel)]="loanAmount" inputmode="numeric" (input)="updateSlider()">
             <div class="slider-container">
-              <span class="bar"><span class="fill"></span></span>
-              <input class="slider" type="range" min="0" max="3000000" value="0">
+              <span class="bar"><span class="fill" [style.width.%]="calculateFillPercentage()"></span></span>
+              <input class="slider" type="range" min="10000" max="5000000" value="0" step="100" [(ngModel)]="loanAmount">
+            </div>
+          </div>
+        </div>
+        <div class="financing-calculator-wrap-toggles-row">
+          <h4>Первоначальный взнос</h4>
+          <div class="criteria-tool">
+            <input type="tel" [(ngModel)]="initialFee" inputmode="numeric" (input)="updateSliderTwo()">
+            <div class="slider-container">
+              <span class="bar"><span class="fill" [style.width.%]="calculateFillPercentageTwo()"></span></span>
+              <input class="slider" type="range" [min]="0" [max]="loanAmount" [value]="initialFee" step="100" [(ngModel)]="initialFee">
             </div>
           </div>
         </div>
         <div class="financing-calculator-wrap-toggles-row">
           <h4>Срок финансирования</h4>
-          <div class="financing-period-button-wrap">
-            <div class="financing-period-button" *ngFor="let period of periodButton; let i = index"
-                 (click)="buttonClick(i)"
-                 [ngClass]="buttonIndex === i ? 'active' : ''">{{period}}</div>
+          <div class="criteria-tool">
+            <input type="tel" [(ngModel)]="loanPeriod" inputmode="numeric" (input)="updateSliderThree()"/>
+            <div class="slider-container">
+              <span class="bar"><span class="fill" [style.width.%]="calculateFillPercentageThree()"></span></span>
+              <input class="slider" type="range" value="0" min="1" max="60" step="1" [(ngModel)]="loanPeriod">
+            </div>
           </div>
         </div>
       </div>
@@ -30,11 +42,11 @@
             <div>предложение</div>
           </div>
           <div class="financing-calculator-wrap-summary-row-item">
-            <div class="important">2340,56</div>
+            <div class="important">{{calculateMonthlyPayment().toFixed(2) + " TJS"}}</div>
             <div>платёж в месяц</div>
           </div>
           <div class="financing-calculator-wrap-summary-row-item">
-            <div class="important">{{bid}}</div>
+            <div class="important">{{currentRate + " %"}}</div>
             <div>Ставка</div>
           </div>
         </div>

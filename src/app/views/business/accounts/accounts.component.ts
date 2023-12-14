@@ -8,6 +8,7 @@ import {Component} from '@angular/core';
 export class AccountsComponent {
   tabsArray: string[] = ['Расчётный счёт', 'Переводы', 'Кассовое обслуживание', 'Другое'];
   activatedTab: number = 0;
+  requestType: string = 'НАЧНИТЕ ВМЕСТЕ С НАМИ!'
 
   constructor() {
   }

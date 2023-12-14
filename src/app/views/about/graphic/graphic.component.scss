@@ -1,44 +1,45 @@
 @import "../../../../assets/styles/mixins";
 @import "../../../../assets/styles/variables";
 
-.graphic{
+.graphic {
   padding-top: 60px;
   padding-bottom: 80px;
   background-color: #f7f8f9;
 
-  .container{
-    h1{
+  .container {
+    h1 {
       @include h1-mixin;
       color: #1e2332;
       margin-bottom: 50px;
     }
 
-    .graphic-wrap{
+    .graphic-wrap {
       width: 100%;
       background-color: white;
       border-radius: 15px;
       box-sizing: border-box;
       padding: 50px;
 
-      .graphic-wrap-row{
+      .graphic-wrap-row {
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
         padding-top: 50px;
-        padding-bottom: 50px;
+        padding-bottom: 0;
         border-bottom: 2px solid rgba(48, 151, 153, 0.2);
 
-
-        &:first-child{
+        &:first-child {
           padding-top: 0;
         }
-        &:last-child{
+
+        &:last-child {
           border-bottom: none;
         }
-        .graphic-branch{
+
+        .graphic-branch {
           width: 50%;
 
-          .graphic-branch-title{
+          .graphic-branch-title {
             max-width: 80%;
             font-size: 24px;
             font-weight: 600;
@@ -47,7 +48,7 @@
             line-height: 1.2;
           }
 
-          .graphic-branch-address{
+          .graphic-branch-address {
             font-size: 20px;
             font-weight: 500;
             color: #6d6d6d;
@@ -55,43 +56,8 @@
           }
         }
 
-        .graphic-people{
+        .graphic-people {
           width: 50%;
-
-          .graphic-person{
-            .graphic-person-name{
-              font-size: 20px;
-              font-weight: 500;
-              color: #1e2332;
-              margin-bottom: 20px;
-            }
-
-            .graphic-person-duty{
-              font-size: 18px;
-              font-weight: 500;
-              color: #6d6d6d;
-              margin-bottom: 40px;
-            }
-
-            .graphic-person-time{
-              display: flex;
-              align-items: center;
-              gap: 20px;
-
-              .graphic-person-time-row{
-                display: flex;
-                align-items: center;
-                gap: 10px;
-
-                span{
-                  font-size: 18px;
-                  font-weight: 400;
-                  color: #1e2332;
-                  margin-bottom: 40px;
-                }
-              }
-            }
-          }
         }
       }
     }

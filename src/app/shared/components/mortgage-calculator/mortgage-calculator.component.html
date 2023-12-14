@@ -1,0 +1,69 @@
+<section class="mortgage-calculator-wrap">
+  <div class="mortgage-calculator">
+    <div class="calculator-left">
+      <div class="mortgage-calculator-criteria">
+        <div class="mortgage-calculator-criteria-title">Сумма финансирования</div>
+        <div class="criteria-tool">
+          <input type="tel" [(ngModel)]="loanAmount" inputmode="numeric" (input)="updateSlider()">
+          <div class="slider-container">
+            <span class="bar"><span class="fill" [style.width.%]="calculateFillPercentage()"></span></span>
+            <input class="slider" type="range" min="10000" max="500000" value="0" step="100" [(ngModel)]="loanAmount">
+          </div>
+        </div>
+      </div>
+      <div class="mortgage-calculator-criteria">
+        <div class="mortgage-calculator-criteria-title">Первоначальный взнос</div>
+        <div class="criteria-tool">
+          <input type="tel" [(ngModel)]="initialFee" inputmode="numeric" (input)="updateSliderTwo()">
+          <div class="slider-container">
+            <span class="bar"><span class="fill" [style.width.%]="calculateFillPercentageTwo()"></span></span>
+            <input class="slider" type="range" [min]="0" [max]="loanAmount" [value]="initialFee" step="100" [(ngModel)]="initialFee">
+          </div>
+        </div>
+      </div>
+      <div class="mortgage-calculator-criteria">
+        <div class="mortgage-calculator-criteria-title">Срок финансирования</div>
+        <div class="criteria-tool">
+          <input type="tel" [(ngModel)]="loanPeriod" inputmode="numeric" (input)="updateSliderThree()"/>
+          <div class="slider-container">
+            <span class="bar"><span class="fill" [style.width.%]="calculateFillPercentageThree()"></span></span>
+            <input class="slider" type="range" value="0" min="1" max="60" step="1" [(ngModel)]="loanPeriod">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="calculator-right">
+      <div class="calculator-summary">
+        <div class="calculator-summary-item">
+          <div class="calculator-summary-item-text">
+            Ежемесячный платеж
+          </div>
+          <div class="calculator-summary-item-amount">
+            {{calculateMonthlyPayment().toFixed(2) + " TJS"}}
+          </div>
+        </div>
+        <div class="calculator-summary-item">
+          <div class="calculator-summary-item-text">
+            Ставка
+          </div>
+          <div class="calculator-summary-item-amount">
+            {{currentRate + " %"}}
+          </div>
+        </div>
+        <div class="calculator-summary-item">
+          <div class="calculator-summary-item-text">
+            Сумма финансирования
+          </div>
+          <div class="calculator-summary-item-amount">
+            {{ totalAmount.toFixed() + " TJS"}}
+          </div>
+        </div>
+        <a href="#" class="request-mortgage">Заполнить заявку</a>
+      </div>
+      <div class="summary-description">
+        Все ставки указаны с учетом страхования. Банк принимает финальное решение о параметрах кредитования после
+        получения необходимых документов
+      </div>
+    </div>
+  </div>
+</section>

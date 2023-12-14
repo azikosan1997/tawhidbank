@@ -6,7 +6,7 @@
         <div class="banner-title">Ограниченная мудараба</div>
         <div class="banner-subtitle">ИНВЕСТИЦИИ С <br>
           ПРОФЕССИОНАЛАМИ РЫНКА</div>
-        <button class="button">Инвестировать</button>
+        <a routerLink="/business/deposits" class="button" fragment="request">Инвестировать</a>
       </div>
       <div class="banner-image">
         <img src="./assets/images/pages/investments/banner.png" alt="Card">
@@ -14,40 +14,7 @@
     </div>
   </div>
 </section>
-
-<section class="requirements">
-  <div class="container">
-    <div class="requirements-wrap">
-      <div class="requirements-wrap-item">
-        <div class="requirements-wrap-item-image">
-          <img src="./assets/images/pages/investments/r1.png" alt="Shield">
-        </div>
-        <div class="requirements-wrap-item-info">
-          <div class="requirements-wrap-item-info-title">Надёжность</div>
-          <div class="requirements-wrap-item-info-subtitle">защита инвесторов</div>
-        </div>
-      </div>
-      <div class="requirements-wrap-item">
-        <div class="requirements-wrap-item-image">
-          <img src="./assets/images/pages/investments/r2.png" alt="Aim">
-        </div>
-        <div class="requirements-wrap-item-info">
-          <div class="requirements-wrap-item-info-title">Профессиональное</div>
-          <div class="requirements-wrap-item-info-subtitle">управление</div>
-        </div>
-      </div>
-      <div class="requirements-wrap-item">
-        <div class="requirements-wrap-item-image">
-          <img src="./assets/images/pages/investments/r3.png" alt="Calendar">
-        </div>
-        <div class="requirements-wrap-item-info">
-          <div class="requirements-wrap-item-info-title">Гибкие условия</div>
-          <div class="requirements-wrap-item-info-subtitle">периода инвестирования</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<product-condition [conditionData]="conditionData"></product-condition>
 <section class="features">
   <div class="container">
     <h2>Преимущества Ограниченной мударабы</h2>
@@ -182,5 +149,5 @@
     </div>
   </div>
 </section>
-<app-request-form></app-request-form>
+<app-request-form [requestType]="requestType" id="request"></app-request-form>
 <app-documets></app-documets>

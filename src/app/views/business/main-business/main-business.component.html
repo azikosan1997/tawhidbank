@@ -10,7 +10,7 @@
         <div class="business-main-banner-wrap-info-description">
           с дополнительными опциями на платежи и переводы
         </div>
-        <button class="button">Подробнее</button>
+        <a routerLink="/business/accounting" class="button">Подробнее</a>
       </div>
       <div class="business-main-banner-wrap-image">
         <img src="./assets/images/pages/business%20main/banner.png" alt="Cards & list">
@@ -169,22 +169,30 @@
           Заполните форму, чтобы мы могли с вами связатся и всё подробно рассказать
         </div>
       </div>
-      <div class="consulting-form">
+      <form class="consulting-form" [formGroup]="accountConsulting">
         <div class="consulting-form-row">
           <div class="consulting-form-input-name">Имя фамилия</div>
-          <input type="text" placeholder="Ведите имя и фамилию">
+          <input type="text" placeholder="Ведите имя и фамилию" formControlName="fullName" [ngClass]="{'error': accountConsulting.get('fullName')?.touched &&
+                                                                      (accountConsulting.get('fullName')?.hasError('required') ||
+                                                                      accountConsulting.get('fullName')?.hasError('pattern'))}">
+          <div class="error-message" *ngIf="accountConsulting.get('fullName')?.touched && accountConsulting.get('fullName')?.errors?.['required']">Заполните ФИО</div>
+          <div class="error-message" *ngIf="accountConsulting.get('fullName')?.touched && accountConsulting.get('fullName')?.errors?.['pattern']">Напишите ваше имя и фамиля с заглавной буквой</div>
         </div>
         <div class="consulting-form-row">
           <div class="consulting-form-input-name">Номер телефона</div>
-          <input type="text" placeholder="Ведите номер телефона">
+          <input type="text" placeholder="Ведите номер телефона" formControlName="mobileNumber"  [ngClass]="{'error': accountConsulting.get('mobileNumber')?.touched &&
+                                                                      (accountConsulting.get('mobileNumber')?.hasError('required') ||
+                                                                      accountConsulting.get('mobileNumber')?.hasError('pattern'))}">
+          <div class="error-message" *ngIf="accountConsulting.get('mobileNumber')?.touched && accountConsulting.get('mobileNumber')?.errors?.['required']">Заполните поле для номера телефона</div>
+          <div class="error-message" *ngIf="accountConsulting.get('mobileNumber')?.touched && accountConsulting.get('mobileNumber')?.errors?.['pattern']">Заполните поле для номера телефона(+992 999 999 999)</div>
         </div>
         <div class="consulting-form-row">
-          <button class="button">Отправить</button>
+          <button class="button" (click)="sendConsultingRequest()">Отправить</button>
           <div class="agreement">Нажимая кнопку <strong>«Отправить»</strong>, я соглашаюсь с условиями обработки моих
             данных
           </div>
         </div>
-      </div>
+      </form>
     </div>
   </div>
 </section>
@@ -516,7 +524,7 @@
             также список банкоматов партнеров на карте —
             график работы, телефоны.
           </div>
-          <a href="#" class="button-fill">Перейти</a>
+          <a routerLink="/about/location" class="button-fill">Перейти</a>
         </div>
       </div>
     </div>

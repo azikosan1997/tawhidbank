@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {OwlOptions} from "ngx-owl-carousel-o";
 import {BannerDataType} from "../../../../types/banner-data.type";
+import {FormBuilder, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-main-business',
@@ -8,6 +9,32 @@ import {BannerDataType} from "../../../../types/banner-data.type";
   styleUrls: ['./main-business.component.scss']
 })
 export class MainBusinessComponent {
+
+  constructor(private formBuilder: FormBuilder) {
+  }
+  accountConsulting = this.formBuilder.group({
+    fullName: [
+      '',
+      [
+        Validators.required,
+        Validators.pattern(/^[A-Za-zА-Яа-я]+(?: [A-Za-zА-Яа-я]+)*$/),
+      ],
+    ],
+    mobileNumber: [
+      '+992',
+      [
+        Validators.required,
+        Validators.pattern(/^\+992 \d{3} \d{3} \d{3}$/),
+      ],
+    ],
+  });
+
+  sendConsultingRequest(){
+    if (this.accountConsulting.valid){
+      console.log(this.accountConsulting.value)
+    }
+  }
+
   serviceOptions: OwlOptions = {
     autoplay: true,
     loop: true,

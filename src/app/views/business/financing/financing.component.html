@@ -7,7 +7,7 @@
         <div class="business-financing-banner-info-description">
           Развивай свой бизнес сегодня и сейчас!
         </div>
-        <button class="button">Заявка на финансирования</button>
+        <a routerLink="/business/financing" fragment="request" class="button">Заявка на финансирования</a>
       </div>
       <div class="business-financing-banner-image">
         <img src="./assets/images/pages/business%20financing/banner.png" alt="Cash machine">
@@ -16,7 +16,7 @@
   </div>
 </section>
 <section class="requirements">
-  <product-condition></product-condition>
+  <product-condition [conditionData]="conditionData"></product-condition>
 </section>
 <section class="features">
   <div class="container">
@@ -77,5 +77,5 @@
   </div>
 </section>
 <app-steps></app-steps>
-<app-request-form></app-request-form>
+<app-request-form [requestType]="requestType" id="request"></app-request-form>
 <app-documets></app-documets>

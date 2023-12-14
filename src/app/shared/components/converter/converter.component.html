@@ -1,0 +1,39 @@
+<div class="converter-wrap">
+  <div class="converter">
+    <div class="converter-row">
+      <mat-form-field>
+        <input matInput>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Валюта</mat-label>
+        <mat-select [(ngModel)]="selectedFromCurrency">
+          <mat-option *ngFor="let food of foods" [value]="food.value">
+            {{food.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="converter-action">
+      <button class="button converter-toggle">
+        <mat-icon>repeat</mat-icon>
+      </button>
+    </div>
+    <div class="converter-row">
+      <mat-form-field>
+        <input matInput>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Валюта</mat-label>
+        <mat-select [(ngModel)]="selectedToCurrency">
+          <mat-option *ngFor="let food of foods" [value]="food.value">
+            {{food.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="converter-info">
+    <h2>Обменяйте валюту с выгодой</h2>
+    <img src="./assets/images/pages/main/converter.png" alt="Currency">
+  </div>
+</div>

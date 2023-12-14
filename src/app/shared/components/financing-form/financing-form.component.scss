@@ -1,13 +1,13 @@
 @import "../../../../assets/styles/mixins";
 @import "../../../../assets/styles/variables";
 
-.financing-request-wrap{
-  box-shadow: 0 4px 20px rgba(0,0,0,.14);
+.financing-request-wrap {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, .14);
   border-radius: 16px;
   padding: 30px 150px;
   margin-bottom: 80px;
 
-  .financing-request-title{
+  .financing-request-title {
     font-size: 30px;
     font-weight: bold;
     color: #444444;
@@ -15,153 +15,172 @@
     text-align: center;
   }
 
-  .financing-request-steps{
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-    border-bottom: 1px solid #b8c7d4;
-    .financing-request-step-one{
-      font-size: 18px;
-      font-weight: 500;
-      margin-bottom: 5px;
-    }
+  .financing-form-step {
+    .financing-request-steps {
+      padding-bottom: 10px;
+      margin-bottom: 40px;
+      border-bottom: 1px dashed #b8c7d4;
 
-    .financing-request-step-one-info{
-      font-size: 16px;
-      line-height: 24px;
-    }
-  }
-
-  .financing-request-progress{
-    margin-bottom: 40px;
-    .financing-request-progress-text{
-      font-size: 16px;
-      font-weight: normal;
-      margin-bottom: 5px;
-      color: #b8c7d4;
-      b{
-        color: #444444;
-        margin-right: 5px;
+      .financing-request-step-one {
+        font-size: 18px;
+        font-weight: 500;
+        margin-bottom: 5px;
       }
-    }
 
-    .financing-request-progress-subtext{
-      font-size: 16px;
-      font-weight: normal;
-      margin-bottom: 5px;
-      color: #444444;
-      margin-top: 5px;
-    }
-  }
-
-  .financing-request-condition{
-    margin-bottom: 40px;
-    h3{
-      font-size: 18px;
-      font-weight: 500;
-      margin-bottom: 30px;
-    }
-    .criteria-tool{
-      .slider-container .slider{
-        width: 102%;
-      }
-    }
-  }
-
-  .financing-request-period{
-    h3{
-      font-size: 18px;
-      font-weight: 500;
-      margin-bottom: 20px;
-    }
-
-    .financing-request-period-buttons{
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 10px;
-
-      .period-button{
-        padding: 8px 16px;
-        border: 2px solid transparent;
-        border-radius: 10px;
-        outline: none;
-        cursor: pointer;
-        position: relative;
-        flex-shrink: 0;
-        margin-bottom: 8px;
+      .financing-request-step-one-info {
         font-size: 16px;
         line-height: 24px;
-        font-weight: normal;
-        transition: background-color 0.3s;
-        min-width: 81px;
+      }
+    }
 
-        &.active{
-          background-color: $main-color;
-          color: white;
+
+    .financing-request-condition {
+      margin-bottom: 40px;
+
+      h3 {
+        font-size: 18px;
+        font-weight: 500;
+        margin-bottom: 30px;
+      }
+
+      .criteria-tool {
+        .slider-container .slider {
+          width: 102%;
         }
       }
     }
 
-    .financing-request-period-hint{
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: #66788f ;
-      font-size: 18px;
-      flex-direction: row;
-      margin-top: 10px;
-
-      svg{
-        width: 30px;
+    .financing-request-period {
+      h3 {
+        font-size: 18px;
+        font-weight: 500;
+        margin-bottom: 20px;
       }
-    }
-  }
 
-  .financing-request-bank-obligation{
-    margin-top: 30px;
-    font-size: 14px;
-    display: flex;
-    flex-direction: row;
-    background-color: #f5f5f5;
-    border-radius: 8px;
-    padding: 16px;
-    align-items: center;
-    gap: 30px;
-    color: #66788f;
+      .financing-request-period-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px;
 
-    svg{
-      width: 60px;
-    }
-  }
+        .period-button {
+          padding: 8px 16px;
+          border: 2px solid transparent;
+          border-radius: 10px;
+          outline: none;
+          cursor: pointer;
+          position: relative;
+          flex-shrink: 0;
+          margin-bottom: 8px;
+          font-size: 16px;
+          line-height: 24px;
+          font-weight: normal;
+          transition: background-color 0.3s;
+          min-width: 81px;
 
-  .financing-request-form{
-    padding-top: 40px;
-    h3{
-      font-size: 18px;
-      font-weight: 500;
-      margin-bottom: 30px;
-    }
+          &.active {
+            background-color: $main-color;
+            color: white;
+          }
+        }
+      }
 
-    form{
-      .form-row{
+      .financing-request-period-hint {
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        gap: 20px;
+        gap: 10px;
+        color: #66788f;
+        font-size: 18px;
+        flex-direction: row;
+        margin-top: 10px;
+
+        svg {
+          width: 30px;
+        }
+      }
+    }
+
+    .financing-request-bank-obligation {
+      margin-top: 30px;
+      font-size: 14px;
+      display: flex;
+      flex-direction: row;
+      background-color: #f5f5f5;
+      border-radius: 8px;
+      padding: 16px;
+      align-items: center;
+      gap: 30px;
+      color: #66788f;
+
+      svg {
+        width: 60px;
+      }
+    }
+
+    .financing-request-form {
+      padding-top: 40px;
+
+      h3 {
+        font-size: 18px;
+        font-weight: 500;
+        margin-bottom: 30px;
+      }
+
+      form {
+        .form-row {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 20px;
+        }
+      }
+    }
+
+    .financing-action {
+      margin-top: 40px;
+      margin-bottom: 40px;
+
+      .button {
+        font-size: 18px;
+        font-weight: 500;
+        border: none;
+        border-radius: 10px;
+        padding-inline: 30px;
       }
     }
   }
+}
 
-  .financing-action{
-    margin-top: 40px;
-    margin-bottom: 40px;
+.totp-check-wrap{
+  width: 30vw;
+  height: 30vh;
+  padding: 30px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-    .button{
-      font-size: 18px;
-      font-weight: 500;
-      border: none;
-      border-radius: 10px;
-      padding-inline: 30px;
-    }
+  .popup-close{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+  }
+
+  h4{
+    font-size: 20px;
+    font-weight: 500;
+    font-family: Montserrat,sans-serif;
+    margin-bottom: 20px;
+  }
+  .button{
+    display: grid;
+    place-content: center;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    font-family: Montserrat,sans-serif;
+    font-size: 18px;
   }
 }

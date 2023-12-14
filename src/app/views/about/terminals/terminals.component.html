@@ -29,14 +29,20 @@
         <mat-form-field>
           <mat-label>Регионы</mat-label>
           <mat-select>
-            <mat-option *ngFor="let food of foods" [value]="food.value">
-              {{food.viewValue}}
+            <mat-option *ngFor="let region of regions" [value]="region.value">
+              {{region.viewValue}}
             </mat-option>
           </mat-select>
         </mat-form-field>
       </div>
       <div class="atms-map">
-        <google-map [options]="options" width="100vw" height="700px"></google-map>
+        <google-map [options]="options" width="100vw" height="700px">
+          <map-marker *ngFor="let atm of bokhtarTerminals" [position]="{lat: atm.lat, lng: atm .lng}" [icon]="customMarkerIcon"></map-marker>
+          <map-marker *ngFor="let atm of shahrituzTerminals" [position]="{lat: atm.lat, lng: atm .lng}" [icon]="customMarkerIcon"></map-marker>
+          <map-marker *ngFor="let atm of rudakiTerminals" [position]="{lat: atm.lat, lng: atm .lng}" [icon]="customMarkerIcon"></map-marker>
+          <map-marker *ngFor="let atm of firdavsiTerminals" [position]="{lat: atm.lat, lng: atm .lng}" [icon]="customMarkerIcon"></map-marker>
+          <map-marker *ngFor="let atm of khujandTerminals" [position]="{lat: atm.lat, lng: atm .lng}" [icon]="customMarkerIcon"></map-marker>
+        </google-map>
       </div>
       <div class="atms-info">
         <div class="atms-hints">
@@ -63,7 +69,7 @@
             <div class="atm-list-row-cash head">СНЯТИЕ НАЛИЧНЫХ</div>
           </div>
           <div class="atm-list-row">
-            <div class="atm-list-row-address">Бонки маркази ш. Душанбе н.Шоҳмансур кучаи Айни 4/1</div>
+            <div class="atm-list-row-address">Головной офис, г. Душанбе, р.Шохмансур, ул. Айни 4/1</div>
             <div class="atm-list-row-graphic">24 часа</div>
             <div class="atm-list-row-cash">Да</div>
           </div>

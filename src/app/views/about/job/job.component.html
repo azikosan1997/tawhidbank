@@ -5,7 +5,6 @@
       <div class="banner-info">
         <div class="banner-title">Больше, чем новая работа</div>
         <div class="banner-subtitle">Новые возможности</div>
-        <a href="#" class="button">Вакансии</a>
       </div>
       <div class="banner-image">
         <img src="./assets/images/pages/job/banner.png" alt="Bee">
@@ -56,58 +55,16 @@
     </div>
   </div>
 </section>
-<section class="search">
+<section class="search" id="search">
   <div class="container">
     <h2>Поиск вакансий</h2>
     <div class="search-subtitle">Найдите работу своей мечты</div>
     <div class="search-params-wrap">
-      <div class="search-param-duty">
-        <mat-form-field class="example-form-field">
-          <mat-label>Найти вакасию</mat-label>
-          <input matInput type="text" [(ngModel)]="searchValue">
-          <button *ngIf="searchValue" matSuffix mat-icon-button aria-label="Clear" (click)="searchValue=''">
-            <mat-icon>close</mat-icon>
-          </button>
-        </mat-form-field>
-      </div>
-      <div class="search-param-filter">
-        <div class="search-param-filter-item">
-          <mat-form-field>
-            <mat-label>Вакансии</mat-label>
-            <mat-select>
-              <mat-option *ngFor="let food of foods" [value]="food.value">
-                {{food.viewValue}}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-        </div>
-        <div class="search-param-filter-item">
-          <mat-form-field>
-            <mat-label>Виберите регион</mat-label>
-            <mat-select>
-              <mat-option *ngFor="let food of foods" [value]="food.value">
-                {{food.viewValue}}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-        </div>
-        <div class="search-param-filter-result">Всего <span>20</span> вакансии в <span>17</span> городах</div>
-      </div>
       <div class="search-results">
-        <div class="search-results-row">
-          <div class="search-results-row-duty">Сотрудник Банка</div>
-          <div class="search-results-row-salary">от 6000 сомони</div>
-          <div class="search-results-row-city">Душанбе</div>
-        </div>
-        <div class="search-results-row">
-          <div class="search-results-row-duty">Стратег финансовой службы</div>
-          <div class="search-results-row-salary">з.п не указана</div>
-          <div class="search-results-row-city">Худжанд</div>
-        </div>
-        <div class="search-results-row">
-          <div class="search-results-row-duty">Бизнес аналитик</div>
-          <div class="search-results-row-salary">от 4500 сомони</div>
-          <div class="search-results-row-city">Бохтар</div>
+        <div class="search-results-row" *ngFor="let job of jobs">
+          <div class="search-results-row-duty">{{job.duty}}</div>
+          <div class="search-results-row-salary">{{job.salary}}</div>
+          <div class="search-results-row-city">{{job.city}}</div>
         </div>
       </div>
     </div>
@@ -116,51 +73,84 @@
 <section class="contact">
   <div class="container">
     <h2>Обратная связь</h2>
-    <div class="contact-wrap">
+    <form class="contact-wrap" [formGroup]="candidateForm" autocomplete="off">
       <div class="contact-wrap-row">
         <mat-form-field class="example-form-field">
           <mat-label>Фамилия, имя и отчество</mat-label>
-          <input matInput type="text" [(ngModel)]="fullNameValue">
-          <button *ngIf="fullNameValue" matSuffix mat-icon-button aria-label="Clear" (click)="fullNameValue=''">
-            <mat-icon>close</mat-icon>
-          </button>
+          <input matInput type="text" formControlName="fullname">
+          <mat-hint style="color: #f44336" *ngIf="candidateForm.get('fullname')?.touched && candidateForm.get('fullname')?.errors?.['required']">
+            Заполните ФИО
+          </mat-hint>
+          <mat-hint style="color: #f44336" *ngIf="candidateForm.get('fullname')?.touched && candidateForm.get('fullname')?.errors?.['pattern']">
+            Напишите ваше имя и фамиля с заглавной буквой
+          </mat-hint>
         </mat-form-field>
       </div>
       <div class="contact-wrap-row">
         <mat-form-field class="example-form-field">
           <mat-label>Мобильный телефон</mat-label>
-          <input matInput type="tell">
-          <button *ngIf="mobileValue" matSuffix mat-icon-button aria-label="Clear" (click)="mobileValue=''">
-            <mat-icon>close</mat-icon>
-          </button>
+          <input matInput type="tell" formControlName="mobileNumber">
+          <mat-hint style="color: #f44336" *ngIf="candidateForm.get('mobileNumber')?.touched && candidateForm.get('mobileNumber')?.errors?.['required']">
+            Заполните поле для номера телефона
+          </mat-hint>
+          <mat-hint style="color: #f44336" *ngIf="candidateForm.get('mobileNumber')?.touched && candidateForm.get('mobileNumber')?.errors?.['pattern']">
+            Напишите ваш номер в правильном формате (+992 999 99 99)
+          </mat-hint>
         </mat-form-field>
-        <mat-form-field class="example-form-field">
+        <mat-form-field class="example-form-field" >
           <mat-label>E-mail</mat-label>
-          <input matInput type="text">
-          <button *ngIf="emailValue" matSuffix mat-icon-button aria-label="Clear" (click)="emailValue=''">
-            <mat-icon>close</mat-icon>
-          </button>
+          <input matInput type="text" formControlName="email">
+          <mat-hint style="color: #f44336" *ngIf="candidateForm.get('email')?.touched && candidateForm.get('email')?.errors?.['required']">
+            Заполните поле для e-mail
+          </mat-hint>
+          <mat-hint style="color: #f44336" *ngIf="candidateForm.get('email')?.touched && candidateForm.get('email')?.errors?.['pattern']">
+            Напишите ваш e-mail в правильном формате (name@mail.org)
+          </mat-hint>
         </mat-form-field>
       </div>
       <div class="contact-wrap-row">
         <mat-form-field>
-          <mat-label>Textarea</mat-label>
-          <textarea matInput></textarea>
+          <mat-label>Напишите коротко о себе</mat-label>
+          <textarea matInput formControlName="text"></textarea>
+          <mat-hint style="color: #f44336" *ngIf="candidateForm.get('text')?.touched && candidateForm.get('text')?.errors?.['required']">
+            Это поле обязательно надо заполнить
+          </mat-hint>
         </mat-form-field>
+      </div>
+      <div class="contact-wrap-row file">
+        <app-file-getter (fileSelected)="onFileSelected($event)"></app-file-getter>
       </div>
       <div class="contact-wrap-row">
         <div class="financing-request-agreement-checkbox">
-          <input class="custom-checkbox" type="checkbox" id="myCheckbox">
+          <input class="custom-checkbox" type="checkbox" id="myCheckbox" formControlName="agree">
           <label for="myCheckbox">
-            Даю согласия на переработку своих персональных данных.
+            Даю согласия на переработку своих персональных данных. (Обязательно!)
           </label>
         </div>
       </div>
       <div class="contact-wrap-row">
-        <button class="button">Отправить</button>
+        <button class="button" (click)="sendCandidateData()">Отправить</button>
       </div>
-    </div>
+    </form>
   </div>
 </section>
+<ng-template #job>
+  <div class="job-popup">
+    <div class="popup-close" (click)="closePopup()">
+      <svg width="40px" height="40px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+        <g id="SVGRepo_iconCarrier">
+          <path
+            d="M6.99486 7.00636C6.60433 7.39689 6.60433 8.03005 6.99486 8.42058L10.58 12.0057L6.99486 15.5909C6.60433 15.9814 6.60433 16.6146 6.99486 17.0051C7.38538 17.3956 8.01855 17.3956 8.40907 17.0051L11.9942 13.4199L15.5794 17.0051C15.9699 17.3956 16.6031 17.3956 16.9936 17.0051C17.3841 16.6146 17.3841 15.9814 16.9936 15.5909L13.4084 12.0057L16.9936 8.42059C17.3841 8.03007 17.3841 7.3969 16.9936 7.00638C16.603 6.61585 15.9699 6.61585 15.5794 7.00638L11.9942 10.5915L8.40907 7.00636C8.01855 6.61584 7.38538 6.61584 6.99486 7.00636Z"
+            fill="#309799"></path>
+        </g>
+      </svg>
+    </div>
+    <div class="confirm-request">
+      Ташаккур! Дархост ирсол карда шуд.
+    </div>
+  </div>
+</ng-template>
 
 

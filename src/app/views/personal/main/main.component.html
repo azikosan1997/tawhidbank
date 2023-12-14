@@ -39,98 +39,15 @@
 <section class="online-calculator">
   <div class="container">
     <h2>Рассчитайте онлайн</h2>
-    <div class="online-calculator-component-selector">
-      <div class="online-calculator-selector active">Платеж по ипотеке</div>
-      <div class="online-calculator-selector">Доход по вкладу</div>
-    </div>
-    <div class="mortgage-calculator">
-      <div class="calculator-left">
-        <div class="mortgage-calculator-criteria">
-          <div class="mortgage-calculator-criteria-title">Регион приобритения квартиры</div>
-          <div class="criteria-tool">
-            <mat-form-field>
-              <mat-label>Виберите регион</mat-label>
-              <mat-select>
-                <mat-option *ngFor="let food of foods" [value]="food.value">
-                  {{food.viewValue}}
-                </mat-option>
-              </mat-select>
-            </mat-form-field>
-          </div>
-        </div>
-        <div class="mortgage-calculator-criteria">
-          <div class="mortgage-calculator-criteria-title">Стоимость квартиры</div>
-          <div class="criteria-tool">
-            <input type="tel" value="6400000 TJS" inputmode="numeric">
-            <div class="slider-container">
-              <span class="bar"><span class="fill"></span></span>
-              <input class="slider" type="range" min="0" max="100" value="0">
-            </div>
-          </div>
-        </div>
-        <div class="mortgage-calculator-criteria">
-          <div class="mortgage-calculator-criteria-title">Первоначальный взнос</div>
-          <div class="criteria-tool">
-            <input type="tel" value="10000 TJS" inputmode="numeric">
-            <div class="slider-container">
-              <span class="bar"><span class="fill"></span></span>
-              <input class="slider" type="range" min="0" max="100" value="0">
-            </div>
-          </div>
-        </div>
-        <div class="mortgage-calculator-criteria">
-          <div class="mortgage-calculator-criteria-title">Срок ипотеки</div>
-          <div class="criteria-tool">
-            <input type="tel" value="3 года" inputmode="numeric">
-            <div class="slider-container">
-              <span class="bar"><span class="fill"></span></span>
-              <input class="slider" type="range" min="0" max="100" value="0">
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="calculator-right">
-        <div class="calculator-summary">
-          <div class="calculator-summary-item">
-            <div class="calculator-summary-item-text">
-              Ежемесячный платеж
-            </div>
-            <div class="calculator-summary-item-amount">
-              16 026 TJS
-            </div>
-          </div>
-          <div class="calculator-summary-item">
-            <div class="calculator-summary-item-text">
-              Ставка
-            </div>
-            <div class="calculator-summary-item-amount">
-              5,99%
-            </div>
-          </div>
-          <div class="calculator-summary-item">
-            <div class="calculator-summary-item-text">
-              Необходимый доход
-            </div>
-            <div class="calculator-summary-item-amount">
-              от 32 052 TJS
-            </div>
-          </div>
-          <div class="calculator-summary-item">
-            <div class="calculator-summary-item-text">
-              Сумма кредита
-            </div>
-            <div class="calculator-summary-item-amount">
-              500 000 TJS
-            </div>
-          </div>
-          <a href="#" class="request-mortgage">Заполнить заявку</a>
-        </div>
-        <div class="summary-description">
-          Все ставки указаны с учетом страхования. Банк принимает финальное решение о параметрах кредитования после
-          получения необходимых документов
-        </div>
-      </div>
-    </div>
+    <nav class="tab-panel-button-group">
+      <ul>
+        <li class="tab" *ngFor="let tab of tabsArray; let i = index" (click)="setTab(i)">
+          <a class="tab-link" [ngClass]="activatedTab === i ? 'active' : ''">{{tab}}</a>
+        </li>
+      </ul>
+    </nav>
+    <app-mortgage-calculator *ngIf="activatedTab === 1"></app-mortgage-calculator>
+    <app-converter *ngIf="activatedTab === 0"></app-converter>
     <div class="profit-calculator">
     </div>
   </div>
@@ -139,7 +56,7 @@
   <div class="container">
     <div class="apps-wrap">
       <div class="apps-info">
-        <h2>Бакн там, где удобно вам</h2>
+        <h2>Банк там, где удобно вам</h2>
         <div class="apps-info-description">Управляйте финансами онлайн без очередей и поездок в офис</div>
         <div class="apps-info-action">
           <a href="https://play.google.com/store/apps/details?id=tj.itservice.tawhidbank&pcampaignid=web_share" class="button-fill">
@@ -197,194 +114,10 @@
     </div>
   </div>
 </section>
-
 <section class="additional">
   <div class="container">
     <div class="additional-wrap">
-      <div class="additional-rate">
-        <div class="additional-rate-title">
-          <h2>Курс обмена</h2>
-          <div class="sub-title">Обновлено 04.10.2023 в 10.08</div>
-        </div>
-        <mat-tab-group>
-          <mat-tab label="Наличными">
-            <div class="rate-label-wrap">
-              <div class="rate-label">Банк покупает</div>
-              <div class="rate-label">Банк продает</div>
-            </div>
-            <div class="rate-rows-wrap">
-              <div class="rate-row">
-                <div class="rate-initials">
-                  <div class="currency-flag">
-                    <img src="./assets/images/pages/main/rub.png" alt="Ruble">
-                  </div>
-                  <div class="currency-name">RUB</div>
-                </div>
-                <div class="rate-values">
-                  <div class="rate">199</div>
-                  <div class="rate">99</div>
-                </div>
-              </div>
-              <div class="rate-row">
-                <div class="rate-initials">
-                  <div class="currency-flag">
-                    <img src="./assets/images/pages/main/usd.png" alt="USD">
-                  </div>
-                  <div class="currency-name">USD</div>
-                </div>
-                <div class="rate-values">
-                  <div class="rate">1099</div>
-                  <div class="rate">1099</div>
-                </div>
-              </div>
-              <div class="rate-row">
-                <div class="rate-initials">
-                  <div class="currency-flag">
-                    <img src="./assets/images/pages/main/eur.png" alt="Euro">
-                  </div>
-                  <div class="currency-name">EUR</div>
-                </div>
-                <div class="rate-values">
-                  <div class="rate">1199</div>
-                  <div class="rate">1199</div>
-                </div>
-              </div>
-            </div>
-          </mat-tab>
-          <mat-tab label="В интернет банке ">
-            <div class="rate-label-wrap">
-              <div class="rate-label">Банк покупает</div>
-              <div class="rate-label">Банк продает</div>
-            </div>
-            <div class="rate-rows-wrap">
-              <div class="rate-row">
-                <div class="rate-initials">
-                  <div class="currency-flag">
-                    <img src="./assets/images/pages/main/rub.png" alt="Ruble">
-                  </div>
-                  <div class="currency-name">RUB</div>
-                </div>
-                <div class="rate-values">
-                  <div class="rate">199</div>
-                  <div class="rate">99</div>
-                </div>
-              </div>
-              <div class="rate-row">
-                <div class="rate-initials">
-                  <div class="currency-flag">
-                    <img src="./assets/images/pages/main/usd.png" alt="USD">
-                  </div>
-                  <div class="currency-name">USD</div>
-                </div>
-                <div class="rate-values">
-                  <div class="rate">1099</div>
-                  <div class="rate">1099</div>
-                </div>
-              </div>
-              <div class="rate-row">
-                <div class="rate-initials">
-                  <div class="currency-flag">
-                    <img src="./assets/images/pages/main/eur.png" alt="Euro">
-                  </div>
-                  <div class="currency-name">EUR</div>
-                </div>
-                <div class="rate-values">
-                  <div class="rate">1199</div>
-                  <div class="rate">1199</div>
-                </div>
-              </div>
-            </div>
-          </mat-tab>
-          <mat-tab label="НБТ">
-            <div class="rate-label-wrap">
-              <div class="rate-label">Банк покупает</div>
-              <div class="rate-label">Банк продает</div>
-            </div>
-            <div class="rate-rows-wrap">
-              <div class="rate-row">
-                <div class="rate-initials">
-                  <div class="currency-flag">
-                    <img src="./assets/images/pages/main/rub.png" alt="Ruble">
-                  </div>
-                  <div class="currency-name">RUB</div>
-                </div>
-                <div class="rate-values">
-                  <div class="rate">199</div>
-                  <div class="rate">99</div>
-                </div>
-              </div>
-              <div class="rate-row">
-                <div class="rate-initials">
-                  <div class="currency-flag">
-                    <img src="./assets/images/pages/main/usd.png" alt="USD">
-                  </div>
-                  <div class="currency-name">USD</div>
-                </div>
-                <div class="rate-values">
-                  <div class="rate">1099</div>
-                  <div class="rate">1099</div>
-                </div>
-              </div>
-              <div class="rate-row">
-                <div class="rate-initials">
-                  <div class="currency-flag">
-                    <img src="./assets/images/pages/main/eur.png" alt="Euro">
-                  </div>
-                  <div class="currency-name">EUR</div>
-                </div>
-                <div class="rate-values">
-                  <div class="rate">1199</div>
-                  <div class="rate">1199</div>
-                </div>
-              </div>
-            </div>
-          </mat-tab>
-          <mat-tab label="Безналичными">
-            <div class="rate-label-wrap">
-              <div class="rate-label">Банк покупает</div>
-              <div class="rate-label">Банк продает</div>
-            </div>
-            <div class="rate-rows-wrap">
-              <div class="rate-row">
-                <div class="rate-initials">
-                  <div class="currency-flag">
-                    <img src="./assets/images/pages/main/rub.png" alt="Ruble">
-                  </div>
-                  <div class="currency-name">RUB</div>
-                </div>
-                <div class="rate-values">
-                  <div class="rate">199</div>
-                  <div class="rate">99</div>
-                </div>
-              </div>
-              <div class="rate-row">
-                <div class="rate-initials">
-                  <div class="currency-flag">
-                    <img src="./assets/images/pages/main/usd.png" alt="USD">
-                  </div>
-                  <div class="currency-name">USD</div>
-                </div>
-                <div class="rate-values">
-                  <div class="rate">1099</div>
-                  <div class="rate">1099</div>
-                </div>
-              </div>
-              <div class="rate-row">
-                <div class="rate-initials">
-                  <div class="currency-flag">
-                    <img src="./assets/images/pages/main/eur.png" alt="Euro">
-                  </div>
-                  <div class="currency-name">EUR</div>
-                </div>
-                <div class="rate-values">
-                  <div class="rate">1199</div>
-                  <div class="rate">1199</div>
-                </div>
-              </div>
-            </div>
-          </mat-tab>
-        </mat-tab-group>
-      </div>
+      <app-rate-tabe></app-rate-tabe>
       <div class="additional-map">
         <div class="map">
           <img src="./assets/images/pages/main/map.png" alt="Map">
@@ -395,7 +128,7 @@
           также список банкоматов партнеров на карте —
           график работы, телефоны.
         </div>
-        <a href="#" class="button-fill">Перейти</a>
+        <a routerLink="/about/location" class="button-fill">Перейти</a>
       </div>
     </div>
   </div>

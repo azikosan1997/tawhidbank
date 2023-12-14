@@ -10,7 +10,7 @@ import {AboutBankComponent} from './about-bank/about-bank.component';
 import {DocumentsComponent} from './documents/documents.component';
 import {JobComponent} from './job/job.component';
 import {MatFormFieldModule} from "@angular/material/form-field";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
 import {MatSelectModule} from "@angular/material/select";
@@ -22,6 +22,7 @@ import { TerminalsComponent } from './terminals/terminals.component';
 import { GraphicComponent } from './graphic/graphic.component';
 import { RequisitesComponent } from './requisites/requisites.component';
 import { HelpComponent } from './help/help.component';
+import {MatDialogModule} from "@angular/material/dialog";
 
 
 @NgModule({
@@ -52,6 +53,8 @@ import { HelpComponent } from './help/help.component';
     NgFor,
     MatCardModule,
     GoogleMapsModule,
+    ReactiveFormsModule,
+    MatDialogModule,
   ]
 })
 export class AboutModule {

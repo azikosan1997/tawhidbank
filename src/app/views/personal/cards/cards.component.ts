@@ -1,5 +1,6 @@
-import {AfterViewInit, Component, ElementRef} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, TemplateRef, ViewChild} from '@angular/core';
 import VanillaTilt from 'vanilla-tilt';
+import {MatDialog} from "@angular/material/dialog";
 
 
 
@@ -9,11 +10,10 @@ import VanillaTilt from 'vanilla-tilt';
   styleUrls: ['./cards.component.scss']
 })
 export class CardsComponent implements AfterViewInit {
+  @ViewChild('cardPopup') depositPopup!: TemplateRef<ElementRef>;
   tabsArray: string[] = ['Все карты', 'Дебетовые карты', 'Кредитные карты'];
   activatedTab: number = 0;
-
   value = '';
-
 
   allCard = [
     {
@@ -94,7 +94,7 @@ export class CardsComponent implements AfterViewInit {
     },
   ]
 
-  constructor(private el: ElementRef) {
+  constructor(private el: ElementRef, public dialog: MatDialog) {
   }
 
   ngAfterViewInit() {
@@ -112,5 +112,17 @@ export class CardsComponent implements AfterViewInit {
 
   setTab(index: number) {
     this.activatedTab = index;
+  }
+
+  openPopup() {
+    this.dialog.open(this.depositPopup,{
+      width: '50vw',
+      // disableClose: true,
+      // hasBackdrop: false,
+    });
+  }
+
+  closePopup() {
+    this.dialog.closeAll();
   }
 }

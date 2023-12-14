@@ -58,9 +58,11 @@
           color: #444444;
           border: none;
           cursor: pointer;
-          font-size: 16px;
+          font-size: 18px;
+          font-weight: 500;
           font-family: "Montserrat", sans-serif;
           padding: 13px 56px;
+          max-width: 115px;
 
           &:hover {
             box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.15);
@@ -361,6 +363,15 @@
             font-family: "Montserrat", sans-serif;
             color: rgb(12, 12, 12);
             outline: none;
+
+            &.error{
+              border: 2px solid #f44336;
+            }
+          }
+          .error-message{
+            color: #f44336;
+            font-size: 12px;
+            font-family: Montserrat,sans-serif;
           }
 
           .button {
@@ -368,6 +379,9 @@
             outline: none;
             border: none;
             padding: 18px 41px;
+            font-size: 18px;
+            font-family: Montserrat,sans-serif;
+            font-weight: 500;
           }
 
           .agreement {
@@ -548,14 +562,6 @@
 
   .container {
     .additional-wrap {
-      .additional-rate{
-        width: 49%;
-        background-color: white;
-        padding: 25px 30px;
-        border-radius: 10px;
-        box-sizing: border-box;
-      }
-
       .additional-map{
         width: 49%;
         height: 448px;
