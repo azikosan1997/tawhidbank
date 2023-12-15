@@ -693,6 +693,10 @@ input[type=checkbox] + label:before {
   vertical-align: bottom;
   color: transparent;
   transition: .2s;
+
+  &.error{
+    border: 0.1em solid #f44336;
+  }
 }
 
 input[type=checkbox] + label:active:before {
