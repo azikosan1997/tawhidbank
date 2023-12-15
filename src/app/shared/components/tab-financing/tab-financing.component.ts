@@ -10,7 +10,7 @@ export class TabFinancingComponent {
   @Input() tariffs!: any;
   @Input() documents!: any;
 
-  tabsArray: string[] = ['Операции', 'Документы', 'Лимиты'];
+  tabsArray: string[] = ['Операции', 'Лимиты', 'Документы'];
   activatedTab: number = 0;
 
   constructor() {

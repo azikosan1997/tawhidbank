@@ -14,6 +14,8 @@ export class CardsComponent implements AfterViewInit {
   tabsArray: string[] = ['Все карты', 'Дебетовые карты', 'Кредитные карты'];
   activatedTab: number = 0;
   value = '';
+  mainForm: boolean = true;
+  formName: string = 'Оформить заявку на получение карты';
 
   allCard = [
     {

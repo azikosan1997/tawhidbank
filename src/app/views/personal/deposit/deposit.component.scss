@@ -23,6 +23,63 @@
       @include h2-mixin;
     }
 
+    .tab-panel-button-group {
+      margin-bottom: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      ul {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        list-style: none;
+        flex-wrap: wrap;
+
+        li {
+          cursor: pointer;
+
+          .tab-link {
+            padding: 15px 30px;
+            background-color: transparent;
+            border: 2px solid #309799;
+            border-radius: 10px;
+            font-size: 18px;
+            font-family: "Montserrat", sans-serif;
+            color: rgb(48, 151, 153);
+            transition: all 120ms ease-in-out;
+
+            &:hover {
+              background-color: #309799;
+              color: white;
+            }
+
+            &.active {
+              background-color: #309799;
+              color: white;
+            }
+          }
+        }
+      }
+
+      a.tab-link {
+        text-decoration: none;
+        padding: 16px 30px;
+        background-color: transparent;
+        border: 2px solid #309799;
+        border-radius: 10px;
+        font-size: 18px;
+        font-family: "Montserrat", sans-serif;
+        color: rgb(48, 151, 153);
+        transition: all 120ms ease-in-out;
+
+        &:hover {
+          background-color: #309799;
+          color: white;
+        }
+      }
+    }
+
     .tariff-controllers {
       display: flex;
       align-items: center;

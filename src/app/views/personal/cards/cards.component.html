@@ -147,70 +147,7 @@
         </span>
       </div>
       <div class="cards-request-form">
-        <h3>Персональные данные</h3>
-        <form>
-          <div class="form-row">
-            <mat-form-field class="example-form-field">
-              <mat-label>Фамилия</mat-label>
-              <input matInput type="text">
-              <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
-                <mat-icon>close</mat-icon>
-              </button>
-            </mat-form-field>
-          </div>
-          <div class="form-row">
-            <mat-form-field class="example-form-field">
-              <mat-label>Имя</mat-label>
-              <input matInput type="text">
-              <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
-                <mat-icon>close</mat-icon>
-              </button>
-            </mat-form-field>
-            <mat-form-field class="example-form-field">
-              <mat-label>Отчество</mat-label>
-              <input matInput type="text">
-              <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
-                <mat-icon>close</mat-icon>
-              </button>
-            </mat-form-field>
-          </div>
-          <div class="form-row">
-            <mat-form-field class="example-form-field">
-              <mat-label>Мобильный телефон</mat-label>
-              <input matInput type="tell">
-              <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
-                <mat-icon>close</mat-icon>
-              </button>
-            </mat-form-field>
-            <mat-form-field class="example-form-field">
-              <mat-label>E-mail</mat-label>
-              <input matInput type="text">
-              <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
-                <mat-icon>close</mat-icon>
-              </button>
-            </mat-form-field>
-          </div>
-          <div class="form-row">
-            <mat-form-field>
-              <mat-label>Дата рождения</mat-label>
-              <input matInput [matDatepicker]="picker">
-              <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-              <mat-datepicker #picker></mat-datepicker>
-            </mat-form-field>
-          </div>
-        </form>
-      </div>
-      <div class="cards-request-agreement">
-        <div class="checkbox-container">
-          <input type="checkbox" id="fruit1" name="fruit-1" value="Apple">
-          <label for="fruit1">Даю согласие на <a href="#1">отправку запроса в БКИ (для клиентов банка)</a> и <a href="#2">обработку персональных данных</a>, с тарифами и условиями
-          <span class="label-break">кредитования,
-            <a href="#3">политикой обработки персональных данных</a> ознакомлен и согласен</span>
-          </label>
-        </div>
-      </div>
-      <div class="cards-request-action">
-        <button class="button">Оставить заявку</button>
+        <app-form [mainForm]="mainForm" [formName]="formName"></app-form>
       </div>
     </div>
     <div class="cards-accordion">
@@ -259,7 +196,6 @@
     </div>
   </div>
 </section>
-
 <ng-template #cardPopup>
   <div class="deposit-popup">
     <div class="popup-close" (click)="closePopup()">
@@ -273,7 +209,7 @@
         </g>
       </svg>
     </div>
-    <app-form></app-form>
+    <app-form [mainForm]="mainForm"></app-form>
   </div>
 </ng-template>
 

@@ -12,8 +12,7 @@ export class JobComponent {
   @ViewChild('job') job!: TemplateRef<ElementRef>;
   selectedFile: any = null;
   constructor(private formBuilder: FormBuilder,
-              public dialog: MatDialog,
-              private router: Router) {
+              public dialog: MatDialog) {
   }
 
   onFileSelected(selectedFile: any) {

@@ -8,6 +8,7 @@ import {FormBuilder, Validators} from "@angular/forms";
 })
 export class RequestFormComponent {
   @Input() requestType!: any;
+  @Input() mainForm!: boolean;
   constructor(private formBuilder: FormBuilder) {
   }
   formData = this.formBuilder.group({

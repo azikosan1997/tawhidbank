@@ -35,12 +35,14 @@
 <section class="tariff">
   <div class="container">
     <h2>Тарифы и условия</h2>
-    <div class="tariff-controllers">
-      <button class="tariff-controller active">Сравнить вклады</button>
-      <button class="tariff-controller">Тарифы</button>
-      <button class="tariff-controller">Условия вклада</button>
-    </div>
-    <div class="tariff-wrap">
+    <nav class="tab-panel-button-group">
+      <ul>
+        <li class="tab" *ngFor="let tab of tabsArray; let i = index" (click)="setTab(i)">
+          <a class="tab-link" [ngClass]="activatedTab === i ? 'active' : ''">{{tab}}</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="tariff-wrap" *ngIf="activatedTab === 0">
       <h3>Сравнить вклады</h3>
       <table class="tariff-table">
         <thead>

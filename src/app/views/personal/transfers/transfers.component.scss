@@ -13,7 +13,7 @@
       background: linear-gradient(-60deg, rgb(48, 153, 151) 0%, rgb(64, 192, 193) 100%);
       background: -webkit-linear-gradient(-60deg, rgb(48, 153, 151) 0%, rgb(64, 192, 193) 100%);
       background: -ms-linear-gradient(-60deg, rgb(48, 153, 151) 0%, rgb(64, 192, 193) 100%);
-      padding: 20px 162px;
+      padding: 20px 80px;
       box-sizing: border-box;
       display: flex;
       justify-content: space-between;
@@ -98,30 +98,6 @@
         color: rgb(255, 255, 255);
         font-weight: bold;
         padding: 20px 100px;
-      }
-    }
-  }
-}
-
-.transfers-video {
-  padding-bottom: 110px;
-
-  .container {
-    h2 {
-      @include h2-mixin;
-    }
-
-    .transfers-video-wrap {
-      width: 100%;
-      box-sizing: border-box;
-
-      video {
-        width: 100%;
-        border-radius: 20px;
-      }
-
-      .transfers-video-item {
-        border-radius: 21px;
       }
     }
   }

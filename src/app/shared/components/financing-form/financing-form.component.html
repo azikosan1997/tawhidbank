@@ -1,25 +1,35 @@
 <section class="financing-form">
   <div class="container">
     <div class="financing-request-wrap">
-      <h3 class="financing-request-title">Онлайн заявка на кредит наличными</h3>
+      <h3 class="financing-request-title">Онлайн проверка возможностей</h3>
       <div class="financing-form-step" *ngIf="!confirmedFirstStep">
         <div class="financing-request-steps">
           <div class="financing-request-step-one">Шаг 1</div>
-          <div class="financing-request-step-one-info">Свой кредитный рейтинг</div>
+          <div class="financing-request-step-one-info">Узнайте свой кредитный рейтинг</div>
         </div>
-        <div class="financing-fields-for-tin">
-          <mat-form-field>
-            <mat-label>Введите свой ИНН</mat-label>
-            <input matInput>
-          </mat-form-field>
-          <mat-form-field>
-            <mat-label>Введите мобильный номер</mat-label>
-            <input matInput>
-          </mat-form-field>
-        </div>
-        <div class="financing-action">
-          <button class="button" (click)="openCheckTinPopup()">Получить код</button>
-        </div>
+        <form [formGroup]="firstStep">
+          <div class="financing-fields-for-tin">
+            <mat-form-field>
+              <mat-label>Введите свой ИНН</mat-label>
+              <input matInput formControlName="tin"  [ngClass]="{'error': firstStep.get('tin')?.touched &&
+                                                                      (firstStep.get('tin')?.hasError('required') ||
+                                                                      firstStep.get('tin')?.hasError('pattern'))}">
+              <mat-hint class="error-message" *ngIf="firstStep.get('tin')?.touched && firstStep.get('tin')?.errors?.['required']" style="color: #f44336; margin-bottom: 10px;">Заполните поле для ИНН</mat-hint>
+              <mat-hint class="error-message" *ngIf="firstStep.get('tin')?.touched && firstStep.get('tin')?.errors?.['pattern']" style="color: #f44336; margin-bottom: 10px;">ИНН должно содержать только 9 цифр</mat-hint>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Введите мобильный номер</mat-label>
+              <input matInput formControlName="mobileNumber"  [ngClass]="{'error': firstStep.get('mobileNumber')?.touched &&
+                                                                      (firstStep.get('mobileNumber')?.hasError('required') ||
+                                                                      firstStep.get('mobileNumber')?.hasError('pattern'))}">
+              <mat-hint class="error-message" *ngIf="firstStep.get('mobileNumber')?.touched && firstStep.get('mobileNumber')?.errors?.['required']" style="color: #f44336; margin-bottom: 10px;">Заполните поле для номера телефона</mat-hint>
+              <mat-hint class="error-message" *ngIf="firstStep.get('mobileNumber')?.touched && firstStep.get('mobileNumber')?.errors?.['pattern']" style="color: #f44336; margin-bottom: 10px;">Заполните поле для номера телефона(+992 999 999 999)</mat-hint>
+            </mat-form-field>
+          </div>
+          <div class="financing-action">
+            <button class="button" (click)="openCheckTinPopup()">Получить код</button>
+          </div>
+        </form>
       </div>
       <div class="financing-form-step" *ngIf="confirmedFirstStep">
         <div class="financing-request-steps">
@@ -27,22 +37,22 @@
           <div class="financing-request-step-one-info">Оставьте заявку</div>
         </div>
         <div class="financing-request-condition">
-          <h3>Условия</h3>
+          <h3>Сумма финансирования</h3>
           <div class="criteria-tool">
-            <input type="tel" value="1000 TJS" inputmode="numeric">
+            <input type="tel" [(ngModel)]="loanAmount" inputmode="numeric" (input)="updateSlider()">
             <div class="slider-container">
-              <span class="bar"><span class="fill"></span></span>
-              <input class="slider" type="range" min="0" max="3000000" value="0">
+              <span class="bar"><span class="fill" [style.width.%]="calculateFillPercentage()"></span></span>
+              <input class="slider" type="range" min="1000" max="5000000" value="0" step="100" [(ngModel)]="loanAmount">
             </div>
           </div>
         </div>
         <div class="financing-request-period">
-          <h3>Срок кредита</h3>
+          <h3>Срок финансирования</h3>
           <div class="criteria-tool">
-            <input type="tel" value="1000 TJS" inputmode="numeric">
+            <input type="tel" [(ngModel)]="loanPeriod" inputmode="numeric" (input)="updateSliderThree()"/>
             <div class="slider-container">
-              <span class="bar"><span class="fill"></span></span>
-              <input class="slider" type="range" min="0" max="3000000" value="0">
+              <span class="bar"><span class="fill" [style.width.%]="calculateFillPercentageThree()"></span></span>
+              <input class="slider" type="range" value="loanPeriod" min="1" max="60" step="1" [(ngModel)]="loanPeriod">
             </div>
           </div>
           <div class="financing-request-period-buttons">
@@ -71,66 +81,80 @@
         </div>
         <div class="financing-request-form">
           <h3>Персональные данные</h3>
-          <form>
+          <form [formGroup]="secondStep">
             <div class="form-row">
               <mat-form-field class="example-form-field">
                 <mat-label>Фамилия</mat-label>
-                <input matInput type="text">
-                <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
-                  <mat-icon>close</mat-icon>
-                </button>
+                <input matInput type="text" formControlName="surname"  [ngClass]="{'error': secondStep.get('surname')?.touched &&
+                                                                      (secondStep.get('surname')?.hasError('required') ||
+                                                                      secondStep.get('surname')?.hasError('pattern'))}">
+                <mat-hint class="error-message" *ngIf="secondStep.get('surname')?.touched && secondStep.get('surname')?.errors?.['required']" style="color: #f44336; margin-bottom: 10px;">Заполните фамилию</mat-hint>
               </mat-form-field>
             </div>
             <div class="form-row">
               <mat-form-field class="example-form-field">
                 <mat-label>Имя</mat-label>
-                <input matInput type="text">
-                <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
-                  <mat-icon>close</mat-icon>
-                </button>
+                <input matInput type="text" formControlName="name"  [ngClass]="{'error': secondStep.get('name')?.touched &&
+                                                                      (secondStep.get('name')?.hasError('required') ||
+                                                                      secondStep.get('name')?.hasError('pattern'))}">
+                <mat-hint class="error-message" *ngIf="secondStep.get('name')?.touched && secondStep.get('name')?.errors?.['required']" style="color: #f44336; margin-bottom: 10px;">Заполните имя</mat-hint>
               </mat-form-field>
               <mat-form-field class="example-form-field">
                 <mat-label>Отчество</mat-label>
-                <input matInput type="text">
-                <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
-                  <mat-icon>close</mat-icon>
-                </button>
+                <input matInput type="text" formControlName="fathersName"  [ngClass]="{'error': secondStep.get('fathersName')?.touched &&
+                                                                      (secondStep.get('fathersName')?.hasError('required') ||
+                                                                      secondStep.get('fathersName')?.hasError('pattern'))}">
+                <mat-hint class="error-message" *ngIf="secondStep.get('fathersName')?.touched && secondStep.get('fathersName')?.errors?.['required']" style="color: #f44336; margin-bottom: 10px;">Заполните отчество</mat-hint>
               </mat-form-field>
             </div>
             <div class="form-row">
               <mat-form-field class="example-form-field">
                 <mat-label>Мобильный телефон</mat-label>
-                <input matInput type="tell">
-                <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
-                  <mat-icon>close</mat-icon>
-                </button>
+                <input matInput type="tell" formControlName="mobileNumber"  [ngClass]="{'error': secondStep.get('mobileNumber')?.touched &&
+                                                                      (secondStep.get('mobileNumber')?.hasError('required') ||
+                                                                      secondStep.get('mobileNumber')?.hasError('pattern'))}">
+                <mat-hint class="error-message" *ngIf="firstStep.get('mobileNumber')?.touched && firstStep.get('mobileNumber')?.errors?.['required']" style="color: #f44336; margin-bottom: 10px;">Заполните поле для номера телефона</mat-hint>
+                <mat-hint class="error-message" *ngIf="firstStep.get('mobileNumber')?.touched && firstStep.get('mobileNumber')?.errors?.['pattern']" style="color: #f44336; margin-bottom: 10px;">Заполните поле для номера телефона(+992 999 999 999)</mat-hint>
               </mat-form-field>
               <mat-form-field class="example-form-field">
                 <mat-label>E-mail</mat-label>
-                <input matInput type="text">
-                <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
-                  <mat-icon>close</mat-icon>
-                </button>
+                <input matInput type="text" formControlName="email"  [ngClass]="{'error': secondStep.get('email')?.touched &&
+                                                                      (secondStep.get('email')?.hasError('required') ||
+                                                                      secondStep.get('email')?.hasError('pattern'))}">
+                <mat-hint style="color: #f44336" *ngIf="secondStep.get('email')?.touched && secondStep.get('email')?.errors?.['required']">
+                  Заполните поле для e-mail
+                </mat-hint>
+                <mat-hint style="color: #f44336" *ngIf="secondStep.get('email')?.touched && secondStep.get('email')?.errors?.['pattern']">
+                  Напишите ваш e-mail в правильном формате (name@mail.org)
+                </mat-hint>
               </mat-form-field>
             </div>
             <div class="form-row">
               <mat-form-field>
                 <mat-label>Дата рождения</mat-label>
-                <input matInput [matDatepicker]="picker">
+                <input matInput [matDatepicker]="picker" formControlName="birthDate"  [ngClass]="{'error': secondStep.get('birthDate')?.touched &&
+                                                                      (secondStep.get('birthDate')?.hasError('required') ||
+                                                                      secondStep.get('birthDate')?.hasError('pattern'))}">
                 <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
+                <mat-hint style="color: #f44336" *ngIf="secondStep.get('birthDate')?.touched && secondStep.get('birthDate')?.errors?.['required']">
+                  Заполните поле дату рождения
+                </mat-hint>
               </mat-form-field>
             </div>
-          </form>
-        </div>
-        <div class="financing-request-agreement">
-          <input type="checkbox" id="fruit1" name="fruit-1" value="Apple">
-          <label for="fruit1">Даю согласие на <a href="#1">отправку запроса в БКИ (для клиентов банка)</a> и <a
-            href="#2">обработку
-            персональных данных</a>, с тарифами и условиями
-            <span class="label-break">кредитования,
+            <div class="financing-request-agreement">
+              <input type="checkbox" id="fruit1" name="fruit-1" value="Apple" formControlName="birthDate"  [ngClass]="{'error': secondStep.get('birthDate')?.touched &&
+                                                                      (secondStep.get('birthDate')?.hasError('required') ||
+                                                                      secondStep.get('birthDate')?.hasError('pattern'))}">
+              <label for="fruit1">Даю согласие на <a href="#1">отправку запроса в БКИ (для клиентов банка)</a> и <a
+                href="#2">обработку
+                персональных данных</a>, с тарифами и условиями
+                <span class="label-break">кредитования,
             <a href="#3">политикой обработки персональных данных</a> ознакомлен и согласен</span>
-          </label>
+              </label>
+            </div>
+            <app-file-getter (fileSelected)="onFileSelected($event)"></app-file-getter>
+          </form>
         </div>
         <div class="financing-action">
           <button class="button" (click)="sendData()">Отправить</button>
@@ -153,11 +177,17 @@
       </svg>
     </div>
     <h4>Ведите код из смс сообщения</h4>
-    <mat-form-field>
-      <mat-label>Введите смс код</mat-label>
-      <input matInput>
-    </mat-form-field>
-    <button class="button" (click)="checkTin()">Получить код</button>
+    <form [formGroup]="totpStep">
+      <mat-form-field>
+        <mat-label>Введите смс код</mat-label>
+        <input matInput formControlName="totp"  [ngClass]="{'error': totpStep.get('totp')?.touched &&
+                                                                      (totpStep.get('totp')?.hasError('required') ||
+                                                                      totpStep.get('totp')?.hasError('pattern'))}">
+        <mat-hint class="error-message" *ngIf="totpStep.get('totp')?.touched && totpStep.get('totp')?.errors?.['required']" style="color: #f44336; margin-bottom: 10px;">Заполните поле кода</mat-hint>
+        <mat-hint class="error-message" *ngIf="totpStep.get('totp')?.touched && totpStep.get('totp')?.errors?.['pattern']" style="color: #f44336; margin-bottom: 10px;">Код должен содержать только 6 цифр</mat-hint>
+      </mat-form-field>
+    </form>
+    <button class="button" (click)="checkTin()">Ввести код</button>
   </div>
 </ng-template>
 <ng-template #thanks>

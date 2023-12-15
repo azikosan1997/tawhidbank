@@ -8,7 +8,13 @@ import {MatDialog} from "@angular/material/dialog";
 })
 export class DepositComponent {
   @ViewChild('depositPopup') depositPopup!: TemplateRef<ElementRef>;
+  tabsArray: string[] = ['Сравнить вклады', 'Тарифы', 'Условия вклада'];
+  activatedTab: number = 0;
   constructor(public dialog: MatDialog) {}
+
+  setTab(index: number) {
+    this.activatedTab = index;
+  }
 
   openPopup() {
     this.dialog.open(this.depositPopup,{
@@ -26,7 +32,7 @@ export class DepositComponent {
     {
       image: './assets/images/pages/deposits/d1.png',
       imageAlt: 'Saving',
-      depositName: 'Вклад «Мудараба»',
+      depositName: '«Мудараба»',
       depositTextFirst: 'От 100$(долларов)',
       depositSubFirst: 'сумма вклада',
       depositTextSecond: 'От 3 до 36 месяцев',
@@ -50,7 +56,7 @@ export class DepositComponent {
     {
       image: './assets/images/pages/deposits/d3.png',
       imageAlt: 'Time',
-      depositName: 'Вклад «Вакала»',
+      depositName: '«Вакала»',
       depositTextFirst: 'От 1000 сомонов',
       depositSubFirst: 'сумма вклада',
       depositTextSecond: 'От 12 до 36 месяцев',

@@ -6,12 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./green.component.scss']
 })
 export class GreenComponent {
+  requestType: string = 'Green Card'
   banner = [
     {
       title: 'КРЕДИТНАЯ КАРТА “САБЗ”',
       subtitle: 'ДЕНЬГИ ВСЕГДА ПОД РУКОЙ',
       image: './assets/images/pages/cards%20info/green-card-banner.png',
       buttonText: 'Заказать карту',
+      link: 'personal/cards/green#form',
       class: 'card'
     }
   ]

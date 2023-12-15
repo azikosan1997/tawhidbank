@@ -1,11 +1,39 @@
 <section class="form">
   <div class="container">
-    <h2>Оформить заявку на вклад</h2>
-    <form>
-      <input type="text" class="form-input" placeholder="Мобильный телефон">
-      <input type="text" class="form-input" placeholder="E-mail">
-      <input type="text" class="form-input" placeholder="ФИО">
-      <input type="text" class="form-input" placeholder="Город">
+    <h2>{{ formName }}</h2>
+    <form [formGroup]="cardRequestData">
+      <div class="form-row">
+        <input type="text" class="form-input" placeholder="Мобильный телефон" formControlName="mobileNumber"  [ngClass]="{'error': cardRequestData.get('mobileNumber')?.touched &&
+                                                                      (cardRequestData.get('mobileNumber')?.hasError('required') ||
+                                                                      cardRequestData.get('mobileNumber')?.hasError('pattern'))}">
+        <div class="error-message" *ngIf="cardRequestData.get('mobileNumber')?.touched && cardRequestData.get('mobileNumber')?.errors?.['required']">Заполните поле для номера телефона</div>
+        <div class="error-message" *ngIf="cardRequestData.get('mobileNumber')?.touched && cardRequestData.get('mobileNumber')?.errors?.['pattern']">Заполните поле для номера телефона(+992 999 999 999)</div>
+      </div>
+      <div class="form-row">
+        <input type="text" class="form-input" placeholder="E-mail" formControlName="email" [ngClass]="{'error': cardRequestData.get('email')?.touched &&
+                                                                      (cardRequestData.get('email')?.hasError('required') ||
+                                                                      cardRequestData.get('email')?.hasError('pattern'))}">
+        <div class="error-message" *ngIf="cardRequestData.get('email')?.touched && cardRequestData.get('email')?.errors?.['required']">Заполните поле E-mail в правильном формате</div>
+      </div>
+      <div class="form-row">
+        <input type="text" class="form-input" placeholder="ФИО" formControlName="fullName" [ngClass]="{'error': cardRequestData.get('fullName')?.touched &&
+                                                                      (cardRequestData.get('fullName')?.hasError('required') ||
+                                                                      cardRequestData.get('fullName')?.hasError('pattern'))}">
+        <div class="error-message" *ngIf="cardRequestData.get('fullName')?.touched && cardRequestData.get('fullName')?.errors?.['required']">Заполните ФИО</div>
+        <div class="error-message" *ngIf="cardRequestData.get('fullName')?.touched && cardRequestData.get('fullName')?.errors?.['pattern']">Напишите ваше имя и фамиля с заглавной буквой</div>
+      </div>
+      <div class="form-row">
+        <input type="text" class="form-input" placeholder="Город" formControlName="city"  [ngClass]="{'error': cardRequestData.get('city')?.touched &&
+                                                                      (cardRequestData.get('city')?.hasError('required') ||
+                                                                      cardRequestData.get('city')?.hasError('pattern'))}">
+        <div class="error-message" *ngIf="cardRequestData.get('city')?.touched && cardRequestData.get('city')?.errors?.['required']">Заполните поле для города</div>
+      </div>
+      <div class="form-row" *ngIf="mainForm">
+        <input type="text" class="form-input" placeholder="Название карты" formControlName="cardType"  [ngClass]="{'error': cardRequestData.get('cardType')?.touched &&
+                                                                      (cardRequestData.get('cardType')?.hasError('required') ||
+                                                                      cardRequestData.get('cardType')?.hasError('pattern'))}">
+        <div class="error-message" *ngIf="cardRequestData.get('cardType')?.touched && cardRequestData.get('cardType')?.errors?.['required']">Заполните поле название карты</div>
+      </div>
       <button class="button">Оформить</button>
       <span>Нажимая «Получить», вы соглашаетесь на <a>обработку персональных данных,</a>
         с <a>Условиями дистанционного обслуживания</a>

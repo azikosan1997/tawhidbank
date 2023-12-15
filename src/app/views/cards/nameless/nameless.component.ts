@@ -6,12 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./nameless.component.scss']
 })
 export class NamelessComponent {
+  requestType: string = 'Nameless Card';
   banner = [
     {
       title: 'БЕЗЫМЯННАЯ КАРТА',
       subtitle: 'ВАША НАЦИОНАЛЬНАЯ КАРТА',
       image: './assets/images/pages/cards%20info/nameless-card-banner.png',
       buttonText: 'Заказать карту',
+      link: 'personal/cards/nameless#form',
       class: 'card'
     }
   ]

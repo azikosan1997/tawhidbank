@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-national',
@@ -6,12 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./national.component.scss']
 })
 export class NationalComponent {
+  requestType: string = 'National Card';
   banner = [
     {
       title: 'КОРТИ МИЛЛИ',
       subtitle: 'ВАША НАЦИОНАЛЬНАЯ КАРТА',
       image: './assets/images/pages/cards%20info/national-card-banner.png',
       buttonText: 'Заказать карту',
+      link: 'personal/cards/national#form',
       class: 'card'
     }
   ]
@@ -96,6 +98,7 @@ export class NationalComponent {
       answer: 'от 1 до 3 года'
     },
   ]
+
   constructor() {
   }
 }

@@ -45,7 +45,7 @@
             <input type="text" formControlName="city"  [ngClass]="{'error': formData.get('city')?.touched &&
                                                                       (formData.get('city')?.hasError('required') ||
                                                                       formData.get('city')?.hasError('pattern'))}">
-            <div class="error-message" *ngIf="formData.get('city')?.touched && formData.get('city')?.errors?.['required']">Заполните поле именем вашей компании</div>
+            <div class="error-message" *ngIf="formData.get('city')?.touched && formData.get('city')?.errors?.['required']">Заполните поле для города</div>
           </div>
         </div>
         <div class="request-form-wrap-form-row extra">
