@@ -14,7 +14,7 @@ export class FinancingFormComponent {
   @Output() fileSelected: EventEmitter<any> = new EventEmitter();
   selectedFile: any = null;
   buttonIndex: number = 0;
-  confirmedFirstStep: boolean = true;
+  confirmedFirstStep: boolean = false;
   loanAmount: number = 0;
   loanPeriod: number = 1;
 
