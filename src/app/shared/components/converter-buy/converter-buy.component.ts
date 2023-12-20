@@ -1,13 +1,13 @@
-import {Component, OnInit} from '@angular/core';
+import { Component } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {CurrencyService} from "../../../services/currency.service";
 
 @Component({
-  selector: 'app-converter',
-  templateUrl: './converter.component.html',
-  styleUrls: ['./converter.component.scss']
+  selector: 'app-converter-buy',
+  templateUrl: './converter-buy.component.html',
+  styleUrls: ['./converter-buy.component.scss']
 })
-export class ConverterComponent implements OnInit {
+export class ConverterBuyComponent {
   currencies: any = [
     {value: 'TJS', viewValue: 'TJS'},
     {value: 'USD', viewValue: 'USD'},
@@ -15,8 +15,8 @@ export class ConverterComponent implements OnInit {
     {value: 'EUR', viewValue: 'EUR'},
   ];
   currencyRate: any[] = [];
-  selectedFromCurrency: string = this.currencies[1].value;
-  selectedToCurrency: string = this.currencies[0].value;
+  selectedFromCurrency: string = this.currencies[0].value;
+  selectedToCurrency: string = this.currencies[1].value;
   fromAmount: number = 100;
   toAmount: any = null;
 
@@ -41,7 +41,7 @@ export class ConverterComponent implements OnInit {
 
   getCurrencyRate(currencyType: string): number {
     const currency = this.currencyRate.find(c => c.currencyType === currencyType);
-    return currency ? currency.rateBuy : 1;
+    return currency ? currency.rateSell : 1;
   }
 
   convert() {

@@ -44,8 +44,16 @@
       </ul>
     </nav>
     <app-mortgage-calculator *ngIf="activatedTab === 1"></app-mortgage-calculator>
-    <app-converter *ngIf="activatedTab === 0"></app-converter>
-    <div class="profit-calculator">
+    <div class="converters-wrap" *ngIf="activatedTab === 0">
+      <nav class="converter-toggle">
+        <ul>
+          <li class="tab-toggle " [ngClass]="activeConverter === i ? 'active' : ''" *ngFor="let tab of converterArray; let i = index" (click)="setConverter(i)">
+            <a class="tab-link ">{{tab}}</a>
+          </li>
+        </ul>
+      </nav>
+      <app-converter *ngIf="activeConverter === 0"></app-converter>
+      <app-converter-buy *ngIf="activeConverter === 1"></app-converter-buy>
     </div>
   </div>
 </section>

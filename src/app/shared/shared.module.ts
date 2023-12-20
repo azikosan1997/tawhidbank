@@ -44,6 +44,7 @@ import {MatDialogModule} from "@angular/material/dialog";
 import { BranchInfoComponent } from './components/branch-info/branch-info.component';
 import { PersonGraphicComponent } from './components/person-graphic/person-graphic.component';
 import { FileGetterComponent } from './components/file-getter/file-getter.component';
+import { ConverterBuyComponent } from './components/converter-buy/converter-buy.component';
 
 @NgModule({
   declarations: [
@@ -77,6 +78,7 @@ import { FileGetterComponent } from './components/file-getter/file-getter.compon
     BranchInfoComponent,
     PersonGraphicComponent,
     FileGetterComponent,
+    ConverterBuyComponent,
   ],
   imports: [
     CommonModule,
@@ -127,7 +129,8 @@ import { FileGetterComponent } from './components/file-getter/file-getter.compon
     AutoFinancingCalculatorComponent,
     BranchInfoComponent,
     PersonGraphicComponent,
-    FileGetterComponent
+    FileGetterComponent,
+    ConverterBuyComponent
   ]
 })
 export class SharedModule { }

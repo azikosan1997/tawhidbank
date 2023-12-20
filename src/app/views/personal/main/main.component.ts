@@ -17,12 +17,20 @@ export class MainComponent implements OnInit{
   tabsArray: string[] = ['Конвертер валют', 'Калькулятор финансирования'];
   activatedTab: number = 0;
 
+  converterArray: string[] = ['Продать', 'Купить'];
+  activeConverter: number = 0;
+
   constructor() {
   }
 
   setTab(index: number) {
     this.activatedTab = index;
   }
+
+  setConverter(index: number){
+    this.activeConverter = index
+  }
+
 
   mainBannerOptions: OwlOptions = {
     autoplay: true,
