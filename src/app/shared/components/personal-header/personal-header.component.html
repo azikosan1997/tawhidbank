@@ -8,19 +8,16 @@
     <nav class="header-bottom-menu">
       <ul>
         <li>
-          <a routerLink="/personal/deposit" routerLinkActive="active-link">Депозиты и инвестиции</a>
-        </li>
-        <li>
           <a routerLink="/personal/financing" routerLinkActive="active-link">Финансирование</a>
         </li>
         <li>
-          <a routerLink="/personal/transfers" routerLinkActive="active-link">Переводы</a>
+          <a routerLink="/personal/deposit" routerLinkActive="active-link">Депозиты и инвестиции</a>
+        </li>
+        <li>
+          <a routerLink="/personal/transfers" routerLinkActive="active-link">Переводы зарубеж</a>
         </li>
         <li>
           <a routerLink="/personal/cards" routerLinkActive="active-link">Карты</a>
-        </li>
-        <li>
-          <a routerLink="/personal/tawhid-pay" routerLinkActive="active-link">Tawhidpay</a>
         </li>
         <li>
           <button mat-icon-button [matMenuTriggerFor]="more" aria-label="Example icon-button with a menu">
@@ -28,8 +25,10 @@
           </button>
           <mat-menu #more="matMenu">
             <a mat-menu-item routerLink="/personal/auto-financing" >
-              <mat-icon>directions_car</mat-icon>
               <a routerLinkActive="active-link" class="nav-item">Покупка авто</a>
+            </a>
+            <a mat-menu-item routerLink="/personal/tawhid-pay" >
+              <a routerLinkActive="active-link" class="nav-item">Tawhidpay</a>
             </a>
           </mat-menu>
         </li>

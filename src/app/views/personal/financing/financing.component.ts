@@ -70,21 +70,6 @@ export class FinancingComponent {
       financingLink: 'Подробнее о мурабаха',
       financingButton: 'Оставть заявку',
       link: '/personal/auto-financing'
-    },
-    {
-      image: './assets/images/pages/financing/f5.png',
-      financingSubText: 'Рассчитайте услове по финансированию',
-      imageAlt: 'Time',
-      financingName: 'Калькулятор финансирования',
-      financingTextFirst: '',
-      financingSubFirst: '',
-      financingTextSecond: '',
-      financingSubSecond: '',
-      financingTextThird: '',
-      financingSubThird: '',
-      financingLink: '',
-      financingButton: 'Рассчитать',
-      link: '/personal/auto-financing'
-    },
+    }
   ]
 }

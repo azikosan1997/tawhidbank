@@ -23,6 +23,7 @@ import {SharedModule} from "../../shared/shared.module";
 import { CardsComponent } from './cards/cards.component';
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
+import {HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -54,6 +55,7 @@ import {MatSnackBarModule} from "@angular/material/snack-bar";
     MatDialogModule,
     MatSnackBarModule,
     ReactiveFormsModule,
+    HttpClientModule
   ]
 })
 export class PersonalModule {

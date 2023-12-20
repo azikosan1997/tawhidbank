@@ -2,31 +2,31 @@
   <div class="converter">
     <div class="converter-row">
       <mat-form-field>
-        <input matInput>
+        <input matInput [(ngModel)]="fromAmount" (input)="convert()">
       </mat-form-field>
       <mat-form-field>
         <mat-label>Валюта</mat-label>
-        <mat-select [(ngModel)]="selectedFromCurrency">
-          <mat-option *ngFor="let food of foods" [value]="food.value">
-            {{food.viewValue}}
+        <mat-select [(ngModel)]="selectedFromCurrency" (selectionChange)="convert()">
+          <mat-option *ngFor="let currency of currencies" [value]="currency.value">
+            {{currency.viewValue}}
           </mat-option>
         </mat-select>
       </mat-form-field>
     </div>
     <div class="converter-action">
-      <button class="button converter-toggle">
+      <button class="button converter-toggle" (click)="swapCurrencies()">
         <mat-icon>repeat</mat-icon>
       </button>
     </div>
     <div class="converter-row">
       <mat-form-field>
-        <input matInput>
+        <input matInput [(ngModel)]="toAmount" (input)="convertTo()">
       </mat-form-field>
       <mat-form-field>
         <mat-label>Валюта</mat-label>
-        <mat-select [(ngModel)]="selectedToCurrency">
-          <mat-option *ngFor="let food of foods" [value]="food.value">
-            {{food.viewValue}}
+        <mat-select [(ngModel)]="selectedToCurrency" (selectionChange)="convert()">
+          <mat-option *ngFor="let currency of currencies" [value]="currency.value">
+            {{currency.viewValue}}
           </mat-option>
         </mat-select>
       </mat-form-field>

@@ -562,8 +562,10 @@
 
   .container {
     .additional-wrap {
+      display: flex;
+      gap: 20px;
       .additional-map{
-        width: 49%;
+        width: 42%;
         height: 448px;
         background-color: white;
         border-radius: 10px;
