@@ -8,7 +8,7 @@
           связаться и всё подробно рассказать
         </div>
       </div>
-      <form class="request-form-wrap-form" [formGroup]="formData">
+      <form class="request-form-wrap-form" [formGroup]="formData" autocomplete="off">
         <div class="request-form-wrap-form-row">
           <div class="input-name">Имя и фамилия</div>
           <input type="text" formControlName="fullName" [ngClass]="{'error': formData.get('fullName')?.touched &&

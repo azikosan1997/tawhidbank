@@ -4,34 +4,65 @@
 .banner {
   width: 100%;
   min-height: 625px;
-  background-image: url("../../../../assets/images/pages/about/banner.png");
+  background: #f2f7f9;
 
   .container {
-    padding-top: 200px;
+    padding-top: 30px;
+    padding-bottom: 30px;
 
-    .banner-info {
-      padding: 30px;
-      background-color: $secondary-color;
-      max-width: 500px;
-      border-radius: 10px;
+    .banner-wrap {
+      width: 100%;
+      min-height: 600px;
+      position: relative;
+      border-radius: 25px;
+      padding: 40px;
+      background: linear-gradient(70deg, rgb(48, 151, 153) 0%, rgb(79, 183, 185) 64%, rgb(110, 214, 216) 100%);
+      box-shadow: 2.5px 4.33px 9.5px 0.5px rgba(0, 0, 0, 0.5);
+      box-sizing: border-box;
+      overflow: hidden;
 
-      h1 {
-        @include h1-mixin;
-        color: black;
+      .banner-info {
+        height: 500px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        img{
+          width: 460px ;
+          margin-bottom: 60px;
+        }
+
+        .banner-info-description {
+          font-size: 24px;
+          font-family: "Montserrat",sans-serif;
+          color: rgb(255, 255, 255);
+          line-height: 1.2;
+        }
       }
 
-      .banner-info-description {
-        font-size: 24px;
-        color: rgb(68, 68, 68);
-        line-height: 1.2;
+      .bank {
+        width: 700px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        object-fit: scale-down;
       }
+
+      .mandala {
+        width: 900px;
+        position: absolute;
+        bottom: -250px;
+        right: -180px;
+        object-fit: scale-down;
+      }
+
     }
   }
 }
 
 .amount {
-  padding-top: 103px;
-  padding-bottom: 100px;
+  padding-top: 80px;
+  padding-bottom: 80px;
   background-color: #f2f7f9;
 
   .container {
@@ -149,7 +180,7 @@
         overflow: hidden;
         transition: all 200ms ease-in-out;
 
-        &:hover{
+        &:hover {
           @include hover;
         }
 
@@ -262,7 +293,7 @@
         justify-content: space-between;
         transition: all 200ms ease-in-out;
 
-        &:hover{
+        &:hover {
           @include hover;
         }
 
@@ -285,7 +316,8 @@
           width: 100%;
           object-fit: scale-down;
         }
-        .si{
+
+        .si {
           height: 205px;
         }
       }

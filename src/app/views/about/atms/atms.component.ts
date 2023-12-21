@@ -6,23 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./atms.component.scss']
 })
 export class AtmsComponent {
-
-
-  updateCenter(event: any) {
-    const searchString = event.target.value.toLowerCase();
-
-    this.filteredAtms = this.atms.filter(atm =>
-      atm.address.toLowerCase().includes(searchString)
-    );
-
-    if (this.filteredAtms.length > 0) {
-      this.options.center = { lat: this.filteredAtms[0].lat, lng: this.filteredAtms[0].lng };
-    }
-  }
-
-  constructor() {
-  }
-
   regions: any = [
     {value: 'headquarter', viewValue: 'Головной офис'},
     {value: 'pizza-1', viewValue: 'г. Бохтар'},
@@ -76,7 +59,8 @@ export class AtmsComponent {
       },
     ]
   };
-
+  constructor() {
+  }
   atms = [
     {
       address: 'Головной офис р.Фирдавси ул. С. Айни 4/1.',
@@ -396,4 +380,20 @@ export class AtmsComponent {
   ]
   filteredAtms: any[] = this.atms;
 
+  isSearching = false;
+
+  updateCenter(event: any): void {
+    const searchTerm = event.target.value.toLowerCase();
+
+    // Если введен текст, фильтруем массив
+    if (searchTerm) {
+      this.filteredAtms = this.atms.filter(atm =>
+        atm.address.toLowerCase().includes(searchTerm)
+      );
+      this.isSearching = true; // Устанавливаем флаг поиска
+    } else {
+      this.filteredAtms = this.atms; // В противном случае отображаем все маркеры
+      this.isSearching = false; // Сбрасываем флаг поиска
+    }
+  }
 }

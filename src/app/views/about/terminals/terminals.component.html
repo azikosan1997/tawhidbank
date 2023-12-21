@@ -4,37 +4,38 @@
     <h1>Адреса</h1>
     <app-about-navigation></app-about-navigation>
     <div class="atms-wrap">
-      <div class="atm-search">
-        <mat-form-field appearance="fill">
-          <mat-label>Поиск по адресу</mat-label>
-          <input matInput placeholder="Адресс">
-          <mat-icon matSuffix>
-            <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-              <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-              <g id="SVGRepo_iconCarrier">
-                <path opacity="0.1"
-                      d="M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
-                      fill="#309799"></path>
-                <path d="M15 15L21 21" stroke="#309799" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round"></path>
-                <path
-                  d="M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
-                  stroke="#309799" stroke-width="2"></path>
-              </g>
-            </svg>
-          </mat-icon>
-          <mat-hint></mat-hint>
-        </mat-form-field>
-        <mat-form-field>
-          <mat-label>Регионы</mat-label>
-          <mat-select>
-            <mat-option *ngFor="let region of regions" [value]="region.value">
-              {{region.viewValue}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
+      <h2>Терминалы </h2>
+<!--      <div class="atm-search">-->
+<!--        <mat-form-field appearance="fill">-->
+<!--          <mat-label>Поиск по адресу</mat-label>-->
+<!--          <input matInput placeholder="Адресс">-->
+<!--          <mat-icon matSuffix>-->
+<!--            <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+<!--              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>-->
+<!--              <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>-->
+<!--              <g id="SVGRepo_iconCarrier">-->
+<!--                <path opacity="0.1"-->
+<!--                      d="M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"-->
+<!--                      fill="#309799"></path>-->
+<!--                <path d="M15 15L21 21" stroke="#309799" stroke-width="2" stroke-linecap="round"-->
+<!--                      stroke-linejoin="round"></path>-->
+<!--                <path-->
+<!--                  d="M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"-->
+<!--                  stroke="#309799" stroke-width="2"></path>-->
+<!--              </g>-->
+<!--            </svg>-->
+<!--          </mat-icon>-->
+<!--          <mat-hint></mat-hint>-->
+<!--        </mat-form-field>-->
+<!--        <mat-form-field>-->
+<!--          <mat-label>Регионы</mat-label>-->
+<!--          <mat-select>-->
+<!--            <mat-option *ngFor="let region of regions" [value]="region.value">-->
+<!--              {{region.viewValue}}-->
+<!--            </mat-option>-->
+<!--          </mat-select>-->
+<!--        </mat-form-field>-->
+<!--      </div>-->
       <div class="atms-map">
         <google-map [options]="options" width="100vw" height="700px">
           <map-marker *ngFor="let atm of bokhtarTerminals" [position]="{lat: atm.lat, lng: atm .lng}" [icon]="customMarkerIcon"></map-marker>
@@ -55,7 +56,7 @@
             <span>Сейчас не работает</span>
           </div>
         </div>
-        <h2>Терминалы </h2>
+
         <div class="toggle-region-wrap">
           <div class="toggle-region" *ngFor="let region of tabsArray; let i = index">
             <input type="radio" id="{{i}}" name="radio-group" (click)="setTab(i)" [checked]="activatedTab === 0 ? i === 0 : false">
